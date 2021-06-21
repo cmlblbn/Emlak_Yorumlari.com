@@ -87,9 +87,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202106211003410_deneme1.cs" />
-    <Compile Include="Migrations\202106211003410_deneme1.designer.cs">
-      <DependentUpon>202106211003410_deneme1.cs</DependentUpon>
+    <Compile Include="Migrations\202106211158279_deneme.cs" />
+    <Compile Include="Migrations\202106211158279_deneme.designer.cs">
+      <DependentUpon>202106211158279_deneme.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Adress_Description.cs" />
@@ -109,8 +109,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106211003410_deneme1.resx">
-      <DependentUpon>202106211003410_deneme1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106211158279_deneme.resx">
+      <DependentUpon>202106211158279_deneme.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
