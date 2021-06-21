@@ -11,7 +11,7 @@ namespace Emlak_Yorumlari_Entities.Models
     [Table("Adress_Type")]
     public class Adress_Type
     {
-        [MaxLength(2, ErrorMessage = "Maximum {0} karakter olmalı!")]
+        
         [Key]
         public int adress_type_id { get; set; }
 

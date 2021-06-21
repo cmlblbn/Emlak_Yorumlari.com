@@ -15,7 +15,7 @@ namespace Emlak_Yorumlari_Entities
     [Table("User")]
     public class User
     {
-        [MaxLength(10, ErrorMessage = "Maximum {0} karakter olmalı!")]
+
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Index(IsUnique = true)]
         public int user_id { get; set; }

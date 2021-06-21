@@ -87,6 +87,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\202106211003410_deneme1.cs" />
+    <Compile Include="Migrations\202106211003410_deneme1.designer.cs">
+      <DependentUpon>202106211003410_deneme1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Adress_Description.cs" />
     <Compile Include="Models\Adress_Type.cs" />
     <Compile Include="Models\Comment.cs" />
@@ -98,8 +103,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202106211003410_deneme1.resx">
+      <DependentUpon>202106211003410_deneme1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

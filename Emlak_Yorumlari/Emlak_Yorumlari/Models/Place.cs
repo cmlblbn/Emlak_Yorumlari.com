@@ -13,17 +13,17 @@ namespace Emlak_Yorumlari_Entities
     [Table("Place")]
     public class Place
     {
-        [MaxLength(10,ErrorMessage = "Maximum {0} karakter olmalı!")]
+
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Index(IsUnique = true)]
         public int place_id { get; set; }
 
-        [ForeignKey("user_id")]
         public int user_id { get; set; }
+        [ForeignKey("user_id")]
         public virtual User user { get; set; }
 
-        [ForeignKey("adress_desc_id")]
         public int adress_desc_id { get; set; }
+        [ForeignKey("adress_desc_id")]
         public virtual Adress_Description adress_description { get; set; }
 
         [StringLength(100, ErrorMessage = "placeName alanı max. {0} karakter olmalıdır.")]

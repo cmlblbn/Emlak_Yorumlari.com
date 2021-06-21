@@ -11,7 +11,7 @@ namespace Emlak_Yorumlari_Entities.Models
     [Table("Adress_Description")]
     public class Adress_Description
     {
-        [MaxLength(10, ErrorMessage = "Maximum {0} karakter olmalı!")]
+        
         [Key]
         [Index(IsUnique = true)]
         public int adress_desc_id { get; set; }
@@ -19,17 +19,17 @@ namespace Emlak_Yorumlari_Entities.Models
         [StringLength(50, ErrorMessage = "adress_name alanı max. {0} karakter olmalıdır.")]
         public string adress_name { get; set; }
 
-        [ForeignKey("adress_type_id")]
         public int adress_type_id { get; set; }
-        public Adress_Type adress_type { get; set; }
+        [ForeignKey("adress_type_id")]
+        public virtual Adress_Type adress_type { get; set; }
 
-        [MaxLength(10, ErrorMessage = "Maximum {0} karakter olmalı!")]
+
         public int parent_id { get; set; }
 
         public bool IsActive { get; set; }
 
 
-
+        
         public virtual List<Place> places { get; set; }
 
 

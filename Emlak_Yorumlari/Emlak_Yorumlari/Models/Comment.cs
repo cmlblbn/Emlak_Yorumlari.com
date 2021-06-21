@@ -11,13 +11,15 @@ namespace Emlak_Yorumlari_Entities.Models
     [Table("Comment")]
     public class Comment
     {
-        [MaxLength(10, ErrorMessage = "Maximum {0} karakter olmalı!")]
+
         [Key]
+        [Column(Order = 1)]
         public int user_id { get; set; }
         public virtual User user { get; set; }
 
-        [MaxLength(10, ErrorMessage = "Maximum {0} karakter olmalı!")]
+
         [Key]
+        [Column(Order = 2)]
         public int place_id { get; set; }
         public virtual Place place { get; set; }
 

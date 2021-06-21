@@ -11,22 +11,25 @@ namespace Emlak_Yorumlari_Entities.Models
     [Table("Survey")]
     public class Survey
     {
-        [MaxLength(10, ErrorMessage = "Maximum {0} karakter olmalı!")]
+
         [Key]
+        [Column(Order = 1)]
         public int user_id { get; set; }
         public virtual User user { get; set; }
 
-        [MaxLength(10, ErrorMessage = "Maximum {0} karakter olmalı!")]
+
         [Key]
+        [Column(Order = 2)]
         public int question_id { get; set; }
         public virtual Question_Definition question_definitioın { get; set; }
 
-        [MaxLength(10, ErrorMessage = "Maximum {0} karakter olmalı!")]
+
         [Key]
+        [Column(Order = 3)]
         public int place_id { get; set; }
         public virtual Place place { get; set; }
 
-        [MaxLength(5, ErrorMessage = "Maximum {0} karakter olmalı!")]
+
         public float score { get; set; }
 
 

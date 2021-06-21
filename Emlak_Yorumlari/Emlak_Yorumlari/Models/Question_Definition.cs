@@ -11,7 +11,7 @@ namespace Emlak_Yorumlari_Entities.Models
     [Table("Question_Definition")]
     public class Question_Definition
     {
-        [MaxLength(10, ErrorMessage = "Maximum {0} karakter olmalı!")]
+
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Index(IsUnique = true)]
         public int question_id { get; set; }
