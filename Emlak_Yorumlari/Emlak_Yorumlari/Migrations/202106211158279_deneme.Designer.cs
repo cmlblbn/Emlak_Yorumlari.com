@@ -7,13 +7,13 @@ namespace Emlak_Yorumlari.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class deneme1 : IMigrationMetadata
+    public sealed partial class deneme : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(deneme1));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(deneme));
         
         string IMigrationMetadata.Id
         {
-            get { return "202106211003410_deneme1"; }
+            get { return "202106211158279_deneme"; }
         }
         
         string IMigrationMetadata.Source
