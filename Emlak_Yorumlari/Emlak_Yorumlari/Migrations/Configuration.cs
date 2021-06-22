@@ -1,4 +1,9 @@
-﻿namespace Emlak_Yorumlari.Migrations
+﻿using System.Runtime.InteropServices;
+using Emlak_Yorumlari_Entities.Models;
+using Excel = Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
+
+namespace Emlak_Yorumlari.Migrations
 {
     using System;
     using System.Data.Entity;

@@ -106,3 +106,4 @@ C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yoru
 C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.pdb
 C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.Migrations.deneme.resources
 C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.csproj.GenerateResource.cache
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\bin\Debug\EntityFramework.dll
