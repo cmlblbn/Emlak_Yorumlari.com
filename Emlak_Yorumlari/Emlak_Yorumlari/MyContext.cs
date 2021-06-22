@@ -12,7 +12,7 @@ namespace Emlak_Yorumlari_Entities
     {
         public MyContext() : base("Name=MyContext")
         {
-
+			Database.SetInitializer(new MigrateDatabaseToLatestVersion<MyContext, Emlak_Yorumlari.Migrations.Configuration>());
         }
         public DbSet<User> Users { get; set; }
         public DbSet<Place> Places { get; set; }
