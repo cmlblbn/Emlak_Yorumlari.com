@@ -1,4 +1,9 @@
-﻿namespace Emlak_Yorumlari.Migrations
+﻿using System.Runtime.InteropServices;
+using Emlak_Yorumlari_Entities.Models;
+using Excel = Microsoft.Office.Interop.Excel;
+
+
+namespace Emlak_Yorumlari.Migrations
 {
     using System;
     using System.Data.Entity;
@@ -42,7 +47,7 @@
             });
 
             context.SaveChanges();
-
+            
             // excel dosyası okunması
             Excel.Application application = new Excel.Application();
 
