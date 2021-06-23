@@ -1,0 +1,82 @@
+﻿
+@{
+
+    ViewBag.Title = "Kayıt sayfası";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="~/Content/login-register.css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <script>
+        $(function() {
+            $("footer").hide();
+        });
+    </script>
+</head>
+<body>
+
+    <!------ Include the above in your HEAD tag ---------->
+    <br />
+    <br />
+    <br />
+    @using (Html.BeginForm())
+    {
+        <section class="login-info">
+            <div class="container">
+                <div class="row main">
+                    <div class="form-header">
+                        <h1 class="text-center ">Kayıt Ol </h1>
+                    </div>
+                    <div class="main-content">
+                        <p class="input-group"> Özellikler için üye olmak zorunludur.</p>
+                        <div class="input-group ">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                            <input id="username" type="text" class="form-control" name="username" placeholder="Kullanıcı Adını Giriniz.">
+                        </div>
+                        <div class="input-group ">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
+                            <input id="email" type="text" class="form-control" name="email" placeholder="E-mail giriniz.">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+                            <input id="password" type="password" class="form-control" name="password" placeholder="Şifrenizi Giriniz.">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+                            <input id="password" type="password" class="form-control" name="password" placeholder="Tekrar Şifre Giriniz.">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></span>
+                            <input type="file" name="uploadfile" id="uploadfile" /> Resim Yükle
+                        </div>
+
+
+                        <div class="form-group ">
+                            <a href="../Home/Login" class="alert-link">Hesabın var mı? Giris Yap</a><br />
+
+                            <button href="#" type="submit" class="btn btn-warning btn-lg btn-block login-button">Giriş Yap</button>
+
+
+
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+
+</body>
+</html>
+
+

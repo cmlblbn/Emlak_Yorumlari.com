@@ -1,19 +1,67 @@
 ﻿
-@{
-    Layout = null;
-}
+
 
 <!DOCTYPE html>
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
 
+    <meta name="viewport" content="width=device-width"/>
+    <title>Index</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet"/>
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet"/>
+    <script src="~/Scripts/jquery-2.2.4.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <style type="text/css">
+        #container {
+            width: 1200px;
+            height: 500px;
+            text-align: left;
+            margin-top: 150px;
+            margin-left: 350px;
+            border-style: solid;
+            border-width: 1px;
+            background-color: beige
+
+        }
+
+    </style>
 </head>
 <body>
-    <div>
-        örnek div
+
+
+<div class="row" style="text-align: center">
+    <div class="row-md-12" id ="container">
+        <h2 style="margin-left: 20px; color: brown; font-family: fantasy">
+            Türkiye'nin Emlak Yorumlarına Hoşgeldiniz.
+        </h2>
+        <div class="col-md-6">
+            <br />
+            <br />
+            <p style="margin-left: 5px; color:darkcyan; font-family: inherit; font-size: large"">
+                Türkiye'de varolan bir çok sitenin yorumları hakkında bilgi almak için tam olmanız gereken yerdesiniz. 
+                Oturmak istediğiniz sitenin yorumlarına bakabilir veya siz de bu platforma katkı sağlamak istiyorsanız 
+                oturmakta bulunduğunuz site hakkında yorumlar yapabilirsiniz.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <br />
+            <br />
+            <p style="margin-left: 5px; color:darkcyan; font-family: inherit; font-size: small">Aşağıdaki özellikleri kullanmak için lütfen giriş yapınız.</p><br />
+            <p style="margin-left: 5px; color:crimson; font-family: inherit; font-size: small">Hesabınız yok mu? yukarıdaki üye ol kısmından kolayca üyelik oluşturabilirsiniz.</p><br /><br /><br />
+
+        </div>
+
+        <div class="col-md-6" id="btn-index" style="float: right">
+            <a href="../Home/Register" class="btn btn-warning btn-lg">SİTE EKLE</a>
+            <a href="../Home/Register" class="btn btn-warning btn-lg">YORUMDA BULUN</a>
+        </div>
     </div>
+
+
+</div>
+
+
 </body>
+
 </html>
