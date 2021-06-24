@@ -8,7 +8,7 @@ using Emlak_Yorumlari_Entities.Models;
 
 namespace Emlak_Yorumlari_Entities
 {
-    class MyContext : DbContext
+   public class MyContext : DbContext
     {
         public MyContext() : base("Name=MyContext")
         {
