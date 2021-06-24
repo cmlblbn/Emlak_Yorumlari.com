@@ -1,0 +1,65 @@
+﻿
+@{
+
+    ViewBag.Title = "UserActive sayfası";
+    Layout = null;
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="~/Content/login-register.css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <script>
+        $(function () {
+            $("footer").parent().hide();
+        });
+        $(function () {
+            $("bs-example-navbar-collapse-1").parent().hide();
+        });
+
+        setTimeout(function () {
+            window.location = "/Home/Login";
+        }, 6000);
+        
+    </script>
+</head>
+<body>
+
+    <!------ Include the above in your HEAD tag ---------->
+    <br />
+    <br />
+    <br />
+
+        <section class="login-info">
+            <div class="container">
+                <div class="row main">
+                    <div class="form-header">
+                        <h1 class="text-center ">Aktivasyon İşlemi </h1>
+                    </div>
+                    <div class="main-content">
+                        <div class="text-success">
+                            <h2><span class="glyphicon glyphicon-ok-circle"></span>&nbsp;&nbsp;&nbsp;Aktivasyon İşlemi Başarılı</h2>
+                            <hr />
+                            <p class="text-center">
+                               Aktivasyon işlemi tamamlanmıştır. Giriş sayfasına yönlendiriliyorsunuz...
+                            </p>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+</body>
+</html>

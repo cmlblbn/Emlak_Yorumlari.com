@@ -1,0 +1,102 @@
+﻿@using Emlak_Yorumlari_WebApp.ViewModels;
+@model RegisterViewModel
+@{
+
+
+    ViewBag.Title = "Kayıt sayfası";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="~/Content/login-register.css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <style type="text/css">
+        .validation-summary-errors {
+            border: 2px dotted;
+            background-color: #d76663;
+            border-radius: 8px;
+        }
+
+        .validation-summary-errors ul {
+            color: white;
+            padding: 10px;
+            list-style-type: none;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            $("footer").hide();
+        });
+
+    </script>
+</head>
+<body>
+
+    <!------ Include the above in your HEAD tag ---------->
+    <br />
+    <br />
+    <br />
+    @using (Html.BeginForm("Register", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <section class="login-info">
+            <div class="container">
+                <div class="row main">
+                    <div class="form-header">
+                        <h1 class="text-center ">Kayıt Ol </h1>
+                    </div>
+                    <div class="main-content">
+                        <p > Özellikler için üye olmak zorunludur.</p><br />
+                        @Html.ValidationSummary(false)
+                        <div class="input-group ">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                            @Html.TextBoxFor(model => model.username, new { @class = "form-control", placeholder = "Kullanıcı Adını Giriniz." })
+                            @*<input id="username" type="text" class="form-control" name="username" placeholder="Kullanıcı Adını Giriniz.">*@
+                        </div>
+                        <div class="input-group ">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                            @Html.TextBoxFor(model => model.email, new { @class = "form-control", placeholder = "E-mail adresinizi giriniz. Giriniz." })
+                            @*<input id="username" type="text" class="form-control" name="username" placeholder="Kullanıcı Adını Giriniz.">*@
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+                            @Html.TextBoxFor(model => model.password, new { @class = "form-control", placeholder = "Şifrenizi Giriniz.", type = "password" })
+                            @*<input id="password" type="password" class="form-control" name="password" placeholder="Şifrenizi Giriniz.">*@
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+                            @Html.TextBoxFor(model => model.repassword, new { @class = "form-control", placeholder = "Tekrardan Şifrenizi Giriniz.", type = "password" })
+                            @*<input id="password" type="password" class="form-control" name="password" placeholder="Şifrenizi Giriniz.">*@
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></span>
+                            <input type="file" name="uploadfile" id="uploadfile" accept="image/png, image/jpeg, image/jpg" /> Resim Yükle
+                        </div>
+                            <p class="input-group"> @ViewBag.message</p><br />  
+
+                        <div class="form-group ">
+                            <a href="../Home/Login" class="alert-link">Hesabın var mı? Giris Yap</a><br /><br />
+
+                            <button href="../Home/Login" type="submit" class="btn btn-warning btn-lg btn-block login-button">Kayıt Ol</button>
+
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+                                }
+
+</body>
+</html>
+
+
