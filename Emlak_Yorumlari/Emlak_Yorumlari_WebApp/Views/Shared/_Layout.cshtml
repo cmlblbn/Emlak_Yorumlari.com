@@ -38,31 +38,51 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../Home/Homepage">Emlak Yorumları</a>
+                @if (Session["User"] != null)
+                {
+                    <a class="navbar-brand" href="../Home/Homepage">Emlak Yorumları</a>
+                }
+                else
+                {
+                    <a class="navbar-brand" href="../Home/Index">Emlak Yorumları</a>
+                }
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
 
-                    <li>
-                        <a href="#"><span class="glyphicon glyphicon-wrench"></span> Profilim</a>
-                    </li>
-                    
-                    
+                    @if (Session["User"] != null)
+                    {
+                        <li>
+                            <a href="#"><span class="glyphicon glyphicon-wrench"></span> Profilim</a>
+                        </li>
+                    }
+
+
+
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#"><span class="glyphicon glyphicon-user"></span> kullanıcı_adı</a>
-                    </li>
-                    <li>
-                        <a href="#"> <span class="glyphicon glyphicon-log-out"></span> Çıkış</a>
-                    </li>
-                    <li>
-                        <a href="../Home/Login"><span class="glyphicon glyphicon-log-in"></span> Giriş</a>
-                    </li>
-                    <li>
-                        <a href="../Home/Register"> <span class="glyphicon glyphicon-info-sign"></span> Üye Ol</a>
-                    </li>
+                    @if (Session["User"] == null)
+                    {
+                        <li>
+                            <a href="../Home/Login"><span class="glyphicon glyphicon-log-in"></span> Giriş</a>
+                        </li>
+
+                        <li>
+                            <a href="../Home/Register"> <span class="glyphicon glyphicon-info-sign"></span> Üye Ol</a>
+                        </li>
+                    }
+                    else
+                    {
+
+                        <li>
+                            <a href="#"><span class="glyphicon glyphicon-user"></span> @Session["User"].ToString()</a>
+                        </li>
+                        <li>
+
+                            <a href="../Home/Logout"> <span class="glyphicon glyphicon-log-out"></span> Çıkış</a>
+                        </li>
+                    }
 
                 </ul>
             </div>

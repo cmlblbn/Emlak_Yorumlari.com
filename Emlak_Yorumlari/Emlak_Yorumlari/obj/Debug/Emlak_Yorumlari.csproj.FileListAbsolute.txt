@@ -68,7 +68,6 @@ C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yoruml
 C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.dll
 C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.pdb
 C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.csprojAssemblyReference.cache
-C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.Migrations.deneme1.resources
 C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.csproj.GenerateResource.cache
 C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\bin\Debug\Emlak_Yorumlari.dll.config
 C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\bin\Debug\Emlak_Yorumlari.dll
@@ -179,3 +178,4 @@ C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\D
 C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.csproj.CopyComplete
 C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.dll
 C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.pdb
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.Migrations.deneme.resources

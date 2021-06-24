@@ -21,17 +21,24 @@
         .validation-summary-errors {
             border: 2px dotted;
             background-color: #d76663;
-            border-radius: 8px
+            border-radius: 8px;
         }
-        .validation-summary-errors ul{
-            color: black;
+
+        .validation-summary-errors ul {
+            color: white;
             padding: 10px;
+            list-style-type: none;
         }
     </style>
     <script>
-        $(function() {
+        $(function () {
             $("footer").parent().hide();
         });
+
+        setTimeout(function () {
+            window.location = "/Home/Login";
+        }, 2000);
+            });
     </script>
 </head>
 <body>

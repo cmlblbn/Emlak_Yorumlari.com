@@ -14,22 +14,26 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    
+
     <style type="text/css">
         .validation-summary-errors {
             border: 2px dotted;
             background-color: #d76663;
-            border-radius: 8px
+            border-radius: 8px;
         }
-        .validation-summary-errors ul{
-            color: black;
+
+        .validation-summary-errors ul {
+            color: white;
             padding: 10px;
+            list-style-type: none;
         }
     </style>
+
     <script>
         $(function () {
             $("footer").hide();
         });
+
     </script>
 </head>
 <body>
@@ -38,7 +42,7 @@
     <br />
     <br />
     <br />
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("Register", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         <section class="login-info">
             <div class="container">
@@ -47,7 +51,7 @@
                         <h1 class="text-center ">Kayıt Ol </h1>
                     </div>
                     <div class="main-content">
-                        <p class="input-group"> Özellikler için üye olmak zorunludur.</p><br/>
+                        <p class="input-group"> Özellikler için üye olmak zorunludur.</p><br />
                         @Html.ValidationSummary(false)
                         <div class="input-group ">
                             <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
@@ -74,9 +78,30 @@
                             <input type="file" name="uploadfile" id="uploadfile" /> Resim Yükle
                         </div>
 
+                        <div class="input-group">
+                            
+
+
+                            <p class="input-group"> @ViewBag.message</p><br />
+                                
+                            
+                        </div>
+
 
                         <div class="form-group ">
                             <a href="../Home/Login" class="alert-link">Hesabın var mı? Giris Yap</a><br />
+                            @{
+                                 byte[] ConvertToBytes(HttpPostedFileBase image)
+                                {
+                                    byte[] imageBytes = null;
+                                    BinaryReader reader = new BinaryReader(image.InputStream);
+                                    imageBytes = reader.ReadBytes((int)image.ContentLength);
+                                    return imageBytes;
+                                }
+                                
+
+
+                            }
 
                             <button href="../Home/Login" type="submit" class="btn btn-warning btn-lg btn-block login-button">Kayıt Ol</button>
 
@@ -92,7 +117,7 @@
                 </div>
             </div>
         </section>
-    }
+                                }
 
 </body>
 </html>
