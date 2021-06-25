@@ -183,6 +183,7 @@
     <Content Include="Views\Shared\_PartialSearch.cshtml" />
     <Content Include="Views\Home\ForgotMyPassword.cshtml" />
     <Content Include="Views\Home\UserActivate.cshtml" />
+    <None Include="Views\Home\UserActivateTimeOut.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

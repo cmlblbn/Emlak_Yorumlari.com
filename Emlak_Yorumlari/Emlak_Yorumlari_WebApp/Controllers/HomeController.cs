@@ -147,6 +147,9 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 kisi.createOn = DateTime.Now.Date;
                 kisi.profileImage = model.profileImage;
                 context.Users.Add(kisi);
+                
+
+                
                 SendActivationEmail(kisi);
 
                 int status = context.SaveChanges();
@@ -168,19 +171,23 @@ namespace Emlak_Yorumlari_WebApp.Controllers
         }
 
         private void SendActivationEmail(User kontrolkisi)
-        {
+        {   //GUİD OLUSTUR
+            string guidkey = Guid.NewGuid().ToString();
+            //GUİD İLE USERNAME REDİSE AT
+
             WebMail.SmtpServer = "smtp.gmail.com";
             WebMail.SmtpPort = 587;
             WebMail.UserName = "meunotes1@gmail.com";
             WebMail.Password = "meunotes1.Meu";
             WebMail.EnableSsl = true;
+            
 
             try
             {
                 WebMail.Send(
                     to: kontrolkisi.email, subject: "Aktivasyon",
                     body: "\nSayın :" + kontrolkisi.username + "<br/> Hesabınızı aktifleştirmek için lütfen bağlantıya tıklayın, "+"<br/>"
-                         + string.Format("{0}://{1}/Home/UserActivate/{2}", Request.Url.Scheme, Request.Url.Authority, kontrolkisi.username),
+                         + string.Format("{0}://{1}/Home/UserActivate/{2}", Request.Url.Scheme, Request.Url.Authority, guidkey),
                     replyTo: "dont-reply@gmail.com", isBodyHtml: true);
             }
             catch (Exception e)
@@ -191,7 +198,9 @@ namespace Emlak_Yorumlari_WebApp.Controllers
         public ActionResult UserActivate()
         {
             if (RouteData.Values["id"] != null)
-            {
+            {//GELEN İD ASLINDA STRİNG GUİD, ŞİMDİ REDİSTE KONTROL ET BU İD İLE EŞLEŞEN VALUE VAR MI?
+                //VARSA AŞAĞIDAKİ İŞLEME DEVAM ET SORGUDA X=>X.USERNAME==REDİSTEKİ GUİDİN VALUE Sİ(USERNAME)
+                //YOKSA RedirectToAction("UserActivatedTimeOut")
                 string kod = RouteData.Values["id"].ToString();
                 MyContext context = new MyContext();
                 User kontrolkisi = context.Users.Where(x => x.username == kod).FirstOrDefault();
@@ -200,6 +209,32 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 //ViewBag.Bilgi = "Aktivasyon başarılı.";
             }
             return View();
+        }
+        
+        public ActionResult UserActivateTimeOut()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult UserActivateTimeOut(RegisterViewModel model)
+        {
+
+            MyContext db = new MyContext();
+            User kontrolkisi = null;
+
+            kontrolkisi = db.Users.Where(x => x.email == model.email).FirstOrDefault();
+            if (kontrolkisi == null)
+            {
+                ModelState.AddModelError("", "Sistemde kayıtlı e-mail adresi bulunamadı");
+                return View(model);
+            }
+            else
+            {
+                SendActivationEmail(kontrolkisi);
+                return RedirectToAction("Index");
+            }
         }
 
         public byte[] ConvertToBytes(HttpPostedFileBase image)
