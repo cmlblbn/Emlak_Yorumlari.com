@@ -219,3 +219,12 @@ C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emalk_Yoruml
 C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emalk_Yorumlari_Redis\obj\Debug\Emalk_Yorumlari_Redis.csproj.CopyComplete
 C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emalk_Yorumlari_Redis\obj\Debug\Emalk_Yorumlari_Redis.dll
 C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emalk_Yorumlari_Redis\obj\Debug\Emalk_Yorumlari_Redis.pdb
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emalk_Yorumlari_Redis\bin\Debug\Json.Net.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emalk_Yorumlari_Redis\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emalk_Yorumlari_Redis\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emalk_Yorumlari_Redis\bin\Debug\System.Text.Json.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emalk_Yorumlari_Redis\bin\Debug\System.ValueTuple.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emalk_Yorumlari_Redis\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emalk_Yorumlari_Redis\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emalk_Yorumlari_Redis\bin\Debug\System.Text.Json.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emalk_Yorumlari_Redis\bin\Debug\System.ValueTuple.xml

@@ -114,6 +114,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
                 db.Places.Add(place);
                 kisi.places.Add(place);
+                adres.places.Add(place);
                 int status = db.SaveChanges();
                 ViewBag.status = -1;
                 if (status > 0)
@@ -192,16 +193,59 @@ namespace Emlak_Yorumlari_WebApp.Controllers
         }
 
 
-        public ActionResult Index()
+        public ActionResult ShowPlace()
         {
             User kontrolkisi = new User();
             string sessionname = Session["User"].ToString();
             kontrolkisi = db.Users.Where(x => x.username == sessionname).FirstOrDefault();
 
             var places = db.Places.Where(p => p.user_id == kontrolkisi.user_id);
+
+            Dictionary<int, string> tamAdres = new Dictionary<int, string>();
+
+            Adress_Description mahalle = new Adress_Description();
+            Adress_Description ilce = new Adress_Description();
+            Adress_Description sehir = new Adress_Description();
+            MyContext sorgu = new MyContext();
+            string birlesmisAdres;
+            foreach (var placeIter in places)
+            {
+                birlesmisAdres = "";
+                mahalle = sorgu.Adress_Descriptions.Where(x => x.adress_desc_id == placeIter.adress_desc_id).FirstOrDefault();
+                ilce = sorgu.Adress_Descriptions.Where(x => x.adress_desc_id == mahalle.parent_id).FirstOrDefault();
+                sehir = sorgu.Adress_Descriptions.Where(x => x.adress_desc_id == ilce.parent_id).FirstOrDefault();
+
+                birlesmisAdres = birlesmisAdres + sehir.adress_name + " - ";
+                birlesmisAdres = birlesmisAdres + ilce.adress_name + " - ";
+                birlesmisAdres = birlesmisAdres + mahalle.adress_name;
+                tamAdres.Add(placeIter.adress_desc_id,birlesmisAdres);
+                
+
+            }
+
+            ViewBag.TamAdres = tamAdres;
+
+
+
             // ViewBag.adres=db.Places.Where(p=>p.)
             // var places = db.Places.Include(p => p.adress_description).Include(p => p.user);
             return View(places.ToList());
+        }
+
+        
+        public ActionResult ReturnImage(int? Id)
+        {
+            Place place = new Place();
+            place = db.Places.Where(x => x.place_id == Id).FirstOrDefault();
+            byte[] cover = place.placeImage; 
+            if (cover != null)
+            {
+                return File(cover, "image/jpg");
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public ActionResult Delete(int? id)
@@ -217,7 +261,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             }
             db.Places.Remove(place);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("ShowPlace");
         }
         // GET: Place/Edit/5
         public ActionResult Edit(int?id)
@@ -287,6 +331,16 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 {
                     ModelState.AddModelError("", "Lütfen adresi seçin!");
                 }
+                if (uploadfile != null)
+                {
+
+                    if (!uploadfile.FileName.EndsWith(".png")) //| !uploadfile.FileName.EndsWith(".jpg") | !uploadfile.FileName.EndsWith(".jpeg"))
+                    {
+                        ModelState.AddModelError("", "Lütfen fotoğraf seçin! (.png-.jpg-.jpeg)");
+                    }
+                }
+
+
                 List<Adress_Description> sehirler = new List<Adress_Description>();
 
                 foreach (var adress in db.Adress_Descriptions.Where(x => x.parent_id == 0))
@@ -324,18 +378,23 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 ViewBag.city = model.CityData;
                 ViewBag.district = model.DistrictData;
                 ViewBag.quarter = model.QuarterData;
+
                 foreach (var item in ModelState)
                 {
                     if (item.Value.Errors.Count > 0)
                     {
- 
+
 
                         return View(place);
                     }
                 }
+
+
+                HttpPostedFileBase file = Request.Files["uploadfile"];
+                place.placeImage = HomeController.ConvertToBytes(file);
                 db.Entry(place).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("ShowPlace");
             }
             //ViewBag.adress_desc_id = new SelectList(db.Adress_Descriptions, "adress_desc_id", "adress_name", place.adress_desc_id);
             //ViewBag.user_id = new SelectList(db.Users, "user_id", "username", place.user_id);

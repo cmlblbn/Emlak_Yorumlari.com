@@ -728,3 +728,5 @@ C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yoruml
 C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Diagnostics.PerformanceCounter.xml
 C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.IO.Pipelines.xml
 C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Channels.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Newtonsoft.Json.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Newtonsoft.Json.xml

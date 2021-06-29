@@ -180,7 +180,10 @@
 
                         <div class="input-group">
                             <span class="input-group-addon"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></span>
-                            <input type="file" name="uploadfile" id="uploadfile" accept="image/png, image/jpeg, image/jpg" /> Site İçin Resim Yükle
+                            <input type="file" name="uploadfile" id="uploadfile" @*accept="image/png, image/jpeg, image/jpg"*@ /> Site İçin Resim Yükle
+                        </div>
+                        <div class="form-group">
+                            <img class ="form-group" src ="@Url.Action("ReturnImage", "Place", new { Id = Model.place_id })" height=400 width=400 />
                         </div>
 
                         @if (ViewBag.status > 0)
@@ -198,7 +201,7 @@
                         <div class="form-group ">
 
 
-                            <button href="../Place/Index" type="submit" class="btn btn-warning btn-lg btn-block login-button">Site Ekle</button>
+                            <button href="../Place/Index" type="submit" class="btn btn-warning btn-lg btn-block login-button">Kaydet</button>
 
                         </div>
 

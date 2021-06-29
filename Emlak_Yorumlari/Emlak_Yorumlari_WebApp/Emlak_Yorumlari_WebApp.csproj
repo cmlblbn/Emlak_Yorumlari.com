@@ -228,7 +228,7 @@
     <Content Include="Views\Home\UserActivate.cshtml" />
     <Content Include="Views\Home\UserActivateTimeout.cshtml" />
     <Content Include="Views\Place\AddPlace.cshtml" />
-    <Content Include="Views\Place\Index.cshtml" />
+    <Content Include="Views\Place\ShowPlace.cshtml" />
     <Content Include="Views\Place\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

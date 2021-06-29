@@ -43,11 +43,12 @@
                 </button>
                 @if (Session["User"] != null)
                 {
-                    <a class="navbar-brand" href="../Home/Homepage">Emlak Yorumları</a>
+                    @Html.ActionLink("Emlak Yorumları", "Homepage", "Home", null, new { @class = "navbar-brand" })
+
                 }
                 else
                 {
-                    <a class="navbar-brand" href="../Home/Index">Emlak Yorumları</a>
+                    @Html.ActionLink("Emlak Yorumları", "Index", "Home", null, new { @class = "navbar-brand" })
                 }
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -71,7 +72,7 @@
                                 </li>
                                 <li role="separator" class="divider"></li>
                                 <li>
-                                    <a href="../Place/Index" class="dropdown-item "><span class="glyphicon glyphicon-list"> Sitelerim</span></a>
+                                    <a href="../Place/ShowPlace" class="dropdown-item "><span class="glyphicon glyphicon-list"> Sitelerim</span></a>
                                 </li>
                             </ul>
 
@@ -93,11 +94,11 @@
                     @if (Session["User"] == null)
                     {
                         <li>
-                            <a href="../Home/Login"><span class="glyphicon glyphicon-log-in"></span> Giriş</a>
+                            <a href="/Home/Login"><span class="glyphicon glyphicon-log-in"></span> Giriş</a>
                         </li>
 
                         <li>
-                            <a href="../Home/Register"> <span class="glyphicon glyphicon-info-sign"></span> Üye Ol</a>
+                            <a href="/Home/Register"> <span class="glyphicon glyphicon-info-sign"></span> Üye Ol</a>
                         </li>
                     }
                     else
@@ -108,7 +109,7 @@
                         </li>
                         <li>
 
-                            <a href="../Home/Logout"> <span class="glyphicon glyphicon-log-out"></span> Çıkış</a>
+                            <a href="/Home/Logout"> <span class="glyphicon glyphicon-log-out"></span> Çıkış</a>
                         </li>
                     }
 
