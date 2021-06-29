@@ -13,6 +13,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
 
     <style type="text/css">
         .validation-summary-errors {
@@ -117,14 +118,29 @@
         });
 
     </script>
-    @if (ViewBag.status > 0)
-    {
-        <script type="text/javascript">
-            setTimeout(function () {
-                window.location = "/Home/Homepage";
-            }, 4000);
-        </script>
-    }
+    <script>
+        $(document).ready(function () {
+            $("#js-form").validate({
+                rules: {
+                    placeName: {
+                        required: true
+                    },
+                    city_ddl: {
+                        required: true
+
+                    },
+                    district_ddl: {
+                        required: true
+
+                    },
+                    quarter_ddl: {
+                        required: true
+
+                    }
+                }
+            });
+        });
+    </script>
 </head>
 <body>
 
@@ -132,7 +148,7 @@
     <br />
     <br />
     <br />
-    @using (Html.BeginForm("Edit", "Place", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    @using (Html.BeginForm("Edit", "Place", FormMethod.Post, new { enctype = "multipart/form-data",id="js-form" }))
     {
         <section class="login-info">
             <div class="container">

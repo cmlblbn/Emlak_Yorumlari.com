@@ -54,6 +54,7 @@
 
                     success: function (data) {
 
+                        data = jQuery.parseJSON(data);
                         console.log(data);
 
                         $('#district_ddl').empty();
@@ -95,6 +96,7 @@
 
                     success: function (data) {
 
+                        data = jQuery.parseJSON(data);
                         console.log(data);
 
                         $('#quarter_ddl').empty();

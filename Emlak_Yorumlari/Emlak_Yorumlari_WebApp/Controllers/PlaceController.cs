@@ -113,6 +113,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 place.placeImage = model.placeImage;
 
                 db.Places.Add(place);
+                kisi.places.Add(place);
                 int status = db.SaveChanges();
                 ViewBag.status = -1;
                 if (status > 0)
@@ -165,6 +166,10 @@ namespace Emlak_Yorumlari_WebApp.Controllers
         public JsonResult SetDropResult(int p)
         {
             string redisKey = p.ToString();
+            if (p == 1)
+            {
+                redisKey = "adana";
+            }
             if (redis.IsSet(redisKey))
             {
                 string redisResult = redis.getKey(redisKey);
@@ -278,6 +283,56 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             place.adress_desc_id = Convert.ToInt32(rate);
             if (ModelState.IsValid)
             {
+                if (place.adress_desc_id == 0)
+                {
+                    ModelState.AddModelError("", "Lütfen adresi seçin!");
+                }
+                List<Adress_Description> sehirler = new List<Adress_Description>();
+
+                foreach (var adress in db.Adress_Descriptions.Where(x => x.parent_id == 0))
+                {
+                    sehirler.Add(adress);
+                }
+
+                Adress_Description ilcesecim = new Adress_Description();
+                ilcesecim.adress_desc_id = 1;
+                ilcesecim.adress_name = " ";
+
+                Adress_Description mahallesecim = new Adress_Description();
+                mahallesecim.adress_desc_id = 2;
+                mahallesecim.adress_name = " ";
+
+                List<Adress_Description> ilceSec = new List<Adress_Description>();
+                ilceSec.Add(ilcesecim);
+                List<Adress_Description> mahalleSec = new List<Adress_Description>();
+                mahalleSec.Add(mahallesecim);
+
+                AddPlaceViewModel model = new AddPlaceViewModel()
+                {
+                    city_ddl = "dropdownSehir",
+                    district_ddl = "dropdownIlce",
+                    quarter_ddl = "dropdownMahalle",
+                    CityData = new SelectList(sehirler, "adress_desc_id", "adress_name"),
+                    DistrictData = new SelectList(ilceSec, "adress_desc_id", "adress_name"),
+                    QuarterData = new SelectList(mahalleSec, "adress_desc_id", "adress_name"),
+                    selectedCityId = -1,
+                    SelectedDistrictId = -1,
+                    SelectedQuarterId = -1,
+                };
+
+
+                ViewBag.city = model.CityData;
+                ViewBag.district = model.DistrictData;
+                ViewBag.quarter = model.QuarterData;
+                foreach (var item in ModelState)
+                {
+                    if (item.Value.Errors.Count > 0)
+                    {
+ 
+
+                        return View(place);
+                    }
+                }
                 db.Entry(place).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

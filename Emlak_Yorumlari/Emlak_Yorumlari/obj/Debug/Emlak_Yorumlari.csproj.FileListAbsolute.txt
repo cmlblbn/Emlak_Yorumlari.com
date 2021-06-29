@@ -218,3 +218,5 @@ C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\
 C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.csproj.CopyComplete
 C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.dll
 C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.pdb
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\bin\Debug\Newtonsoft.Json.xml

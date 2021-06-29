@@ -702,3 +702,29 @@ C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\
 C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.csproj.CopyComplete
 C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.dll
 C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.pdb
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emalk_Yorumlari_Redis.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Options.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Newtonsoft.Json.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Pipelines.Sockets.Unofficial.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\StackExchange.Redis.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.ComponentModel.Annotations.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Diagnostics.PerformanceCounter.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.IO.Pipelines.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Channels.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emalk_Yorumlari_Redis.pdb
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emalk_Yorumlari_Redis.dll.config
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.StackExchangeRedis.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Options.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Newtonsoft.Json.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Pipelines.Sockets.Unofficial.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\StackExchange.Redis.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Diagnostics.PerformanceCounter.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.IO.Pipelines.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Channels.xml
