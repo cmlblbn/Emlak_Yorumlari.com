@@ -11,6 +11,11 @@ namespace Emlak_Yorumlari_WebApp.ViewModels
     public class PlaceWithoutSurveys
     {
         public Place place { get; set; }
+        public Dictionary<List<string>, List<float>> commentsAndPoints { get; set; }
+        public User user { get; set; }
+        public string question1_name { get; set; }
+        public string question2_name { get; set; }
+        public string question3_name { get; set; }
         public float guven_puani_mainscore { get; set; }
         public float aktivite_alani_mainscore { get; set; }
         public float yonetim_memnuniyeti_mainscore { get; set; }

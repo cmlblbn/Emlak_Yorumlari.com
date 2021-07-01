@@ -5,64 +5,23 @@
     ViewBag.Title = "PlaceProfile";
 }
 
-<script src="~/Scripts/bootstrap.js"></script>
-<script src="~/Scripts/jquery-2.2.4.js"></script>
+
 <link href="~/Content/shop-item.css" rel="stylesheet" />
-<link href="~/Content/bootstrap.css" rel="stylesheet" />
-<style>
-    .star-cb-group {
-        /* remove inline-block whitespace /
-  font-size: 0;
-  / flip the order so we can use the + and ~ combinators /
-  unicode-bidi: bidi-override;
-  direction: rtl;
-  / the hidden clearer */
+<script>
+    function ConfirmDelete()
+    {
+        var x = confirm("Are you sure you want to delete?");
+        if (x)
+            return true;
+        else
+            $.ajax({
+                url: "@Url.Action("PlaceProfile", "PlacesProfile")",
+                data: { placeId: @Model.place.place_id }
+            }).done();
+            return false;
     }
-    .star-cb-group * {
-        font-size: 1rem;
-    }
-    .star-cb-group > input {
-        display: none;
-    }
-    .star-cb-group > input + label {
-        /* only enough room for the star */
-        display: inline-block;
-        overflow: hidden;
-        text-indent: 9999px;
-        width: 1em;
-        white-space: nowrap;
-        cursor: pointer;
-    }
-    .star-cb-group > input + label:before {
-        display: inline-block;
-        text-indent: -9999px;
-        content: "☆";
-        color: #888;
-    }
-    .star-cb-group > input:checked ~ label:before, .star-cb-group > input + label:hover ~ label:before, .star-cb-group > input + label:hover:before {
-        content: "★";
-        color: #e52;
-        text-shadow: 0 0 1px #333;
-    }
-    .star-cb-group > .star-cb-clear + label {
-        text-indent: -9999px;
-        width: .5em;
-        margin-left: -.5em;
-    }
-    .star-cb-group > .star-cb-clear + label:before {
-        width: .5em;
-    }
-    .star-cb-group:hover > input + label:before {
-        content: "☆";
-        color: #888;
-        text-shadow: none;
-    }
-    .star-cb-group:hover > input + label:hover ~ label:before, .star-cb-group:hover > input + label:hover:before {
-        content: "★";
-        color: #e52;
-        text-shadow: 0 0 1px #333;
-    }
-</style>
+</script>
+
 
 
 <div class="row">
@@ -82,9 +41,9 @@
                     </h4>
                     <p>@ViewBag.TamAdres</p>
                     <hr/>
-                    <p>Güven Puanı: @Model.guven_puani_mainscore</p>
-                    <p>Aktivite Puanı: @Model.aktivite_alani_mainscore</p>
-                    <p>Yönetim Memnuniyeti: @Model.yonetim_memnuniyeti_mainscore</p>
+                    <p>@Html.DisplayFor(x=>Model.question1_name): @Model.guven_puani_mainscore</p>
+                    <p>@Html.DisplayFor(x=>x.question2_name): @Model.aktivite_alani_mainscore</p>
+                    <p>@Html.DisplayFor(x=>x.question3_name): @Model.yonetim_memnuniyeti_mainscore</p>
 
 
                 </div>
@@ -92,7 +51,7 @@
 
             <div class="well">
 
-                @Html.Partial("_PartialComment")
+                @Html.Partial("_PartialComment", Model)
 
                 @if (TempData["post"] == "not")
                 {
@@ -103,7 +62,7 @@
                         <div class="form-control">
                             <p>
 
-                                Güven Puanı:
+                                @Html.DisplayFor(x=>Model.question1_name):
 
                                 1 @Html.RadioButtonFor(x => Model.guven_puani_score, "1", new { required = "required" })
                                 2 @Html.RadioButtonFor(x => Model.guven_puani_score, "2", new { required = "required" })
@@ -117,7 +76,7 @@
 
                         <div class="form-control">
                             <p>
-                                Aktivite Alanı Puanı:
+                                @Html.DisplayFor(x=>x.question2_name) Puanı:
                                 1 @Html.RadioButtonFor(x => Model.aktivite_alani_score, "1", new { required = "required" })
                                 2 @Html.RadioButtonFor(x => Model.aktivite_alani_score, "2", new { required = "required" })
                                 3 @Html.RadioButtonFor(x => Model.aktivite_alani_score, "3", new { required = "required" })
@@ -131,7 +90,7 @@
 
                             <p>
 
-                                Yönetim Memnuniyeti Puanı:
+                                @Html.DisplayFor(x=>x.question3_name) Puanı:
                                 1 @Html.RadioButtonFor(x => Model.yonetim_memnuniyeti_score, "1",new{required="required"})
                                 2 @Html.RadioButtonFor(x => Model.yonetim_memnuniyeti_score, "2", new { required = "required" })
                                 3 @Html.RadioButtonFor(x => Model.yonetim_memnuniyeti_score, "3", new { required = "required" })
@@ -144,7 +103,7 @@
 
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Yorum Yap</label>
-                            @Html.HiddenFor(x => Model.place)
+                           
                             @Html.TextAreaFor(x => Model.comment, new { @class = "form-control", row = "3", required = "required" ,placeholder="Yorum Yazınız.."})<br />
                             <button type="submit" class="btn btn-primary pull-right btn-lg"><span class="glyphicon glyphicon-send"></span> Gönder</button><br />
                         </div>
