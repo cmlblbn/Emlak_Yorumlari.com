@@ -1,6 +1,7 @@
 ﻿using Emlak_Yorumlari_Entities;
 using Emlak_Yorumlari_WebApp.ViewModels;
 using System;
+using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.IO;
 using System.Linq;
@@ -8,13 +9,16 @@ using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
 using Emalk_Yorumlari_Redis;
+using Emlak_Yorumlari_Entities.Models;
 
 namespace Emlak_Yorumlari_WebApp.Controllers
 {
 
     public class HomeController : Controller
     {
-        RedisManager redis = new RedisManager();
+        private RedisManager redis = new RedisManager();
+
+        private MyContext db = new MyContext();
         // GET: Home
         public ActionResult Index()
         {
@@ -26,9 +30,74 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
         public ActionResult Homepage()
         {
+            if (Session["User"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            HomePageViewModel model = new HomePageViewModel();
+            model.places = db.Places.ToList();
+            float[] temp = new float[3];
+            float mainPoint = 0;
+            model.mainPoints = new Dictionary<int, float>();
+            foreach (var place in model.places)
+            {
+                temp = PlacesProfileController.PlaceScoresCalculator(place);
+                foreach (var point in temp)
+                {
+                    mainPoint += point;
+                }
+
+                if (mainPoint == 0)
+                {
+                    mainPoint = 0;
+                }
+                else
+                {
+                    mainPoint /= temp.Length;
+                }
+                mainPoint = (float)Math.Round(mainPoint * 100f) / 100f;
+                model.mainPoints.Add(place.place_id,mainPoint);
+                Array.Clear(temp,0,3);
+                mainPoint = 0;
+            }
+
+
+
+
+
+            List<Adress_Description> sehirler = new List<Adress_Description>();
+
+            foreach (var adress in db.Adress_Descriptions.Where(x => x.parent_id == 0))
+            {
+                sehirler.Add(adress);
+            }
+
+            Adress_Description ilcesecim = new Adress_Description();
+            ilcesecim.adress_desc_id = 1;
+            ilcesecim.adress_name = " ";
+
+            Adress_Description mahallesecim = new Adress_Description();
+            mahallesecim.adress_desc_id = 2;
+            mahallesecim.adress_name = " ";
+
+            List<Adress_Description> ilceSec = new List<Adress_Description>();
+            ilceSec.Add(ilcesecim);
+            List<Adress_Description> mahalleSec = new List<Adress_Description>();
+            mahalleSec.Add(mahallesecim);
+
+
+            model.city_ddl = "dropdownSehir";
+            model.district_ddl = "dropdownIlce";
+            model.quarter_ddl = "dropdownMahalle";
+            model.CityData = new SelectList(sehirler, "adress_desc_id", "adress_name");
+            model.DistrictData = new SelectList(ilceSec, "adress_desc_id", "adress_name");
+            model.QuarterData = new SelectList(mahalleSec, "adress_desc_id", "adress_name");
+            model.selectedCityId = -1;
+            model.SelectedDistrictId = -1;
+            model.SelectedQuarterId = -1;
             
-            
-            return View();
+            return View(model);
         }
 
         [HttpGet]

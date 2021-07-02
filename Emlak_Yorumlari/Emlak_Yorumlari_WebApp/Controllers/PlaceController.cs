@@ -24,7 +24,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
         {
             if (Session["User"] == null)
             {
-                RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Home");
             }
 
             List<Adress_Description> sehirler = new List<Adress_Description>();

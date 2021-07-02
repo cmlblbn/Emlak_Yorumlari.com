@@ -212,6 +212,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AddPlaceViewModel.cs" />
     <Compile Include="ViewModels\ForgotMyPassViewModel.cs" />
+    <Compile Include="ViewModels\HomePageViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\PlaceWithoutSurveys.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />

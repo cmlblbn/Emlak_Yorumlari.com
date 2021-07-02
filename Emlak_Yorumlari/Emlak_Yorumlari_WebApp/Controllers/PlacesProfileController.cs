@@ -23,9 +23,11 @@ namespace Emlak_Yorumlari_WebApp.Controllers
         {
             float[] scores = new float[3];
             MyContext puanSorgu = new MyContext();
-            IQueryable<Survey> q1 = puanSorgu.Surveys.Where(x => x.question_id == 1);
-            IQueryable<Survey> q2 = puanSorgu.Surveys.Where(x => x.question_id == 2);
-            IQueryable<Survey> q3 = puanSorgu.Surveys.Where(x => x.question_id == 3);
+            IQueryable<Survey> q1 = puanSorgu.Surveys.Where(x => x.question_id == 1 && x.place_id == place.place_id);
+            IQueryable<Survey> q2 = puanSorgu.Surveys.Where(x => x.question_id == 2 && x.place_id == place.place_id);
+            IQueryable<Survey> q3 = puanSorgu.Surveys.Where(x => x.question_id == 3 && x.place_id == place.place_id);
+
+            var sorguList = q1.ToList();
 
 
 
@@ -37,23 +39,51 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
             foreach (var point in q1)
             {
+                if (sorguList.Count == 0 )
+                {
+                    q1_mainscore = 0;
+                    break;
+                }
                 q1_mainscore = q1_mainscore + point.score;
                
             }
             foreach (var point in q2)
             {
+                if (sorguList.Count == 0)
+                {
+                    q2_mainscore = 0;
+                    break;
+                }
                 q2_mainscore = q2_mainscore + point.score;
               
             }
             foreach (var point in q3)
             {
+
+                if (sorguList.Count == 0)
+                {
+                    q3_mainscore = 0;
+                    break;
+                }
                 q3_mainscore = q3_mainscore + point.score;
                 
             }
 
+
+
+
             q1_mainscore = q1_mainscore / q1.Count();
             q2_mainscore = q2_mainscore / q2.Count();
             q3_mainscore = q3_mainscore / q3.Count();
+
+            if (Single.IsNaN(q1_mainscore))
+            {
+                q1_mainscore = 0;
+                q2_mainscore = 0;
+                q3_mainscore = 0;
+            }
+
+
 
 
             scores[0] = q1_mainscore;
