@@ -443,10 +443,6 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             if (redis.IsSet(place.place_id.ToString()))
             {
                 redis.Remove(place.place_id.ToString());
-                var commentsAndPoints = commentHelper(db, place);
-                var getJson = Newtonsoft.Json.JsonConvert.SerializeObject(commentsAndPoints);
-                redis.setKey(place.place_id.ToString(), getJson, 3600);
-
             }
 
 
