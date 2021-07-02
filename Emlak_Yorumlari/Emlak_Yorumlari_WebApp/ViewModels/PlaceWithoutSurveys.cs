@@ -11,7 +11,7 @@ namespace Emlak_Yorumlari_WebApp.ViewModels
     public class PlaceWithoutSurveys
     {
         public Place place { get; set; }
-        public Dictionary<List<string>, List<float>> commentsAndPoints { get; set; }
+        public Dictionary<string, List<string>> commentsAndPoints { get; set; }
         public User user { get; set; }
         public string question1_name { get; set; }
         public string question2_name { get; set; }

@@ -42,13 +42,13 @@
             {
                 <div class="col-md-12" id="more">
 
-                    <p>@data.Key[0]</p>
+                    <p>@data.Key</p>
                     <p>@Model.question1_name: @data.Value[0] - @Model.question2_name: @data.Value[1] - @Model.question3_name: @data.Value[2] </p>
 
                     <p>
-                        @data.Key[1]
+                        @data.Value[3]
                     </p>
-                    @if (Session["User"].ToString() == data.Key[0])
+                    @if (Session["User"].ToString() == data.Key)
                     {
 
                         <button type="submit" class="btn btn-danger pull-right btn-xs mr-1" data-toggle="modal" data-target="#yorumSil"> Sil </button>
@@ -67,13 +67,13 @@
             {
                 <div class="col-md-12" id="dots">
 
-                    <p>@data.Key[0]</p>
+                    <p>@data.Key</p>
                     <p>@Model.question1_name: @data.Value[0] - @Model.question2_name: @data.Value[1] - @Model.question3_name: @data.Value[2] </p>
 
                     <p>
-                        @data.Key[1]
+                        @data.Value[3]
                     </p>
-                    @if (Session["User"].ToString() == data.Key[0])
+                    @if (Session["User"].ToString() == data.Key)
                     {
 
                         <button type="submit" class="btn btn-danger pull-right btn-xs mr-1" data-toggle="modal" data-target="#yorumSil"> Sil </button>

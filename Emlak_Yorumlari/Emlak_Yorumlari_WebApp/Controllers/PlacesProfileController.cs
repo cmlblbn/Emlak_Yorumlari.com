@@ -19,7 +19,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
         private RedisManager redis = new RedisManager();
 
-        public static float[] scoresCalculator(Place place)
+        public static float[] PlaceScoresCalculator(Place place)
         {
             float[] scores = new float[3];
             MyContext puanSorgu = new MyContext();
@@ -64,9 +64,9 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             return scores;
         }
 
-        public static List<float> userScore(User sorguUser,Place place)
+        public static List<string> GetUserScore(User sorguUser,Place place)
         {
-            List<float> scores = new List<float>(3);
+            List<string> scores = new List<string>(4);
             MyContext sonSorgu = new MyContext();
             IQueryable<Survey> userPuan = sonSorgu.Surveys.Where(x => x.place_id == place.place_id && x.user_id == sorguUser.user_id);
 
@@ -74,15 +74,15 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             {
                 if (puan.question_id == 1)
                 {
-                    scores.Insert(0,puan.score);
+                    scores.Insert(0,puan.score.ToString());
                 }
                 else if(puan.question_id == 2)
                 {
-                    scores.Insert(1,puan.score);
+                    scores.Insert(1,puan.score.ToString());
                 }
                 else if(puan.question_id == 3)
                 {
-                    scores.Insert(2,puan.score);
+                    scores.Insert(2,puan.score.ToString());
                 }
             }
 
@@ -90,10 +90,10 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             return scores;
         }
 
-        public Dictionary<List<String>, List<float>> commendHelper(MyContext db,Place place)
+        public Dictionary<string, List<string>> commentHelper(MyContext db,Place place)
         {
 
-            Dictionary<List<string>, List<float>> commentsAndPoints = new Dictionary<List<string>, List<float>>();
+            Dictionary<string, List<string>> commentsAndPoints = new Dictionary<string, List<string>>();
             MyContext yorumSorgu = new MyContext();
             User sorguUser = new User();
 
@@ -105,12 +105,9 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             {
                 sorguUser = yorumSorgu.Users.Where(x => x.user_id == comment.user_id).FirstOrDefault();
                 Commentusername = sorguUser.username;
-                List<string> key = new List<string>(2);
-                key.Insert(0, Commentusername);
-                key.Insert(1, comment.text); 
-                
-                var userscore = userScore(sorguUser, place);
-                commentsAndPoints.Add(key, userscore);
+                var userscoreComment = GetUserScore(sorguUser, place);
+                userscoreComment.Insert(3,comment.text);
+                commentsAndPoints.Add(Commentusername, userscoreComment);
             }
 
             return commentsAndPoints;
@@ -118,6 +115,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
         public ActionResult PlaceProfile(int? placeId)
         {
+            
             if (placeId != null)
             {
                 placeId = Convert.ToInt32(placeId);
@@ -136,11 +134,6 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 TempData["post"] = "not";
             }
 
-           
-
-
-
-
             Question_Definition questionName1 = new Question_Definition();
             questionName1 = db.Question_Definitions.Where(x => x.question_id == 1).FirstOrDefault();
             Question_Definition questionName2 = new Question_Definition();
@@ -151,34 +144,25 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             PlaceWithoutSurveys model = new PlaceWithoutSurveys();
             Place place = new Place();
             place = db.Places.Where(x => x.place_id == placeId).FirstOrDefault();
-
-            
-            
-
-
-
-            var scores = scoresCalculator(place);
+            //redis.Remove(place.place_id.ToString());
+            var scores = PlaceScoresCalculator(place);
 
             model.guven_puani_mainscore = scores[0];
             model.aktivite_alani_mainscore = scores[1];
             model.yonetim_memnuniyeti_mainscore = scores[2];
-            var commentsAndPoints = commendHelper(db, place);
-
-            // REDİS İÇİN YAPI BU ŞEKİLDE KURULACAK!
-            //Dictionary<string, List<float>> deneme1 = new Dictionary<string, List<float>>();
-            //List<float> list1 = new List<float>()
-            //{
-            //    1,2,3
-            //};
-
-            //deneme1.Add("cmlblbn",list1);
-
-            //var json = Newtonsoft.Json.JsonConvert.SerializeObject(deneme1);
-            //redis.setKey("yorumlar", json);
-            //var json2 = redis.getKey("yorumlar");
-            //var deneme2 = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, List<float>>> (json2);
-            
-
+            Dictionary<string, List<string>> commentsAndPoints;
+            if (redis.IsSet(place.place_id.ToString()))
+            {
+                var getJson = redis.getKey(place.place_id.ToString());
+                var getDictionary = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(getJson);
+                commentsAndPoints = getDictionary;
+            }
+            else
+            {
+                commentsAndPoints = commentHelper(db, place);
+                var getJson = Newtonsoft.Json.JsonConvert.SerializeObject(commentsAndPoints);
+                redis.setKey(place.place_id.ToString(), getJson, 3600);
+            }
 
             model.commentsAndPoints = commentsAndPoints;
             model.guven_puani_score = 0;
@@ -190,7 +174,6 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             model.question3_name = questionName3.question_name;
             model.place = place;
             model.user = user;
-
 
             Adress_Description mahalle = new Adress_Description();
             Adress_Description ilce = new Adress_Description();
@@ -313,23 +296,8 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
             }
 
-            var scores = scoresCalculator(place);
-            if (model.commentsAndPoints == null)
-            {
-                var commentsAndPoints = commendHelper(db, place);
-                model.commentsAndPoints = commentsAndPoints;
-            }
+
             
-            model.guven_puani_mainscore = scores[0];
-            model.aktivite_alani_mainscore = scores[1];
-            model.yonetim_memnuniyeti_mainscore = scores[2];
-            model.question1_name = guven_question.question_name;
-            model.question2_name = aktivite_question.question_name;
-            model.question3_name = yonetim_question.question_name;
-            model.user = user;
-            model.place = place;
-
-
             return RedirectToAction("PlaceProfile",new{placeId = place.place_id});
 
 
@@ -436,18 +404,15 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
             }
 
-            var scores = scoresCalculator(place);
-            var commentandpointmodel = commendHelper(db, place);
-            model.commentsAndPoints = commentandpointmodel;
-            model.guven_puani_mainscore = scores[0];
-            model.aktivite_alani_mainscore = scores[1];
-            model.yonetim_memnuniyeti_mainscore = scores[2];
-            model.question1_name = guven_question.question_name;
-            model.question2_name = aktivite_question.question_name;
-            model.question3_name = yonetim_question.question_name;
-            model.user = user;
-            model.place = place;
+            if (redis.IsSet(place.place_id.ToString()))
+            {
+                redis.Remove(place.place_id.ToString());
+                var commentsAndPoints = commentHelper(db, place);
+                var getJson = Newtonsoft.Json.JsonConvert.SerializeObject(commentsAndPoints);
+                redis.setKey(place.place_id.ToString(), getJson, 3600);
 
+            }
+            
             return RedirectToAction("PlaceProfile",new{placeId = place.place_id});
         }
 
@@ -475,6 +440,15 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             }
 
             db.SaveChanges();
+            if (redis.IsSet(place.place_id.ToString()))
+            {
+                redis.Remove(place.place_id.ToString());
+                var commentsAndPoints = commentHelper(db, place);
+                var getJson = Newtonsoft.Json.JsonConvert.SerializeObject(commentsAndPoints);
+                redis.setKey(place.place_id.ToString(), getJson, 3600);
+
+            }
+
 
             return RedirectToAction("PlaceProfile",new{placeId = place.place_id});
         }
