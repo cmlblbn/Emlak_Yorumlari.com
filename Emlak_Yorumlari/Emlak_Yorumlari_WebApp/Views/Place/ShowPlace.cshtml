@@ -17,10 +17,10 @@
                 Görsel
             </th>
             <th>
-                Adres
+                Site Adı
             </th>
             <th>
-                Site Adı
+                Adres
             </th>
             <th>
                 Eklenme Tarihi
@@ -45,12 +45,10 @@
                         <img src="@Url.Action("ReturnImage", "Place", new { Id = item.place_id })" height=200 width=250 />
                     </td>
                     <td>
-
-                        @ViewBag.TamAdres[item.adress_desc_id]
-
+                        <a href="@Url.Action("PlaceProfile", "PlacesProfile", new {placeId = item.place_id})">@Html.DisplayFor(modelItem => item.placeName)</a>
                     </td>
                     <td>
-                        <a href="@Url.Action("PlaceProfile","PlacesProfile",new{placeId = item.place_id})">@Html.DisplayFor(modelItem => item.placeName)</a>
+                        @ViewBag.TamAdres[item.adress_desc_id]
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.createdOn)

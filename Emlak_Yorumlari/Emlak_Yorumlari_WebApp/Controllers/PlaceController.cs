@@ -71,10 +71,11 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 if (uploadfile != null)
                 {
 
-                    if (!uploadfile.FileName.EndsWith(".png")) //| !uploadfile.FileName.EndsWith(".jpg") | !uploadfile.FileName.EndsWith(".jpeg"))
+                    if (!(uploadfile.FileName.EndsWith(".png") || uploadfile.FileName.EndsWith(".jpg") || uploadfile.FileName.EndsWith(".jpeg")))
                     {
                         ModelState.AddModelError("", "Lütfen fotoğraf seçin! (.png-.jpg-.jpeg)");
                     }
+
                 }
 
                 if (Int32.Parse(model.quarter_ddl) == 0)
