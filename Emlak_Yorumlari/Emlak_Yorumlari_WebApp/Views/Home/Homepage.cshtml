@@ -35,8 +35,11 @@
                             <hr/>
                             <p>OLUŞTURAN: @place.user.username</p>
                             <hr/>
-                            <h5 class="text-right">
-                                @place.createdOn <span class="glyphicon glyphicon-time"></span>
+                            <h6 class="text-left">
+                                <span class="glyphicon glyphicon-road"></span> @Model.birlesmisAdresDict[place.place_id]
+                            </h6>
+                            <h5 class="text-left">
+                                <span class="glyphicon glyphicon-time"></span> @place.createdOn 
                             </h5>
                         </div>
                         <div><hr/></div>

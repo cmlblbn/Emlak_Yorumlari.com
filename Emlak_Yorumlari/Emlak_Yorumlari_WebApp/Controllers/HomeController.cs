@@ -2,6 +2,7 @@
 using Emlak_Yorumlari_WebApp.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Migrations;
 using System.IO;
 using System.Linq;
@@ -62,7 +63,25 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 mainPoint = 0;
             }
 
+            Adress_Description mahalle = new Adress_Description();
+            Adress_Description ilce = new Adress_Description();
+            Adress_Description sehir = new Adress_Description();
+            MyContext sorgu = new MyContext();
 
+            string birlesmisAdres;
+            model.birlesmisAdresDict = new Dictionary<int, string>();
+            foreach (var place in model.places)
+            {
+                birlesmisAdres = "";
+                mahalle = sorgu.Adress_Descriptions.Where(x => x.adress_desc_id == place.adress_desc_id).FirstOrDefault();
+                ilce = sorgu.Adress_Descriptions.Where(x => x.adress_desc_id == mahalle.parent_id).FirstOrDefault();
+                sehir = sorgu.Adress_Descriptions.Where(x => x.adress_desc_id == ilce.parent_id).FirstOrDefault();
+
+                birlesmisAdres = birlesmisAdres + sehir.adress_name + " / ";
+                birlesmisAdres = birlesmisAdres + ilce.adress_name + " / ";
+                birlesmisAdres = birlesmisAdres + mahalle.adress_name;
+                model.birlesmisAdresDict[place.place_id] = birlesmisAdres;
+            }
 
 
 
@@ -93,22 +112,314 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             model.CityData = new SelectList(sehirler, "adress_desc_id", "adress_name");
             model.DistrictData = new SelectList(ilceSec, "adress_desc_id", "adress_name");
             model.QuarterData = new SelectList(mahalleSec, "adress_desc_id", "adress_name");
-            model.selectedCityId = -1;
-            model.SelectedDistrictId = -1;
-            model.SelectedQuarterId = -1;
+
             
             return View(model);
         }
+        [HttpPost]
+        public ActionResult Homepage(HomePageViewModel model)
+        {
+            return RedirectToAction("Search",
+                new
+                {
+                    searchText = model.SearchText, selectedCityId = model.city_ddl,
+                    selectedDistrictId = model.district_ddl, selectedQuarterId = model.quarter_ddl
+                });
+
+        }
+
+        [HttpGet]
+        public ActionResult Search(string searchText, int? selectedCityId, int? selectedDistrictId, int? selectedQuarterId)
+        {
+            if (Session["User"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            HomePageViewModel model = new HomePageViewModel();
+
+            if (searchText == null && selectedCityId == null && selectedDistrictId == null && selectedQuarterId == null)
+            {
+                var query = from p in db.Places.ToList() select p;
+                model.places = query.ToList();
+            }
+            else if (searchText != null && selectedCityId == null && selectedDistrictId == null &&
+                     selectedQuarterId == null)
+            {
+                var query = from p in db.Places
+                    where p.placeName.Contains(searchText)
+                    select p;
+                model.places = query.ToList();
+            }
+
+
+            else if (searchText != null && selectedCityId != null && selectedDistrictId == 0 &&
+                     selectedQuarterId == null)
+            {
+                List<Adress_Description> sorguMahalleList = new List<Adress_Description>();
+                List<Adress_Description> sorguMahalle = new List<Adress_Description>();
+                var sorguIlce = db.Adress_Descriptions.Where(x => x.parent_id == selectedCityId).ToList();
+                foreach (var data in sorguIlce)
+                {
+                    sorguMahalle = db.Adress_Descriptions.Where(x => x.parent_id == data.adress_desc_id).ToList();
+                    sorguMahalleList.AddRange(sorguMahalle);
+                }
+
+                Place q = new Place();
+                List<Place> filter = new List<Place>();
+                foreach (var mahalleiter in sorguMahalleList)
+                {
+                    q = db.Places.Where(x => x.placeName.Contains(searchText) && x.adress_desc_id == mahalleiter.adress_desc_id).FirstOrDefault();
+                    if (q != null)
+                    {
+                        filter.Add(q);
+                    }
+                    
+                }
+
+                model.places = filter;
+            }
+
+
+            else if (searchText != null && selectedCityId != null && selectedDistrictId != null &&
+                     selectedQuarterId == 0)
+            {
+
+                var sorguMahalle = db.Adress_Descriptions.Where(x => x.parent_id == selectedDistrictId).ToList();
+                Place q = new Place();
+                List<Place> filter = new List<Place>();
+                foreach (var mahalleiter in  sorguMahalle)
+                {
+                    q = db.Places.Where(x => x.placeName.Contains(searchText) && x.adress_desc_id == mahalleiter.adress_desc_id).FirstOrDefault();
+                    if (q != null)
+                    {
+                        filter.Add(q);
+                    }
+                }
+                model.places = filter;
+            }
+
+
+            else
+            {
+                var query = from p in db.Places
+                    where p.placeName.Contains(searchText) && p.adress_desc_id == selectedQuarterId
+                    select p;
+                model.places = query.ToList();
+            }
+
+
+            
+
+            List<Adress_Description> sehirler = new List<Adress_Description>();
+            foreach (var adress in db.Adress_Descriptions.Where(x => x.parent_id == 0))
+            {
+                sehirler.Add(adress);
+            }
+
+            Adress_Description ilcesecim = new Adress_Description();
+            ilcesecim.adress_desc_id = 1;
+            ilcesecim.adress_name = " ";
+
+            Adress_Description mahallesecim = new Adress_Description();
+            mahallesecim.adress_desc_id = 2;
+            mahallesecim.adress_name = " ";
+
+            List<Adress_Description> ilceSec = new List<Adress_Description>();
+            ilceSec.Add(ilcesecim);
+            List<Adress_Description> mahalleSec = new List<Adress_Description>();
+            mahalleSec.Add(mahallesecim);
+
+
+            model.city_ddl = "dropdownSehir";
+            model.district_ddl = "dropdownIlce";
+            model.quarter_ddl = "dropdownMahalle";
+            model.CityData = new SelectList(sehirler, "adress_desc_id", "adress_name");
+            model.DistrictData = new SelectList(ilceSec, "adress_desc_id", "adress_name");
+            model.QuarterData = new SelectList(mahalleSec, "adress_desc_id", "adress_name");
+
+            Adress_Description mahalle = new Adress_Description();
+            Adress_Description ilce = new Adress_Description();
+            Adress_Description sehir = new Adress_Description();
+            MyContext sorgu = new MyContext();
+
+            string birlesmisAdres;
+            model.birlesmisAdresDict = new Dictionary<int, string>();
+            foreach (var place in model.places)
+            {
+                birlesmisAdres = "";
+                mahalle = sorgu.Adress_Descriptions.Where(x => x.adress_desc_id == place.adress_desc_id).FirstOrDefault();
+                ilce = sorgu.Adress_Descriptions.Where(x => x.adress_desc_id == mahalle.parent_id).FirstOrDefault();
+                sehir = sorgu.Adress_Descriptions.Where(x => x.adress_desc_id == ilce.parent_id).FirstOrDefault();
+
+                birlesmisAdres = birlesmisAdres + sehir.adress_name + " / ";
+                birlesmisAdres = birlesmisAdres + ilce.adress_name + " / ";
+                birlesmisAdres = birlesmisAdres + mahalle.adress_name;
+                model.birlesmisAdresDict[place.place_id] = birlesmisAdres;
+            }
+
+
+           
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Search(HomePageViewModel model)
+        {
+            if (Session["User"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            int? selectedCityId = null;
+            int? selectedDistrictId = null;
+            int? selectedQuarterId = null;
+
+            if (model.city_ddl != null)
+            {
+                selectedCityId = int.Parse(model.city_ddl);
+            }
+            if (model.district_ddl != null)
+            {
+                selectedDistrictId = int.Parse(model.district_ddl);
+            }
+            if (model.quarter_ddl != null)
+            {
+                selectedQuarterId = int.Parse(model.quarter_ddl);
+            }
+
+
+            if (model.SearchText == null && selectedCityId == null && selectedDistrictId == null && selectedQuarterId == null)
+            {
+                var query = from p in db.Places.ToList() select p;
+                model.places = query.ToList();
+            }
+            else if (model.SearchText != null && selectedCityId == null && selectedDistrictId == null &&
+                     selectedQuarterId == null)
+            {
+                var query = from p in db.Places
+                            where p.placeName.Contains(model.SearchText)
+                            select p;
+                model.places = query.ToList();
+            }
+
+
+            else if (model.SearchText != null && selectedCityId != null && selectedDistrictId == 0 &&
+                     selectedQuarterId == null)
+            {
+                List<Adress_Description> sorguMahalleList = new List<Adress_Description>();
+                List<Adress_Description> sorguMahalle = new List<Adress_Description>();
+                var sorguIlce = db.Adress_Descriptions.Where(x => x.parent_id == selectedCityId).ToList();
+                foreach (var data in sorguIlce)
+                {
+                    sorguMahalle = db.Adress_Descriptions.Where(x => x.parent_id == data.adress_desc_id).ToList();
+                    sorguMahalleList.AddRange(sorguMahalle);
+                }
+
+                Place q = new Place();
+                List<Place> filter = new List<Place>();
+                foreach (var mahalleiter in sorguMahalleList)
+                {
+                    q = db.Places.Where(x => x.placeName.Contains(model.SearchText) && x.adress_desc_id == mahalleiter.adress_desc_id).FirstOrDefault();
+                    if (q != null)
+                    {
+                        filter.Add(q);
+                    }
+
+                }
+
+                model.places = filter;
+            }
+
+
+            else if (model.SearchText != null && selectedCityId != null && selectedDistrictId != null &&
+                     selectedQuarterId == 0)
+            {
+
+                var sorguMahalle = db.Adress_Descriptions.Where(x => x.parent_id == selectedDistrictId).ToList();
+                Place q = new Place();
+                List<Place> filter = new List<Place>();
+                foreach (var mahalleiter in sorguMahalle)
+                {
+                    q = db.Places.Where(x => x.placeName.Contains(model.SearchText) && x.adress_desc_id == mahalleiter.adress_desc_id).FirstOrDefault();
+                    if (q != null)
+                    {
+                        filter.Add(q);
+                    }
+                }
+                model.places = filter;
+            }
+
+
+            else
+            {
+                var query = from p in db.Places
+                            where p.placeName.Contains(model.SearchText) && p.adress_desc_id == selectedQuarterId
+                            select p;
+                model.places = query.ToList();
+            }
+
+            List<Adress_Description> sehirler = new List<Adress_Description>();
+            foreach (var adress in db.Adress_Descriptions.Where(x => x.parent_id == 0))
+            {
+                sehirler.Add(adress);
+            }
+
+            Adress_Description ilcesecim = new Adress_Description();
+            ilcesecim.adress_desc_id = 1;
+            ilcesecim.adress_name = " ";
+
+            Adress_Description mahallesecim = new Adress_Description();
+            mahallesecim.adress_desc_id = 2;
+            mahallesecim.adress_name = " ";
+
+            List<Adress_Description> ilceSec = new List<Adress_Description>();
+            ilceSec.Add(ilcesecim);
+            List<Adress_Description> mahalleSec = new List<Adress_Description>();
+            mahalleSec.Add(mahallesecim);
+
+
+            model.city_ddl = "dropdownSehir";
+            model.district_ddl = "dropdownIlce";
+            model.quarter_ddl = "dropdownMahalle";
+            model.CityData = new SelectList(sehirler, "adress_desc_id", "adress_name");
+            model.DistrictData = new SelectList(ilceSec, "adress_desc_id", "adress_name");
+            model.QuarterData = new SelectList(mahalleSec, "adress_desc_id", "adress_name");
+
+            Adress_Description mahalle = new Adress_Description();
+            Adress_Description ilce = new Adress_Description();
+            Adress_Description sehir = new Adress_Description();
+            MyContext sorgu = new MyContext();
+
+            string birlesmisAdres;
+            model.birlesmisAdresDict = new Dictionary<int, string>();
+            foreach (var place in model.places)
+            {
+                birlesmisAdres = "";
+                mahalle = sorgu.Adress_Descriptions.Where(x => x.adress_desc_id == place.adress_desc_id).FirstOrDefault();
+                ilce = sorgu.Adress_Descriptions.Where(x => x.adress_desc_id == mahalle.parent_id).FirstOrDefault();
+                sehir = sorgu.Adress_Descriptions.Where(x => x.adress_desc_id == ilce.parent_id).FirstOrDefault();
+
+                birlesmisAdres = birlesmisAdres + sehir.adress_name + " / ";
+                birlesmisAdres = birlesmisAdres + ilce.adress_name + " / ";
+                birlesmisAdres = birlesmisAdres + mahalle.adress_name;
+                model.birlesmisAdresDict[place.place_id] = birlesmisAdres;
+            }
+
+            return View(model);
+        }
+
 
         [HttpGet]
         public ActionResult Login()
         {
+
             return View();
         }
 
-        [HttpPost] //post yapıldı veritabanı bağlanmalı
+        [HttpPost] 
         public ActionResult Login(LoginViewModel model)
         {
+
             if (ModelState.IsValid)
             {
                 

@@ -1,55 +1,122 @@
-﻿<div class="jumbotron">
-<div class="input-group input-group-sm mb-3 ">
-    <p class="lead">Arama</p>
-    <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroup-sizing-sm"></span>
-    </div>
-    <input type="text" class="form-control" placeholder="arama..." aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-    <br /> <br />
+﻿@using Emlak_Yorumlari_WebApp.ViewModels
+@model HomePageViewModel
 
-    <div class="list-group">
-        <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle btn-sm " type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                Şehir
-                <span class="caret"></span>
+<script>
+
+    $(function () {
+
+        $('#city_ddl').change(function () {
+
+            var id = $('#city_ddl').val();
+            if ($('#city_ddl').val() == 0) {
+                $("#district_ddl").prop("disabled", true);
+                $("#quarter_ddl").prop("disabled", true);
+            } else {
+                $("#district_ddl").prop("disabled", false);
+                $("#quarter_ddl").prop("disabled", false);
+            }
+            $.ajax({
+
+                url: '/Place/SetDropResult',
+
+                data: { p: id },
+
+                type: "POST",
+
+                dataType: "Json",
+
+                success: function (data) {
+
+                    data = jQuery.parseJSON(data);
+                    console.log(data);
+
+                    $('#district_ddl').empty();
+                    $('#district_ddl').append("<option value='" + "0" + "'>" + "ilçe Seçiniz" + "</option>");
+                    for (var i = 0; i < data.length; i++) {
+
+                        $('#district_ddl').append("<option value='" + data[i].Value + "'>" + data[i].Text + "</option>");
+
+                    }
+
+                }
+
+            });
+
+        });
+
+    });
+
+    $(function () {
+
+        $('#district_ddl').change(function () {
+
+            var id = $('#district_ddl').val();
+            if ($('#district_ddl').val() == 0) {
+                $("#quarter_ddl").prop("disabled", true);
+            } else {
+                $("#quarter_ddl").prop("disabled", false);
+            }
+
+            $.ajax({
+
+                url: '/Place/SetDropResult',
+
+                data: { p: id },
+
+                type: "POST",
+
+                dataType: "Json",
+
+                success: function (data) {
+
+                    data = jQuery.parseJSON(data);
+                    console.log(data);
+
+                    $('#quarter_ddl').empty();
+                    $('#quarter_ddl').append("<option value='" + "0" + "'>" + "Mahalle Seçiniz" + "</option>");
+
+                    for (var i = 0; i < data.length; i++) {
+
+                        $('#quarter_ddl').append("<option value='" + data[i].Value + "'>" + data[i].Text + "</option>");
+
+                    }
+
+                }
+
+            });
+
+        });
+
+    });
+</script>
+<div class="well">
+    <div class="input-group input-group-sm mb-3">
+        @using (Html.BeginForm())
+        {
+
+
+            <p class="lead">Arama</p>
+            <div class="input-group-prepend form-group">
+                <span class="input-group-text" id="inputGroup-sizing-sm"></span>
+            </div>
+            @Html.TextBoxFor(model => model.SearchText, new { @class = "form-control", placeholder = "Arama..." })
+            <br/>
+            <br/>
+
+            <div class="form-group">
+                <div class="dropdown">
+                    @Html.DropDownListFor(x => x.city_ddl, Model.CityData, "Şehir Seçiniz", new { @class = "form-control dropdown"})
+                </div><br/><br/>
+                <div class="dropdown">
+                    @Html.DropDownListFor(m => m.district_ddl, Model.DistrictData, "İlçe Seçiniz", new { @class = "form-control dropdown" })
+                </div><br/><br/>
+                <div class="dropdown">
+                    @Html.DropDownListFor(m => m.quarter_ddl, Model.QuarterData, "Mahalle Seçiniz", new { @class = "form-control dropdown" })
+                </div><br/><br/>
+            </div>
+            <button type="submit" class="btn btn-primary pull-right"> Ara
+                <span class="glyphicon glyphicon-search"></span>
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-            </ul>
-        </div><br />
-        <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle btn-sm " type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                İlçe
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-            </ul>
-        </div><br />
-        <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle btn-sm " type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                Mahalle
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-            </ul>
-        </div><br />
+        }
     </div>
-    <button type="button" class="btn btn-primary pull-right"> Ara
-        <span class="glyphicon glyphicon-search"></span>
-    </button>
-</div>
     </div>

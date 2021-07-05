@@ -236,6 +236,7 @@
     <Content Include="Views\Place\Edit.cshtml" />
     <Content Include="Views\PlacesProfile\PlaceProfile.cshtml" />
     <Content Include="Views\Shared\_PartialComment.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

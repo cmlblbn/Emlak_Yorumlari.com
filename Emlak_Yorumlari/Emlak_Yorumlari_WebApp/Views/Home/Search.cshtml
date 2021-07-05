@@ -1,0 +1,51 @@
+﻿@using Emlak_Yorumlari_WebApp.ViewModels
+@model HomePageViewModel 
+@{
+    ViewBag.Title = "Search";
+}
+
+<link href="~/Content/shop-homepage.css" rel="stylesheet" />
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+        @*ara*@
+        <div class="col-md-3">
+            @Html.Partial("_PartialSearch")
+        </div>
+
+        <div class="col-md-9 offset-md-3">
+            
+
+            @*İçerikler*@
+            <div class="row">
+                @foreach (var data in Model.places)
+                {
+                    <div class="col-md-9 alert-success">
+                        <h4>
+                            <span class="label">
+                                @Html.ActionLink(@data.placeName, "PlaceProfile", "PlacesProfile", new { placeId = data.place_id }, null)
+                            </span>
+                            <br/>
+                            <h5 class="text-primary">
+
+                                &nbsp;&nbsp;@Model.birlesmisAdresDict[data.place_id]
+                            </h5>
+                        </h4>
+                        <br />
+                        <h6>
+                            <label>&nbsp;&nbsp;Oluşturan: @data.user.username</label>
+                        </h6>
+                       
+
+                    </div>
+                    <div class="col-md-9 alert-warning ">
+                        <hr/>
+                    </div>
+
+                }
+
+            </div>
+        </div>
+    </div>
+</div>

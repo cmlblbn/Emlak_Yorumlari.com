@@ -145,7 +145,12 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
         public ActionResult PlaceProfile(int? placeId)
         {
-            
+
+            if (Session["User"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             if (placeId != null)
             {
                 placeId = Convert.ToInt32(placeId);
@@ -154,7 +159,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             User user = new User();
             user = db.Users.Where(x => x.username == username).FirstOrDefault();
             Comment kisisorgu = new Comment();
-            kisisorgu = db.Comments.Where(x => x.user_id == user.user_id).FirstOrDefault();
+            kisisorgu = db.Comments.Where(x => x.user_id == user.user_id && x.place_id == placeId).FirstOrDefault();
             if (kisisorgu != null)
             {
                 TempData["post"] = "ok";
@@ -229,6 +234,10 @@ namespace Emlak_Yorumlari_WebApp.Controllers
         [HttpPost]
         public ActionResult PlaceProfile(PlaceWithoutSurveys model, int? placeId)
         {
+            if (Session["User"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             TempData["post"] = "ok";
             Place place = new Place();
             place = db.Places.Where(x => x.place_id == placeId).FirstOrDefault();
@@ -321,7 +330,10 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 
                 ViewBag.status = db.SaveChanges();
 
-
+                if (redis.IsSet(place.place_id.ToString()))
+                {
+                    redis.Remove(place.place_id.ToString());
+                }
 
 
             }
@@ -336,7 +348,10 @@ namespace Emlak_Yorumlari_WebApp.Controllers
         [HttpGet]
         public ActionResult EditComment()
         {
-
+            if (Session["User"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
 
             return PartialView("~/Views/Shared/_PartialComment.cshtml");
         }
@@ -344,6 +359,10 @@ namespace Emlak_Yorumlari_WebApp.Controllers
         [HttpPost]
         public ActionResult EditComment(PlaceWithoutSurveys model, int? placeId)
         {
+            if (Session["User"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             TempData["post"] = "ok";
             Place place = new Place();
             place = db.Places.Where(x => x.place_id == placeId).FirstOrDefault();
@@ -362,7 +381,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             {
 
 
-                Survey quiz1 = db.Surveys.Where(x => x.user_id == user.user_id && x.question_id == 1).FirstOrDefault();
+                Survey quiz1 = db.Surveys.Where(x => x.user_id == user.user_id && x.place_id == placeId && x.question_id == 1).FirstOrDefault();
 
                 quiz1.user_id = user.user_id;
                 quiz1.user = user;
@@ -379,7 +398,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
 
 
-                Survey quiz2 = db.Surveys.Where(x => x.user_id == user.user_id && x.question_id == 2).FirstOrDefault(); ;
+                Survey quiz2 = db.Surveys.Where(x => x.user_id == user.user_id && x.place_id == placeId && x.question_id == 2).FirstOrDefault(); ;
 
                 quiz2.user_id = user.user_id;
                 quiz2.user = user;
@@ -395,7 +414,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
 
 
-                Survey quiz3 = db.Surveys.Where(x => x.user_id == user.user_id && x.question_id == 3).FirstOrDefault(); ;
+                Survey quiz3 = db.Surveys.Where(x => x.user_id == user.user_id && x.place_id == placeId && x.question_id == 3).FirstOrDefault(); ;
 
                 quiz3.user_id = user.user_id;
                 quiz3.user = user;
@@ -411,7 +430,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
 
 
-                Comment comments = db.Comments.Where(x => x.user_id == user.user_id).FirstOrDefault(); ;
+                Comment comments = db.Comments.Where(x => x.user_id == user.user_id && x.place_id == placeId).FirstOrDefault(); ;
 
                 comments.user_id = user.user_id;
                 comments.user = user;
@@ -450,6 +469,10 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
         public ActionResult DeleteComment(PlaceWithoutSurveys model, int? placeId)
         {
+            if (Session["User"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             TempData["post"] = "not";
             Place place = new Place();
             place = db.Places.Where(x => x.place_id == placeId).FirstOrDefault();
@@ -457,10 +480,10 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             User user = new User();
             user = db.Users.Where(x => x.username == username).FirstOrDefault();
 
-            Survey quiz1 = db.Surveys.Where(x => x.user_id == user.user_id && x.question_id == 1).FirstOrDefault();
-            Survey quiz2 = db.Surveys.Where(x => x.user_id == user.user_id && x.question_id == 2).FirstOrDefault();
-            Survey quiz3 = db.Surveys.Where(x => x.user_id == user.user_id && x.question_id == 3).FirstOrDefault();
-            Comment comment = db.Comments.Where(x => x.user_id == user.user_id).FirstOrDefault(); ;
+            Survey quiz1 = db.Surveys.Where(x => x.user_id == user.user_id && x.place_id == placeId && x.question_id == 1).FirstOrDefault();
+            Survey quiz2 = db.Surveys.Where(x => x.user_id == user.user_id && x.place_id == placeId && x.question_id == 2).FirstOrDefault();
+            Survey quiz3 = db.Surveys.Where(x => x.user_id == user.user_id && x.place_id == placeId && x.question_id == 3).FirstOrDefault();
+            Comment comment = db.Comments.Where(x => x.user_id == user.user_id && x.place_id == placeId ).FirstOrDefault(); ;
             if (quiz1 != null && quiz2 != null && quiz3 != null && comment  != null)
             {
                 db.Surveys.Remove(quiz1);
