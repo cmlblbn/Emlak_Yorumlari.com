@@ -92,7 +92,7 @@ namespace Emlak_Yorumlari.Migrations
             {
 
                 //100. id üzerinde ilçeler başlıyor
-                detector = int.Parse(xlRange2.Cells[i, 3].Value2.ToString()) + 99;
+                detector = int.Parse(xlRange2.Cells[i, 3].Value2.ToString()) + 81;
 
                 // 2. kısım ilceler, il kodları ile birlikte veri tabanında üst referans vererek saklıyoruz
                 context.Adress_Descriptions.AddOrUpdate(new Adress_Description()
@@ -130,7 +130,7 @@ namespace Emlak_Yorumlari.Migrations
                 // 3. kısım mahallelerin eklenmesi, işlem yaklaşık 1 saat sürüyor.
                 context.Adress_Descriptions.AddOrUpdate(new Adress_Description()
                 {
-                    adress_desc_id = i + 1350,
+                    
                     adress_name = yer,
                     adress_type_id = 3,
                     parent_id = ustReferansMahalle,
