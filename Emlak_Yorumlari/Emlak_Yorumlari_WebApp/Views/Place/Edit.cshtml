@@ -1,0 +1,220 @@
+﻿@using Emlak_Yorumlari_WebApp.ViewModels
+@model Emlak_Yorumlari_Entities.Place
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="~/Content/login-register.css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .validation-summary-errors {
+            border: 2px dotted;
+            background-color: #d76663;
+            border-radius: 8px;
+        }
+
+            .validation-summary-errors ul {
+                color: white;
+                padding: 10px;
+                list-style-type: none;
+            }
+    </style>
+
+    <script>
+
+        $(function () {
+
+            $('#city_ddl').change(function () {
+
+                var id = $('#city_ddl').val();
+                if ($('#city_ddl').val() == 0) {
+                    $("#district_ddl").prop("disabled", true);
+                    $("#quarter_ddl").prop("disabled", true);
+                } else {
+                    $("#district_ddl").prop("disabled", false);
+                    $("#quarter_ddl").prop("disabled", false);
+                }
+                $.ajax({
+
+                    url: '/Place/SetDropResult',
+
+                    data: { p: id },
+
+                    type: "POST",
+
+                    dataType: "Json",
+
+                    success: function (data) {
+
+                        data = jQuery.parseJSON(data);
+                        console.log(data);
+
+                        $('#district_ddl').empty();
+                        $('#district_ddl').append("<option value='" + "0" + "'>" + "ilçe Seçiniz" + "</option>");
+                        for (var i = 0; i < data.length; i++) {
+
+                            $('#district_ddl').append("<option value='" + data[i].Value + "'>" + data[i].Text + "</option>");
+
+                        }
+
+                    }
+
+                });
+
+            });
+
+        });
+
+        $(function () {
+
+            $('#district_ddl').change(function () {
+
+                var id = $('#district_ddl').val();
+                if ($('#district_ddl').val() == 0) {
+                    $("#quarter_ddl").prop("disabled", true);
+                } else {
+                    $("#quarter_ddl").prop("disabled", false);
+                }
+
+                $.ajax({
+
+                    url: '/Place/SetDropResult',
+
+                    data: { p: id },
+
+                    type: "POST",
+
+                    dataType: "Json",
+
+                    success: function (data) {
+
+                        data = jQuery.parseJSON(data);
+                        console.log(data);
+
+                        $('#quarter_ddl').empty();
+                        $('#quarter_ddl').append("<option value='" + "0" + "'>" + "Mahalle Seçiniz" + "</option>");
+
+                        for (var i = 0; i < data.length; i++) {
+
+                            $('#quarter_ddl').append("<option value='" + data[i].Value + "'>" + data[i].Text + "</option>");
+
+                        }
+
+                    }
+
+                });
+
+            });
+
+        });
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#js-form").validate({
+                rules: {
+                    placeName: {
+                        required: true
+                    },
+                    city_ddl: {
+                        required: true
+
+                    },
+                    district_ddl: {
+                        required: true
+
+                    },
+                    quarter_ddl: {
+                        required: true
+
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <!------ Include the above in your HEAD tag ---------->
+    <br />
+    <br />
+    <br />
+    @using (Html.BeginForm("Edit", "Place", FormMethod.Post, new { enctype = "multipart/form-data",id="js-form" }))
+    {
+        <section class="login-info">
+            <div class="container">
+                <div class="row main">
+                    <div class="form-header">
+                        <h1 class="text-center ">Site Düzenle</h1>
+                    </div>
+                    <div class="main-content">
+
+                        @Html.ValidationSummary(false)
+                        <div class="input-group ">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></span>
+                            @Html.TextBoxFor(model => model.placeName)
+                        </div>
+                        <div class="input-group ">
+                            <p class="input-group"> Şehir Seçiniz.</p>
+                            @Html.DropDownList("city_ddl", (SelectList)ViewBag.city, "Şehir Seçiniz", new { @class = "form-control dropdown ", required = "required" })
+                        </div>
+
+                        <div class="input-group ">
+                            <p class="input-group"> Şehir Seçiniz.</p>
+                            @Html.DropDownList("district_ddl", (SelectList)ViewBag.district, "İlçe Seçiniz", new { @class = "form-control dropdown", required = "required" })
+                        </div>
+
+                        <div class="input-group ">
+                            <p class="input-group"> Şehir Seçiniz.</p>
+                            @Html.DropDownList("quarter_ddl", (SelectList)ViewBag.quarter, "Mahalle Seçiniz", new { @class = "form-control dropdown", required = "required" })
+                        </div>
+
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></span>
+                            <input type="file" name="uploadfile" id="uploadfile" @*accept="image/png, image/jpeg, image/jpg"*@ /> Site İçin Resim Yükle
+                        </div>
+                        <div class="form-group">
+                            <img class ="form-group" src ="@Url.Action("ReturnImage", "Place", new { Id = Model.place_id })" height=400 width=400 />
+                        </div>
+
+                        @if (ViewBag.status > 0)
+                        {
+                            <p class="label label-success"> @ViewBag.message</p><br /><br />
+                        }
+                        else if (ViewBag.status == 0)
+                        {
+                            <p class="label label-danger"> @ViewBag.message</p><br /><br />
+                        }
+                        @Html.HiddenFor(model => model.place_id)
+                        @Html.HiddenFor(model => model.user_id)
+                        @Html.HiddenFor(model => model.createdOn)
+                        @Html.HiddenFor(model => model.IsActive)
+                        <div class="form-group ">
+
+
+                            <button href="../Place/Index" type="submit" class="btn btn-warning btn-lg btn-block login-button">Kaydet</button>
+
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+
+</body>
+</html>

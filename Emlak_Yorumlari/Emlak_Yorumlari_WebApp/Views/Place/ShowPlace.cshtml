@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Emlak_Yorumlari_Entities.Place>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+
+
+    <h2>Sitelerim</h2>
+
+    <table class="table table-bordered col-md-6 offset-md-3 ">
+
+        <tr>
+            <th>
+                Görsel
+            </th>
+            <th>
+                Site Adı
+            </th>
+            <th>
+                Adres
+            </th>
+            <th>
+                Eklenme Tarihi
+            </th>
+            <th>
+                Düzenle
+            </th>
+            <th>
+                Sil
+            </th>
+        </tr>
+        <tbody>
+
+
+            @foreach (var item in Model)
+            {
+
+                <tr>
+
+                    <td>
+
+                        <img src="@Url.Action("ReturnImage", "Place", new { Id = item.place_id })" height=200 width=250 />
+                    </td>
+                    <td>
+                        <a href="@Url.Action("PlaceProfile", "PlacesProfile", new {placeId = item.place_id})">@Html.DisplayFor(modelItem => item.placeName)</a>
+                    </td>
+                    <td>
+                        @ViewBag.TamAdres[item.adress_desc_id]
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.createdOn)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Düzenle", "Edit", new { id = item.place_id }, new { @class = "btn btn-warning" })
+                    </td>
+                    <td>
+                        @Html.ActionLink("Sil", "Delete", new { id = item.place_id }, new { @class = "btn btn-danger" })
+
+                    </td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>

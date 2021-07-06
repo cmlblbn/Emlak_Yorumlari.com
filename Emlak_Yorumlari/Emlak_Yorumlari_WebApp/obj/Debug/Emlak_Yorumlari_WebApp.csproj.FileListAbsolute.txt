@@ -1,0 +1,859 @@
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari_WebApp.dll.config
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari_WebApp.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari_WebApp.pdb
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csc.exe
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csc.exe.config
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csc.rsp
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csi.exe
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csi.exe.config
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csi.rsp
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.AppContext.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Console.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.Compression.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Claims.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.ValueTuple.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\vbc.exe
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\vbc.exe.config
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\vbc.rsp
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\VBCSCompiler.exe
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.SqlServer.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework6.Npgsql.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Npgsql.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Buffers.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Memory.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Numerics.Vectors.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Encodings.Web.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Json.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.ValueTuple.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Helpers.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Mvc.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Razor.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Razor.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari.pdb
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari.dll.config
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.SqlServer.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework6.Npgsql.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Npgsql.pdb
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Npgsql.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Buffers.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Memory.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Numerics.Vectors.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Encodings.Web.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Json.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.ValueTuple.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Razor.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Razor.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Helpers.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Mvc.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.csprojAssemblyReference.cache
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.csproj.CoreCompileInputs.cache
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.csproj.CopyComplete
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.pdb
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\FakeData.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\FakeData.pdb
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari_WebApp.dll.config
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari_WebApp.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari_WebApp.pdb
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csc.exe
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csc.exe.config
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csc.rsp
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csi.exe
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csi.exe.config
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csi.rsp
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.AppContext.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Console.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.Compression.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.Pipes.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Claims.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.ValueTuple.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.XPath.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\vbc.exe
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\vbc.exe.config
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\vbc.rsp
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\VBCSCompiler.exe
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.SqlServer.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework6.Npgsql.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\FakeData.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Npgsql.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Buffers.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Memory.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Numerics.Vectors.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Encodings.Web.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Json.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.ValueTuple.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Helpers.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Mvc.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Razor.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Deployment.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Razor.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari.pdb
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari.dll.config
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.SqlServer.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework6.Npgsql.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\FakeData.pdb
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Npgsql.pdb
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Npgsql.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Buffers.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Memory.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Numerics.Vectors.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Encodings.Web.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Json.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.ValueTuple.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Razor.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Deployment.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Razor.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Helpers.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Mvc.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.csproj.AssemblyReference.cache
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.csproj.CoreCompileInputs.cache
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.csproj.CopyComplete
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.pdb
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari_WebApp.dll.config
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari_WebApp.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari_WebApp.pdb
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csc.exe
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csc.exe.config
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csc.rsp
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csi.exe
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csi.exe.config
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csi.rsp
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.AppContext.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Console.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.Compression.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.Pipes.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Claims.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.ValueTuple.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.XPath.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\vbc.exe
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\vbc.exe.config
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\vbc.rsp
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\VBCSCompiler.exe
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.SqlServer.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework6.Npgsql.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\FakeData.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Npgsql.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Buffers.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Memory.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Numerics.Vectors.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Encodings.Web.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Json.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.ValueTuple.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Helpers.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Mvc.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Razor.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Deployment.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Razor.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari.pdb
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari.dll.config
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.SqlServer.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework6.Npgsql.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\FakeData.pdb
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Npgsql.pdb
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Npgsql.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Buffers.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Memory.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Numerics.Vectors.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Encodings.Web.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Json.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.ValueTuple.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Razor.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Deployment.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Razor.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Helpers.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Mvc.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.csproj.AssemblyReference.cache
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.csproj.CoreCompileInputs.cache
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.csproj.CopyComplete
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.pdb
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emalk_Yorumlari_Redis.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Options.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Pipelines.Sockets.Unofficial.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\StackExchange.Redis.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.ComponentModel.Annotations.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Diagnostics.PerformanceCounter.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.IO.Pipelines.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Channels.dll
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emalk_Yorumlari_Redis.pdb
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emalk_Yorumlari_Redis.dll.config
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.StackExchangeRedis.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Options.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Pipelines.Sockets.Unofficial.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\StackExchange.Redis.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Diagnostics.PerformanceCounter.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.IO.Pipelines.xml
+C:\Users\meusoft\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Channels.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari_WebApp.dll.config
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari_WebApp.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari_WebApp.pdb
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csc.exe
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csc.exe.config
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csc.rsp
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csi.exe
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csi.exe.config
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csi.rsp
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.AppContext.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Console.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.Compression.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.Pipes.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Claims.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.ValueTuple.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.XPath.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\vbc.exe
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\vbc.exe.config
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\vbc.rsp
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\VBCSCompiler.exe
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emalk_Yorumlari_Redis.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.SqlServer.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework6.Npgsql.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\FakeData.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Options.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Npgsql.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Pipelines.Sockets.Unofficial.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\StackExchange.Redis.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Buffers.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.ComponentModel.Annotations.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Diagnostics.PerformanceCounter.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.IO.Pipelines.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Memory.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Numerics.Vectors.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Encodings.Web.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Json.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Channels.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.ValueTuple.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Helpers.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Mvc.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Razor.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Deployment.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Razor.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emalk_Yorumlari_Redis.pdb
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emalk_Yorumlari_Redis.dll.config
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari.pdb
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari.dll.config
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.SqlServer.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework6.Npgsql.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\FakeData.pdb
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.StackExchangeRedis.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Options.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Npgsql.pdb
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Npgsql.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Pipelines.Sockets.Unofficial.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\StackExchange.Redis.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Buffers.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Diagnostics.PerformanceCounter.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.IO.Pipelines.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Memory.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Numerics.Vectors.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Encodings.Web.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Json.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Channels.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.ValueTuple.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Razor.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Deployment.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Razor.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Helpers.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Mvc.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.csproj.AssemblyReference.cache
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.csproj.CoreCompileInputs.cache
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.csproj.CopyComplete
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.dll
+C:\Users\meusoft\Desktop\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.pdb
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari_WebApp.dll.config
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari_WebApp.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari_WebApp.pdb
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csc.exe
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csc.exe.config
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csc.rsp
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csi.exe
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csi.exe.config
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csi.rsp
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.AppContext.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Console.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.Compression.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.Pipes.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Claims.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.ValueTuple.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.XPath.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\vbc.exe
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\vbc.exe.config
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\vbc.rsp
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\VBCSCompiler.exe
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emalk_Yorumlari_Redis.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.SqlServer.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework6.Npgsql.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\FakeData.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Options.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Newtonsoft.Json.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Npgsql.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Pipelines.Sockets.Unofficial.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\StackExchange.Redis.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Buffers.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.ComponentModel.Annotations.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Diagnostics.PerformanceCounter.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.IO.Pipelines.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Memory.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Numerics.Vectors.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Encodings.Web.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Json.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Channels.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.ValueTuple.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Helpers.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Mvc.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Razor.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Deployment.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Razor.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emalk_Yorumlari_Redis.pdb
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emalk_Yorumlari_Redis.dll.config
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari.pdb
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari.dll.config
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.SqlServer.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework6.Npgsql.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\FakeData.pdb
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.StackExchangeRedis.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Options.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Newtonsoft.Json.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Npgsql.pdb
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Npgsql.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Pipelines.Sockets.Unofficial.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\StackExchange.Redis.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Buffers.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Diagnostics.PerformanceCounter.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.IO.Pipelines.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Memory.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Numerics.Vectors.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Encodings.Web.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Json.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Channels.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.ValueTuple.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Razor.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Deployment.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Razor.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Helpers.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Mvc.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.csproj.AssemblyReference.cache
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.csproj.CoreCompileInputs.cache
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.csproj.CopyComplete
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.dll
+C:\Users\meusoft\Desktop\Site Güncelleme silme index redis yok\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.pdb
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emalk_Yorumlari_Redis.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Options.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Newtonsoft.Json.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Pipelines.Sockets.Unofficial.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\StackExchange.Redis.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.ComponentModel.Annotations.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Diagnostics.PerformanceCounter.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.IO.Pipelines.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Channels.dll
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emalk_Yorumlari_Redis.pdb
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emalk_Yorumlari_Redis.dll.config
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.StackExchangeRedis.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Options.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Newtonsoft.Json.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Pipelines.Sockets.Unofficial.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\StackExchange.Redis.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Diagnostics.PerformanceCounter.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.IO.Pipelines.xml
+C:\Users\Cemal\Documents\GitHub\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Channels.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari_WebApp.dll.config
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari_WebApp.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari_WebApp.pdb
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csc.exe
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csc.exe.config
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csc.rsp
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csi.exe
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csi.exe.config
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csi.rsp
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.AppContext.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Console.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.Compression.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Claims.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.ValueTuple.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\vbc.exe
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\vbc.exe.config
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\vbc.rsp
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\VBCSCompiler.exe
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emalk_Yorumlari_Redis.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.SqlServer.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework6.Npgsql.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\FakeData.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Options.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Newtonsoft.Json.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Npgsql.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Pipelines.Sockets.Unofficial.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\StackExchange.Redis.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Buffers.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.ComponentModel.Annotations.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Diagnostics.PerformanceCounter.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.IO.Pipelines.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Memory.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Numerics.Vectors.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Encodings.Web.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Json.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Channels.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.ValueTuple.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Helpers.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Mvc.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Razor.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Razor.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emalk_Yorumlari_Redis.pdb
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emalk_Yorumlari_Redis.dll.config
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari.pdb
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari.dll.config
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.SqlServer.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework6.Npgsql.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\FakeData.pdb
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.StackExchangeRedis.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Options.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Newtonsoft.Json.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Npgsql.pdb
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Npgsql.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Pipelines.Sockets.Unofficial.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\StackExchange.Redis.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Buffers.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Diagnostics.PerformanceCounter.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.IO.Pipelines.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Memory.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Numerics.Vectors.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Encodings.Web.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Json.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Channels.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.ValueTuple.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Razor.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Razor.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Helpers.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Mvc.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.csprojAssemblyReference.cache
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.csproj.CoreCompileInputs.cache
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.csproj.CopyComplete
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.pdb
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari_WebApp.dll.config
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari_WebApp.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari_WebApp.pdb
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csc.exe
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csc.exe.config
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csc.rsp
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csi.exe
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csi.exe.config
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\csi.rsp
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.AppContext.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Console.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.Compression.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.IO.Pipes.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Claims.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.ValueTuple.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.XPath.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\vbc.exe
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\vbc.exe.config
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\vbc.rsp
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\VBCSCompiler.exe
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emalk_Yorumlari_Redis.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.SqlServer.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework6.Npgsql.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\FakeData.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Options.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Newtonsoft.Json.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Npgsql.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Pipelines.Sockets.Unofficial.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\StackExchange.Redis.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Buffers.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.ComponentModel.Annotations.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Diagnostics.PerformanceCounter.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.IO.Pipelines.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Memory.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Numerics.Vectors.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Encodings.Web.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Json.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Channels.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.ValueTuple.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Helpers.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Mvc.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Razor.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Deployment.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Razor.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emalk_Yorumlari_Redis.pdb
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emalk_Yorumlari_Redis.dll.config
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari.pdb
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Emlak_Yorumlari.dll.config
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework.SqlServer.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\EntityFramework6.Npgsql.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\FakeData.pdb
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Caching.StackExchangeRedis.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Options.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Newtonsoft.Json.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Npgsql.pdb
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Npgsql.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Pipelines.Sockets.Unofficial.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\StackExchange.Redis.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Buffers.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Diagnostics.PerformanceCounter.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.IO.Pipelines.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Memory.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Numerics.Vectors.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Encodings.Web.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Text.Json.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Channels.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.ValueTuple.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Razor.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Deployment.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Webpages.Razor.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Helpers.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\System.Web.Mvc.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.csproj.AssemblyReference.cache
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.csproj.CoreCompileInputs.cache
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.csproj.CopyComplete
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.dll
+C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.pdb

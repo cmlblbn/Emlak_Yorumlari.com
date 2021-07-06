@@ -1,0 +1,68 @@
+﻿@using Emlak_Yorumlari_WebApp.ViewModels
+@model HomePageViewModel 
+
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Content/shop-homepage.css" rel="stylesheet" />
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+        @*ara*@
+        <div class="col-md-3">
+           @Html.Partial("_PartialSearch")
+        </div>
+
+        <div class="col-md-9">
+
+            
+            @*İçerikler*@
+            <div class="row">
+                
+            @foreach (var place in Model.places)
+            {
+                <div class="col-sm-4 col-lg-4 col-md-4">
+                    <div class="thumbnail">
+                        <div class="img-container" style="background-image: url(@Url.Action("ReturnImage", "Place", new {Id = place.place_id}))">
+
+                        </div>
+
+                        <div class="caption">
+                            <h4>
+                                @Html.ActionLink(place.placeName, "PlaceProfile", "PlacesProfile", new{placeId = place.place_id}, null)
+                            </h4>
+                            <hr/>
+                            <p>OLUŞTURAN: @place.user.username</p>
+                            <hr/>
+                            <h6 class="text-left">
+                                <span class="glyphicon glyphicon-road"></span> @Model.birlesmisAdresDict[place.place_id]
+                            </h6>
+                            <h5 class="text-left">
+                                <span class="glyphicon glyphicon-time"></span> @place.createdOn 
+                            </h5>
+                        </div>
+                        <div><hr/></div>
+                        <div class="ratings">
+
+                            <p class="pull-right">
+                                <a class="btn btn-default btn-sm" href="@Url.Action("PlaceProfile","PlacesProfile",new{placeId = place.place_id})"> <span class="glyphicon glyphicon-triangle-right"></span> Detay </a>
+                            </p>
+                            <p>
+                                <h4><span class="label label-warning">PUAN:@Model.mainPoints[place.place_id]</span></h4> @*<span class="glyphicon glyphicon-star"></span>*@
+                            </p>
+                        </div>
+                        <div class="clearfix">
+
+                        </div>
+                    </div>
+                </div>
+            }
+
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+
