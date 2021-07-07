@@ -11,7 +11,9 @@ using System.Web.Helpers;
 using System.Web.Mvc;
 using Emalk_Yorumlari_Redis;
 using Emlak_Yorumlari_Entities.Models;
-
+using Microsoft.Office.Interop;
+using System.Runtime.InteropServices;
+using Excel = Microsoft.Office.Interop.Excel;
 namespace Emlak_Yorumlari_WebApp.Controllers
 {
 
@@ -21,6 +23,8 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
         private MyContext db = new MyContext();
         // GET: Home
+        
+
         public ActionResult Index()
         {
 
@@ -142,8 +146,56 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 var query = from p in db.Places.ToList() select p;
                 model.places = query.ToList();
             }
-            else if (searchText != null && selectedCityId == null && selectedDistrictId == null &&
-                     selectedQuarterId == null)
+            else if (searchText == null && selectedCityId != null && selectedDistrictId == 0 && selectedQuarterId == null)
+            {
+                List<Adress_Description> sorguMahalleList = new List<Adress_Description>();
+                List<Adress_Description> sorguMahalle = new List<Adress_Description>();
+                var sorguIlce = db.Adress_Descriptions.Where(x => x.parent_id == selectedCityId).ToList();
+                foreach (var data in sorguIlce)
+                {
+                    sorguMahalle = db.Adress_Descriptions.Where(x => x.parent_id == data.adress_desc_id).ToList();
+                    sorguMahalleList.AddRange(sorguMahalle);
+                }
+
+                Place q = new Place();
+                List<Place> filter = new List<Place>();
+                foreach (var mahalleiter in sorguMahalleList)
+                {
+                    q = db.Places.Where(x => x.adress_desc_id == mahalleiter.adress_desc_id).FirstOrDefault();
+                    if (q != null)
+                    {
+                        filter.Add(q);
+                    }
+
+                }
+
+                model.places = filter;
+
+            }
+            else if (searchText == null && selectedCityId != null && selectedDistrictId != null && selectedQuarterId == 0)
+            {
+                var sorguMahalle = db.Adress_Descriptions.Where(x => x.parent_id == selectedDistrictId).ToList();
+                Place q = new Place();
+                List<Place> filter = new List<Place>();
+                foreach (var mahalleiter in sorguMahalle)
+                {
+                    q = db.Places.Where(x => x.adress_desc_id == mahalleiter.adress_desc_id).FirstOrDefault();
+                    if (q != null)
+                    {
+                        filter.Add(q);
+                    }
+                }
+                model.places = filter;
+            }
+            else if (searchText == null && selectedCityId != null && selectedDistrictId != null && selectedQuarterId > 0)
+            {
+                var query = from p in db.Places
+                    where p.adress_desc_id == selectedQuarterId
+                    select p;
+                model.places = query.ToList();
+
+            }
+            else if (searchText != null && selectedCityId == null && selectedDistrictId == null && selectedQuarterId == null)
             {
                 var query = from p in db.Places
                     where p.placeName.Contains(searchText)
@@ -152,8 +204,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             }
 
 
-            else if (searchText != null && selectedCityId != null && selectedDistrictId == 0 &&
-                     selectedQuarterId == null)
+            else if (searchText != null && selectedCityId != null && selectedDistrictId == 0 && selectedQuarterId == null)
             {
                 List<Adress_Description> sorguMahalleList = new List<Adress_Description>();
                 List<Adress_Description> sorguMahalle = new List<Adress_Description>();
@@ -180,8 +231,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             }
 
 
-            else if (searchText != null && selectedCityId != null && selectedDistrictId != null &&
-                     selectedQuarterId == 0)
+            else if (searchText != null && selectedCityId != null && selectedDistrictId != null && selectedQuarterId == 0)
             {
 
                 var sorguMahalle = db.Adress_Descriptions.Where(x => x.parent_id == selectedDistrictId).ToList();
@@ -293,8 +343,56 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 var query = from p in db.Places.ToList() select p;
                 model.places = query.ToList();
             }
-            else if (model.SearchText != null && selectedCityId == null && selectedDistrictId == null &&
-                     selectedQuarterId == null)
+            else if (model.SearchText == null && selectedCityId != null && selectedDistrictId == 0 && selectedQuarterId == null)
+            {
+                List<Adress_Description> sorguMahalleList = new List<Adress_Description>();
+                List<Adress_Description> sorguMahalle = new List<Adress_Description>();
+                var sorguIlce = db.Adress_Descriptions.Where(x => x.parent_id == selectedCityId).ToList();
+                foreach (var data in sorguIlce)
+                {
+                    sorguMahalle = db.Adress_Descriptions.Where(x => x.parent_id == data.adress_desc_id).ToList();
+                    sorguMahalleList.AddRange(sorguMahalle);
+                }
+
+                Place q = new Place();
+                List<Place> filter = new List<Place>();
+                foreach (var mahalleiter in sorguMahalleList)
+                {
+                    q = db.Places.Where(x => x.adress_desc_id == mahalleiter.adress_desc_id).FirstOrDefault();
+                    if (q != null)
+                    {
+                        filter.Add(q);
+                    }
+
+                }
+
+                model.places = filter;
+
+            }
+            else if (model.SearchText == null && selectedCityId != null && selectedDistrictId != null && selectedQuarterId == 0)
+            {
+                var sorguMahalle = db.Adress_Descriptions.Where(x => x.parent_id == selectedDistrictId).ToList();
+                Place q = new Place();
+                List<Place> filter = new List<Place>();
+                foreach (var mahalleiter in sorguMahalle)
+                {
+                    q = db.Places.Where(x => x.adress_desc_id == mahalleiter.adress_desc_id).FirstOrDefault();
+                    if (q != null)
+                    {
+                        filter.Add(q);
+                    }
+                }
+                model.places = filter;
+            }
+            else if (model.SearchText == null && selectedCityId != null && selectedDistrictId != null && selectedQuarterId > 0)
+            {
+                var query = from p in db.Places
+                            where p.adress_desc_id == selectedQuarterId
+                            select p;
+                model.places = query.ToList();
+
+            }
+            else if (model.SearchText != null && selectedCityId == null && selectedDistrictId == null && selectedQuarterId == null)
             {
                 var query = from p in db.Places
                             where p.placeName.Contains(model.SearchText)
@@ -303,8 +401,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             }
 
 
-            else if (model.SearchText != null && selectedCityId != null && selectedDistrictId == 0 &&
-                     selectedQuarterId == null)
+            else if (model.SearchText != null && selectedCityId != null && selectedDistrictId == 0 && selectedQuarterId == null)
             {
                 List<Adress_Description> sorguMahalleList = new List<Adress_Description>();
                 List<Adress_Description> sorguMahalle = new List<Adress_Description>();
@@ -331,8 +428,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             }
 
 
-            else if (model.SearchText != null && selectedCityId != null && selectedDistrictId != null &&
-                     selectedQuarterId == 0)
+            else if (model.SearchText != null && selectedCityId != null && selectedDistrictId != null && selectedQuarterId == 0)
             {
 
                 var sorguMahalle = db.Adress_Descriptions.Where(x => x.parent_id == selectedDistrictId).ToList();
@@ -364,6 +460,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 sehirler.Add(adress);
             }
 
+            
             Adress_Description ilcesecim = new Adress_Description();
             ilcesecim.adress_desc_id = 1;
             ilcesecim.adress_name = " ";
@@ -404,7 +501,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 birlesmisAdres = birlesmisAdres + mahalle.adress_name;
                 model.birlesmisAdresDict[place.place_id] = birlesmisAdres;
             }
-
+            
             return View(model);
         }
 
