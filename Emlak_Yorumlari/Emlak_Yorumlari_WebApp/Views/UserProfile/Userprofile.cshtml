@@ -1,0 +1,140 @@
+﻿@using Emlak_Yorumlari_WebApp.ViewModels
+@model UserProfileViewModel
+
+@{
+    ViewBag.Title = "Userprofile";
+}
+<link href="~/Content/shop-homepage.css" rel="stylesheet" />
+<style>
+    .img-container {
+        width: 100%;
+        height: 250px;
+        background-size: cover;
+        background-position: center;
+    }
+    .validation-summary-errors {
+        border: 2px dotted;
+        background-color: #d76663;
+        border-radius: 8px;
+    }
+
+    .validation-summary-errors ul {
+        color: white;
+        padding: 10px;
+        list-style-type: none;
+    }
+</style>
+
+
+<div class="container">
+
+    <div class="row">
+        @*ara*@
+
+
+        <div class="col-md-12">
+
+        @using (Html.BeginForm("Userprofile", "UserProfile", FormMethod.Post, new {enctype = "multipart/form-data"}))
+        {
+            @*İçerikler*@
+            <div class="row">
+
+
+                <div class="col-lg-12 col-md-12">
+                    <div class="form-header well">
+
+
+                        <div class="col-sm-4 col-lg-4 col-md-4">
+
+                            <br/>
+                            <br/>
+                            
+                            <div class="img-container img-circle" style="background-image: url(@Url.Action("ReturnImage", "UserProfile", new {Id = @Model.user_id}))">
+
+                            </div>
+                            <br/>
+                            <br/>
+                            <div class="input-group">
+                                <span class="text-center">
+                                    <input type="file" name="uploadfile" id="uploadfile" accept="image/png, image/jpeg, image/jpg"/>
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div class="card-body">
+                            <hr/>
+                            <p>
+                                <h4 class="text-muted">
+                                    @Model.username
+                                </h4>
+
+                            </p>
+                            
+                            <hr/>
+                            <div class="input-group col-sm-6 col-lg-6 col-md-6">
+                                @Html.ValidationSummary(false)
+                                <br/>
+                            </div>
+                            <div class="input-group col-sm-6 col-lg-6 col-md-6">
+
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+                                @Html.TextBoxFor(model => model.username, new { @class = "form-control" })
+                            </div>
+                            <hr/>
+                            <div class="input-group col-sm-6 col-lg-6 col-md-6">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
+                                @Html.TextBoxFor(model => model.email, new {@class = "form-control"})
+                            </div>
+                            <hr/>
+                            <div class="input-group col-sm-6 col-lg-6 col-md-6">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+                                @Html.TextBoxFor(model => model.password, new {@class = "form-control", placeholder = "Şifrenizi Giriniz.", type = "password"})
+                            </div>
+                            <hr/>
+                            <div class="input-group col-sm-6 col-lg-6 col-md-6">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+                                @Html.TextBoxFor(model => model.repassword, new {@class = "form-control", placeholder = "Tekrardan Şifrenizi Giriniz.", type = "password"})
+                            </div>
+                            <hr/>
+                            <div class="input-group col-sm-6 col-lg-6 col-md-6">
+                                <button type="submit" class="btn btn-warning btn-lg btn-block login-button">Bilgileri Güncelle</button>
+                            </div>
+
+                            <br/>
+                            <hr/>
+                            <div class="col-sm-6 col-lg-6 col-md-6">
+                                <h6 class="text-right">
+                                    <span class="glyphicon glyphicon-home"></span> Emlak Sayısı: @Model.placeCount
+                                </h6>
+                            </div>
+                            <div class="col-sm-6 col-lg-6 col-md-6">
+                                <h5 class="text-left">
+                                    <span class="glyphicon glyphicon-pencil"></span> Yorum Sayısı: @Model.commentsCount
+                                </h5>
+                            </div>
+
+
+                        </div>
+                        <br/>
+                        <div><br/><hr/><br/></div>
+                        <div class="ratings">
+
+                            <p>
+                                <a class="btn btn-default btn-sm" href="/Place/ShowPlace"> <span class="glyphicon glyphicon-triangle-left"></span> Sitelerim </a>
+
+                                <span class="pull-right">
+                                    <a class="btn btn-default btn-sm" href="/Place/AddPlace"> <span class="glyphicon glyphicon-triangle-right"></span> Site Ekle </a>
+                                </span>
+
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        }
+        </div>
+    </div>
+</div>

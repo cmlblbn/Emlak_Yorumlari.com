@@ -19,12 +19,27 @@
 
             @*İçerikler*@
             <div class="row">
+                @if (Model.places.Count == 0)
+                {
+                    <div class="col-md-9 alert-warning">
+                        
+                        <span class="label">
+                            <h2 class="text-primary">
+                               ARADIĞINIZ ÖGE BULUNAMADI
+                            </h2>
+                        </span>
+                            <br/>
+                        
+
+
+                    </div>
+                }
                 @foreach (var data in Model.places)
                 {
                     <div class="col-md-9 alert-success">
                         <h4>
                             <span class="label">
-                                @Html.ActionLink(@data.placeName, "PlaceProfile", "PlacesProfile", new { placeId = data.place_id }, null)
+                                @Html.ActionLink(@data.placeName, "PlaceProfile", "PlacesProfile", new {placeId = data.place_id}, null)
                             </span>
                             <br/>
                             <h5 class="text-primary">
@@ -32,11 +47,11 @@
                                 &nbsp;&nbsp;@Model.birlesmisAdresDict[data.place_id]
                             </h5>
                         </h4>
-                        <br />
+                        <br/>
                         <h6>
                             <label>&nbsp;&nbsp;Oluşturan: @data.user.username</label>
                         </h6>
-                       
+
 
                     </div>
                     <div class="col-md-9 alert-warning ">

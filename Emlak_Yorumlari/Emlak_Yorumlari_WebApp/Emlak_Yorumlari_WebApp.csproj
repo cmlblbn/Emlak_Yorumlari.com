@@ -211,6 +211,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PlaceController.cs" />
     <Compile Include="Controllers\PlacesProfileController.cs" />
+    <Compile Include="Controllers\UserProfileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -221,6 +222,7 @@
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\PlaceWithoutSurveys.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\UserProfileViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -242,6 +244,7 @@
     <Content Include="Views\PlacesProfile\PlaceProfile.cshtml" />
     <Content Include="Views\Shared\_PartialComment.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\UserProfile\Userprofile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -23,13 +23,13 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
         private MyContext db = new MyContext();
         // GET: Home
-        
+
 
         public ActionResult Index()
         {
 
             Session["User"] = null;
-            
+
             return View();
         }
 
@@ -62,8 +62,8 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                     mainPoint /= temp.Length;
                 }
                 mainPoint = (float)Math.Round(mainPoint * 100f) / 100f;
-                model.mainPoints.Add(place.place_id,mainPoint);
-                Array.Clear(temp,0,3);
+                model.mainPoints.Add(place.place_id, mainPoint);
+                Array.Clear(temp, 0, 3);
                 mainPoint = 0;
             }
 
@@ -117,7 +117,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             model.DistrictData = new SelectList(ilceSec, "adress_desc_id", "adress_name");
             model.QuarterData = new SelectList(mahalleSec, "adress_desc_id", "adress_name");
 
-            
+
             return View(model);
         }
         [HttpPost]
@@ -126,8 +126,10 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             return RedirectToAction("Search",
                 new
                 {
-                    searchText = model.SearchText, selectedCityId = model.city_ddl,
-                    selectedDistrictId = model.district_ddl, selectedQuarterId = model.quarter_ddl
+                    searchText = model.SearchText,
+                    selectedCityId = model.city_ddl,
+                    selectedDistrictId = model.district_ddl,
+                    selectedQuarterId = model.quarter_ddl
                 });
 
         }
@@ -190,16 +192,16 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             else if (searchText == null && selectedCityId != null && selectedDistrictId != null && selectedQuarterId > 0)
             {
                 var query = from p in db.Places
-                    where p.adress_desc_id == selectedQuarterId
-                    select p;
+                            where p.adress_desc_id == selectedQuarterId
+                            select p;
                 model.places = query.ToList();
 
             }
             else if (searchText != null && selectedCityId == null && selectedDistrictId == null && selectedQuarterId == null)
             {
                 var query = from p in db.Places
-                    where p.placeName.Contains(searchText)
-                    select p;
+                            where p.placeName.Contains(searchText)
+                            select p;
                 model.places = query.ToList();
             }
 
@@ -224,7 +226,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                     {
                         filter.Add(q);
                     }
-                    
+
                 }
 
                 model.places = filter;
@@ -237,7 +239,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 var sorguMahalle = db.Adress_Descriptions.Where(x => x.parent_id == selectedDistrictId).ToList();
                 Place q = new Place();
                 List<Place> filter = new List<Place>();
-                foreach (var mahalleiter in  sorguMahalle)
+                foreach (var mahalleiter in sorguMahalle)
                 {
                     q = db.Places.Where(x => x.placeName.Contains(searchText) && x.adress_desc_id == mahalleiter.adress_desc_id).FirstOrDefault();
                     if (q != null)
@@ -252,13 +254,13 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             else
             {
                 var query = from p in db.Places
-                    where p.placeName.Contains(searchText) && p.adress_desc_id == selectedQuarterId
-                    select p;
+                            where p.placeName.Contains(searchText) && p.adress_desc_id == selectedQuarterId
+                            select p;
                 model.places = query.ToList();
             }
 
 
-            
+
 
             List<Adress_Description> sehirler = new List<Adress_Description>();
             foreach (var adress in db.Adress_Descriptions.Where(x => x.parent_id == 0))
@@ -308,7 +310,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             }
 
 
-           
+
 
             return View(model);
         }
@@ -460,7 +462,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 sehirler.Add(adress);
             }
 
-            
+
             Adress_Description ilcesecim = new Adress_Description();
             ilcesecim.adress_desc_id = 1;
             ilcesecim.adress_name = " ";
@@ -501,7 +503,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 birlesmisAdres = birlesmisAdres + mahalle.adress_name;
                 model.birlesmisAdresDict[place.place_id] = birlesmisAdres;
             }
-            
+
             return View(model);
         }
 
@@ -513,27 +515,28 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             return View();
         }
 
-        [HttpPost] 
+        [HttpPost]
         public ActionResult Login(LoginViewModel model)
         {
 
             if (ModelState.IsValid)
             {
-                
+
                 MyContext db = new MyContext();
                 User kontrolkisi = null;
                 kontrolkisi = db.Users.Where(x => x.username == model.username).FirstOrDefault();
-                if (kontrolkisi != null) { 
-                if (kontrolkisi.IsActive == false)
+                if (kontrolkisi != null)
                 {
-                    ModelState.AddModelError("", "Hesabınız aktif değil!");
-                }
+                    if (kontrolkisi.IsActive == false)
+                    {
+                        ModelState.AddModelError("", "Hesabınız aktif değil!");
+                    }
                 }
 
                 kontrolkisi = db.Users.Where(x => x.username == model.username).FirstOrDefault();
                 if (kontrolkisi == null)
                 {
-                    ModelState.AddModelError("","Kullanıcı adı yanlış!");
+                    ModelState.AddModelError("", "Kullanıcı adı yanlış!");
                 }
 
                 string hashpsw = Crypto.SHA256(model.password);
@@ -548,13 +551,13 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
                 //kontrolkisi = db.Users.Where(x => x.IsActive == false).FirstOrDefault();
 
-              
+
 
                 foreach (var item in ModelState)
                 {
                     if (item.Value.Errors.Count > 0)
                     {
-                        
+
                         return View(model);
                     }
                 }
@@ -607,7 +610,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                         ModelState.AddModelError("", "Lütfen fotoğraf seçin! (.png-.jpg-.jpeg)");
                     }
                 }
-                
+
                 foreach (var item in ModelState)
                 {
                     if (item.Value.Errors.Count > 0)
@@ -617,7 +620,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                     }
                 }
 
-               
+
 
                 HttpPostedFileBase file = Request.Files["uploadfile"];
                 model.profileImage = ConvertToBytes(file);
@@ -634,7 +637,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 kisi.profileImage = model.profileImage;
                 context.Users.Add(kisi);
                 SendActivationEmail(kisi);
-                
+
 
                 int status = context.SaveChanges();
 
@@ -649,9 +652,9 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                     ViewBag.message = "Üyelik Başarısız, Tekrar deneyin.";
                 }
             }
-            
+
             return View(model);
-            
+
         }
 
         private void SendActivationEmail(User kontrolkisi)
@@ -661,14 +664,14 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             WebMail.UserName = "meunotes1@gmail.com";
             WebMail.Password = "meunotes1.Meu";
             WebMail.EnableSsl = true;
-            
+
             string Url = Rotate(Crypto.SHA256(kontrolkisi.username).ToString(), 8);
-            redis.setKey(Url, kontrolkisi.username,1);
+            redis.setKey(Url, kontrolkisi.username, 1);
             try
             {
                 WebMail.Send(
                     to: "faalleen.snake@gmail.com", subject: "Aktivasyon",
-                    body: "\nSayın :" + kontrolkisi.username + "<br/> Hesabınızı aktifleştirmek için lütfen bağlantıya tıklayın, "+"<br/>"
+                    body: "\nSayın :" + kontrolkisi.username + "<br/> Hesabınızı aktifleştirmek için lütfen bağlantıya tıklayın, " + "<br/>"
                          + string.Format("{0}://{1}/Home/UserActivate/{2}", Request.Url.Scheme, Request.Url.Authority, Url),
                     replyTo: "dont-reply@gmail.com", isBodyHtml: true);
             }
@@ -683,7 +686,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             {
                 string query = RouteData.Values["id"].ToString();
 
-                if (redis.IsSet(query) )
+                if (redis.IsSet(query))
                 {
                     string kod = redis.getKey(query);
                     MyContext context = new MyContext();
@@ -700,7 +703,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 {
                     return RedirectToAction("UserActivateTimeout");
                 }
-                
+
                 //ViewBag.Bilgi = "Aktivasyon başarılı.";
             }
             return View();

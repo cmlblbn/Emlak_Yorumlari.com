@@ -19,9 +19,12 @@
             
             @*İçerikler*@
             <div class="row">
-                
+            @{
+                int i = 0;
+            }    
             @foreach (var place in Model.places)
             {
+            
                 <div class="col-sm-4 col-lg-4 col-md-4">
                     <div class="thumbnail">
                         <div class="img-container" style="background-image: url(@Url.Action("ReturnImage", "Place", new {Id = place.place_id}))">
@@ -49,7 +52,14 @@
                                 <a class="btn btn-default btn-sm" href="@Url.Action("PlaceProfile","PlacesProfile",new{placeId = place.place_id})"> <span class="glyphicon glyphicon-triangle-right"></span> Detay </a>
                             </p>
                             <p>
-                                <h4><span class="label label-warning">PUAN:@Model.mainPoints[place.place_id]</span></h4> @*<span class="glyphicon glyphicon-star"></span>*@
+                                <button class="btn btn-default" data-toggle="modal" data-target=@("#puanGoster" + i.ToString())>
+                                    <span class="text-primary">
+                                        PUAN:@Model.mainPoints[place.place_id]
+                                    </span>
+                                    
+                                </button>
+                               
+                                @*<h4><span class="label label-warning">PUAN:@Model.mainPoints[place.place_id]</span></h4> @*<span class="glyphicon glyphicon-star"></span>*@
                             </p>
                         </div>
                         <div class="clearfix">
@@ -57,7 +67,36 @@
                         </div>
                     </div>
                 </div>
-            }
+
+                <div class="modal fade" id=@("puanGoster" + i.ToString()) tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">@place.placeName</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body alert-warning">
+                                @{
+                                    float[] temper = new float[3];
+                                    temper = Emlak_Yorumlari_WebApp.Controllers.PlacesProfileController.PlaceScoresCalculator(place);
+                                }
+
+                                <p class="text-justify"><b>Güven Puanı: @temper[0]</b></p>
+                                <p class="text-justify"><b>Aktivite Alanı: @temper[1]</b></p>
+                                <p class="text-justify"><b>Yönetim Memnuniyeti: @temper[2]</b></p>
+                                
+                                @{
+                                    Array.Clear(temper, 0, 3);
+                                    i++;
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                }
 
                 
 
