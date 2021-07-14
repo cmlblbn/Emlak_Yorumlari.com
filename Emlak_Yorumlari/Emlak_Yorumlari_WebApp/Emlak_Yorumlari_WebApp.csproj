@@ -208,6 +208,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminLoginController.cs" />
+    <Compile Include="Controllers\AdminPlaceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PlaceController.cs" />
     <Compile Include="Controllers\PlacesProfileController.cs" />
@@ -245,6 +247,8 @@
     <Content Include="Views\Shared\_PartialComment.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\UserProfile\Userprofile.cshtml" />
+    <Content Include="Views\AdminLogin\AdminLogin.cshtml" />
+    <Content Include="Views\AdminPlace\Adminplace.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
