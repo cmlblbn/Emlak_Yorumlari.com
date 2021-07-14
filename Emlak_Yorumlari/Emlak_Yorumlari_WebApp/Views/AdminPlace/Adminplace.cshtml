@@ -1,0 +1,129 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+@using Emlak_Yorumlari_WebApp.ViewModels
+@model HomePageViewModel 
+@{
+    ViewBag.Title = "Search";
+}
+
+<link href="~/Content/shop-homepage.css" rel="stylesheet" />
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+        @*ara*@
+        <div class="col-md-3">
+            @Html.Partial("_PartialSearch")
+
+        </div>
+
+        <div class="col-md-9 offset-md-3">
+            
+
+            @*İçerikler*@
+            <div class="row">
+                @if (Model.places.Count == 0)
+                {
+                    <div class="col-md-9 alert-warning">
+                        
+                        <span class="label">
+                            <h2 class="text-primary">
+                                ARADIĞINIZ ÖGE BULUNAMADI
+                            </h2>
+                        </span>
+                        <br/>
+                        
+
+
+                    </div>
+                }
+                <div class="col-md-9 alert-warning">
+                        
+                    <span class="label">
+                        <h2 class="text-primary">
+                            EMLAK YORUMLARI SİTELERİ
+                        </h2>
+                    </span>
+                    <br/>
+                        
+
+
+                </div>
+                @{
+                    int i = 0;
+                }  
+                @foreach (var data in Model.places)
+                {
+                    <div class="col-md-9 alert-success">
+                        <div class="col-md-5 alert-success">
+                            <h4>
+                                <span class="label">
+                                    @Html.ActionLink(@data.placeName, "PlaceProfile", "PlacesProfile", new {placeId = data.place_id}, null)
+                                </span>
+                                <br/>
+                                <h5 class="text-primary">
+
+                                    &nbsp;&nbsp;@Model.birlesmisAdresDict[data.place_id]
+                                </h5>
+                                @if (data.IsActive == false)
+                                {
+                                    <h6 class="text-danger">
+                                        Aktif Değil!
+                                    </h6>
+                                }
+
+                            </h4>
+                            <br/>
+                            <h6>
+                                <label>&nbsp;&nbsp;Oluşturan: @data.user.username</label>
+                            </h6>
+                        </div>
+                        <div class="col-md-9 alert-success">
+                            <p>
+                                &nbsp;@Html.ActionLink("AKTİF ET", "PlaceActivate", "AdminPlace", new { id = data.place_id }, new { @class = "btn btn-success" })
+                                &nbsp;@Html.ActionLink("AKTİFLİĞİ KALDIR", "PlaceDeActivate", "AdminPlace", new { id = data.place_id }, new { @class = "btn btn-success" })
+                                &nbsp;@Html.ActionLink("DÜZENLE", "AdminEdit", "AdminPlace", new { id = data.place_id }, new { @class = "btn btn-warning" })
+                                &nbsp;<button class="btn btn-danger" data-toggle="modal" data-target=@("#siteSil"+ i.ToString())> SİL</button>
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="col-md-9 alert-warning ">
+                        <hr/>
+                    </div>
+
+                    <div class="modal fade" id=@("siteSil" + i.ToString()) tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Site Sil</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body alert-warning">
+                                    <p class="text-justify"><b>siteyi SİLMEK istediğinizden emin misiniz?</b></p>
+                                    <p class="text-justify"><b>@data.placeName</b></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <p>
+                                        @using (Html.BeginForm("AdminDelete", "AdminPlace", new { id = data.place_id }, FormMethod.Post))
+                                        {
+                                            i++;
+                                            <button type="submit" class="btn btn-primary">Sil</button><br />
+                                           
+                                        }
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -117,7 +117,13 @@
                 </div><br/><br/>
                 <div class="dropdown">
                     @Html.DropDownListFor(m => m.quarter_ddl, Model.QuarterData, "Mahalle Seçiniz", new { @class = "form-control dropdown" })
-                </div><br/><br/>
+                </div><br/><br/><br/>
+                @if (Session["Admin"] != null)
+                {
+                    <div class="dropdown">
+                        Aktif Olanları Göster @Html.CheckBoxFor(model => model.isActivate)
+                    </div><br/><br/>
+                }
             </div>
             <button type="submit" class="btn btn-primary pull-right"> Ara
                 <span class="glyphicon glyphicon-search"></span>

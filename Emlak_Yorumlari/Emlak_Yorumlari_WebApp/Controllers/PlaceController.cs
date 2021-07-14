@@ -280,10 +280,11 @@ namespace Emlak_Yorumlari_WebApp.Controllers
         // GET: Place/Edit/5
         public ActionResult Edit(int?id)
         {
-            if (Session["User"] == null)
+            if (Session["User"] == null && Session["Admin"] == null)
             {
                 return RedirectToAction("Index", "Home");
             }
+           
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

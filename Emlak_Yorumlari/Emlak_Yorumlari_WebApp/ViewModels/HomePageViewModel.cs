@@ -24,5 +24,7 @@ namespace Emlak_Yorumlari_WebApp.ViewModels
         public SelectList DistrictData { get; set; }
         public SelectList QuarterData { get; set; }
 
+        public bool isActivate { get; set; }
+
     }
 }
