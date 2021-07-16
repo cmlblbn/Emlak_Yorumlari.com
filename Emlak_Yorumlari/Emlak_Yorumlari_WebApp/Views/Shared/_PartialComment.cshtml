@@ -175,20 +175,24 @@
                     <p>
                         @data.Value[3]
                     </p>
-                    @if (Session["User"].ToString() == data.Key)
+                    @if (Session["User"] != null)
                     {
+                        if (Session["User"].ToString() == data.Key)
+                        {
 
-                        <div>
-                            <div class="row col-md-2 pull-right">
-                                <div class="col-xs-1 pull-right">
-                                    <button type="submit" class="btn btn-danger pull-right btn-xs mr-1" data-toggle="modal" data-target="#yorumSil"> Sil </button>
-                                </div>
-                                <div class="col-xs-1 pull-right">
-                                    <button class="btn btn-warning pull-right btn-xs mr-10" data-toggle="modal" data-target="#yorumDuzenle">Düzenle</button>
+                            <div>
+                                <div class="row col-md-2 pull-right">
+                                    <div class="col-xs-1 pull-right">
+                                        <button type="submit" class="btn btn-danger pull-right btn-xs mr-1" data-toggle="modal" data-target="#yorumSil"> Sil </button>
+                                    </div>
+                                    <div class="col-xs-1 pull-right">
+                                        <button class="btn btn-warning pull-right btn-xs mr-10" data-toggle="modal" data-target="#yorumDuzenle">Düzenle</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        }
                     }
+
 
                     <br />
                     <hr class="alert-danger" />
@@ -207,20 +211,24 @@
                     <p>
                         @data.Value[3]
                     </p>
-                    @if (Session["User"].ToString() == data.Key)
+                    @if (Session["User"] != null)
                     {
+                        if (Session["User"].ToString() == data.Key)
+                        {
 
-                        <div>
-                            <div class="row col-md-2 pull-right">
-                                <div class="col-xs-1 pull-right">
-                                    <button type="submit" class="btn btn-danger pull-right btn-xs mr-1" data-toggle="modal" data-target="#yorumSil"> Sil </button>
-                                </div>
-                                <div class="col-xs-1 pull-right">
-                                    <button class="btn btn-warning pull-right btn-xs mr-10" data-toggle="modal" data-target="#yorumDuzenle">Düzenle</button>
+                            <div>
+                                <div class="row col-md-2 pull-right">
+                                    <div class="col-xs-1 pull-right">
+                                        <button type="submit" class="btn btn-danger pull-right btn-xs mr-1" data-toggle="modal" data-target="#yorumSil"> Sil </button>
+                                    </div>
+                                    <div class="col-xs-1 pull-right">
+                                        <button class="btn btn-warning pull-right btn-xs mr-10" data-toggle="modal" data-target="#yorumDuzenle">Düzenle</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        }
                     }
+
 
                     <br />
                     <hr class="alert-danger" />

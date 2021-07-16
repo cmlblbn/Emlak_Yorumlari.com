@@ -109,8 +109,17 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
             if (model.SearchText == null && selectedCityId == null && selectedDistrictId == null && selectedQuarterId == null)
             {
-                var query = from p in db.Places.ToList() select p;
-                model.places = query.ToList();
+                if (model.isActivate)
+                {
+                    var query = from p in db.Places.ToList() where p.IsActive == model.isActivate select p;
+                    model.places = query.ToList();
+                }
+                else
+                {
+                    var query = from p in db.Places.ToList() select p;
+                    model.places = query.ToList();
+                }
+
             }
             else if (model.SearchText == null && selectedCityId != null && selectedDistrictId == 0 && selectedQuarterId == null)
             {
@@ -125,15 +134,34 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
                 Place q = new Place();
                 List<Place> filter = new List<Place>();
-                foreach (var mahalleiter in sorguMahalleList)
+                if (model.isActivate)
                 {
-                    q = db.Places.Where(x => x.adress_desc_id == mahalleiter.adress_desc_id).FirstOrDefault();
-                    if (q != null)
+                    foreach (var mahalleiter in sorguMahalleList)
                     {
-                        filter.Add(q);
+                        q = db.Places.Where(x => x.adress_desc_id == mahalleiter.adress_desc_id && x.IsActive == model.isActivate).FirstOrDefault();
+                        if (q != null)
+                        {
+                            filter.Add(q);
+                        }
+
                     }
 
                 }
+                else
+                {
+                    foreach (var mahalleiter in sorguMahalleList)
+                    {
+                        q = db.Places.Where(x => x.adress_desc_id == mahalleiter.adress_desc_id).FirstOrDefault();
+                        if (q != null)
+                        {
+                            filter.Add(q);
+                        }
+
+                    }
+
+                }
+
+
 
                 model.places = filter;
 
@@ -143,30 +171,69 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 var sorguMahalle = db.Adress_Descriptions.Where(x => x.parent_id == selectedDistrictId).ToList();
                 Place q = new Place();
                 List<Place> filter = new List<Place>();
-                foreach (var mahalleiter in sorguMahalle)
+                if (model.isActivate)
                 {
-                    q = db.Places.Where(x => x.adress_desc_id == mahalleiter.adress_desc_id).FirstOrDefault();
-                    if (q != null)
+                    foreach (var mahalleiter in sorguMahalle)
                     {
-                        filter.Add(q);
+                        q = db.Places.Where(x => x.adress_desc_id == mahalleiter.adress_desc_id && x.IsActive == model.isActivate).FirstOrDefault();
+                        if (q != null)
+                        {
+                            filter.Add(q);
+                        }
                     }
                 }
+                else
+                {
+                    foreach (var mahalleiter in sorguMahalle)
+                    {
+                        q = db.Places.Where(x => x.adress_desc_id == mahalleiter.adress_desc_id).FirstOrDefault();
+                        if (q != null)
+                        {
+                            filter.Add(q);
+                        }
+                    }
+                }
+
+
                 model.places = filter;
             }
             else if (model.SearchText == null && selectedCityId != null && selectedDistrictId != null && selectedQuarterId > 0)
             {
-                var query = from p in db.Places
-                            where p.adress_desc_id == selectedQuarterId
-                            select p;
-                model.places = query.ToList();
+                if (model.isActivate)
+                {
+                    var query = from p in db.Places
+                        where p.adress_desc_id == selectedQuarterId && p.IsActive == model.isActivate
+                        select p;
+                    model.places = query.ToList();
+                }
+                else
+                {
+                    var query = from p in db.Places
+                        where p.adress_desc_id == selectedQuarterId
+                        select p;
+                    model.places = query.ToList();
+                }
+                
+
 
             }
             else if (model.SearchText != null && selectedCityId == null && selectedDistrictId == null && selectedQuarterId == null)
             {
-                var query = from p in db.Places
-                            where p.placeName.Contains(model.SearchText)
-                            select p;
-                model.places = query.ToList();
+                if (model.isActivate)
+                {
+                    var query = from p in db.Places
+                        where p.placeName.Contains(model.SearchText) && p.IsActive == model.isActivate
+                        select p;
+                    model.places = query.ToList();
+                }
+                else
+                {
+                    var query = from p in db.Places
+                        where p.placeName.Contains(model.SearchText)
+                        select p;
+                    model.places = query.ToList();
+                }
+                
             }
 
 
@@ -183,15 +250,31 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
                 Place q = new Place();
                 List<Place> filter = new List<Place>();
-                foreach (var mahalleiter in sorguMahalleList)
+                if (model.isActivate)
                 {
-                    q = db.Places.Where(x => x.placeName.Contains(model.SearchText) && x.adress_desc_id == mahalleiter.adress_desc_id).FirstOrDefault();
-                    if (q != null)
+                    foreach (var mahalleiter in sorguMahalleList)
                     {
-                        filter.Add(q);
-                    }
+                        q = db.Places.Where(x => x.placeName.Contains(model.SearchText) && x.adress_desc_id == mahalleiter.adress_desc_id && x.IsActive == model.isActivate).FirstOrDefault();
+                        if (q != null)
+                        {
+                            filter.Add(q);
+                        }
 
+                    }
                 }
+                else
+                {
+                    foreach (var mahalleiter in sorguMahalleList)
+                    {
+                        q = db.Places.Where(x => x.placeName.Contains(model.SearchText) && x.adress_desc_id == mahalleiter.adress_desc_id).FirstOrDefault();
+                        if (q != null)
+                        {
+                            filter.Add(q);
+                        }
+
+                    }
+                }
+
 
                 model.places = filter;
             }
@@ -203,24 +286,50 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 var sorguMahalle = db.Adress_Descriptions.Where(x => x.parent_id == selectedDistrictId).ToList();
                 Place q = new Place();
                 List<Place> filter = new List<Place>();
-                foreach (var mahalleiter in sorguMahalle)
+                if (model.isActivate)
                 {
-                    q = db.Places.Where(x => x.placeName.Contains(model.SearchText) && x.adress_desc_id == mahalleiter.adress_desc_id).FirstOrDefault();
-                    if (q != null)
+                    foreach (var mahalleiter in sorguMahalle)
                     {
-                        filter.Add(q);
+                        q = db.Places.Where(x => x.placeName.Contains(model.SearchText) && x.adress_desc_id == mahalleiter.adress_desc_id && x.IsActive == model.isActivate).FirstOrDefault();
+                        if (q != null)
+                        {
+                            filter.Add(q);
+                        }
                     }
                 }
+                else
+                {
+                    foreach (var mahalleiter in sorguMahalle)
+                    {
+                        q = db.Places.Where(x => x.placeName.Contains(model.SearchText) && x.adress_desc_id == mahalleiter.adress_desc_id).FirstOrDefault();
+                        if (q != null)
+                        {
+                            filter.Add(q);
+                        }
+                    }
+                }
+
                 model.places = filter;
             }
 
 
             else
             {
-                var query = from p in db.Places
-                            where p.placeName.Contains(model.SearchText) && p.adress_desc_id == selectedQuarterId
-                            select p;
-                model.places = query.ToList();
+                if (model.isActivate)
+                {
+                    var query = from p in db.Places
+                        where p.placeName.Contains(model.SearchText) && p.adress_desc_id == selectedQuarterId && p.IsActive == model.isActivate
+                        select p;
+                    model.places = query.ToList();
+                }
+                else
+                {
+                    var query = from p in db.Places
+                        where p.placeName.Contains(model.SearchText) && p.adress_desc_id == selectedQuarterId
+                        select p;
+                    model.places = query.ToList();
+                }
+               
             }
 
             List<Adress_Description> sehirler = new List<Adress_Description>();

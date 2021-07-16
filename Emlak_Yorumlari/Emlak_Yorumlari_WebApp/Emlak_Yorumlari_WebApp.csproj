@@ -210,6 +210,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminLoginController.cs" />
     <Compile Include="Controllers\AdminPlaceController.cs" />
+    <Compile Include="Controllers\AdminUserController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PlaceController.cs" />
     <Compile Include="Controllers\PlacesProfileController.cs" />
@@ -219,6 +220,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AddPlaceViewModel.cs" />
+    <Compile Include="ViewModels\AdminUserControlViewModel.cs" />
     <Compile Include="ViewModels\ForgotMyPassViewModel.cs" />
     <Compile Include="ViewModels\HomePageViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
@@ -251,6 +253,8 @@
     <Content Include="Views\AdminPlace\Adminplace.cshtml" />
     <Content Include="Views\Shared\_LayoutPageAdmin.cshtml" />
     <Content Include="Views\AdminPlace\AdminEdit.cshtml" />
+    <Content Include="Views\AdminUser\AdminuserControl.cshtml" />
+    <Content Include="Views\PlacesProfile\DeActivatedProfileError.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

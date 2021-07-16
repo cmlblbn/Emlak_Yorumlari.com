@@ -146,16 +146,26 @@ namespace Emlak_Yorumlari_WebApp.Controllers
         public ActionResult PlaceProfile(int? placeId)
         {
 
-            if (Session["User"] == null)
+            if (Session["User"] == null && Session["Admin"] == null)
             {
                 return RedirectToAction("Index", "Home");
             }
-
+            
             if (placeId != null)
             {
                 placeId = Convert.ToInt32(placeId);
             }
-            string username = Session["User"].ToString();
+
+            string username = "";
+            if (Session["User"] == null)
+            {
+                username = Session["Admin"].ToString();
+            }
+            else
+            {
+                username = Session["User"].ToString();
+            }
+
             User user = new User();
             user = db.Users.Where(x => x.username == username).FirstOrDefault();
             Comment kisisorgu = new Comment();
@@ -179,6 +189,11 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             PlaceWithoutSurveys model = new PlaceWithoutSurveys();
             Place place = new Place();
             place = db.Places.Where(x => x.place_id == placeId).FirstOrDefault();
+            
+            if (place.IsActive == false && Session["Admin"] == null)
+            {
+                return RedirectToAction("DeActivatedProfileError");
+            }
             //redis.Remove(place.place_id.ToString());
             var scores = PlaceScoresCalculator(place);
 
@@ -466,7 +481,6 @@ namespace Emlak_Yorumlari_WebApp.Controllers
         }
 
 
-
         public ActionResult DeleteComment(PlaceWithoutSurveys model, int? placeId)
         {
             if (Session["User"] == null)
@@ -501,5 +515,11 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
             return RedirectToAction("PlaceProfile",new{placeId = place.place_id});
         }
+
+        public ActionResult DeActivatedProfileError()
+        {
+            return View();
+        }
+
     }
 }

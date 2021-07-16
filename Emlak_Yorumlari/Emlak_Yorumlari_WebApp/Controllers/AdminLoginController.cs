@@ -15,6 +15,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
         [HttpGet]
         public ActionResult AdminLogin()
         {
+            Session["Admin"] = null;
             return View();
         }
 

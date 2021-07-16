@@ -29,6 +29,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
         {
 
             Session["User"] = null;
+            Session["Admin"] = null;
 
             return View();
         }
@@ -41,7 +42,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             }
 
             HomePageViewModel model = new HomePageViewModel();
-            model.places = db.Places.ToList();
+            model.places = db.Places.Where(x=>x.IsActive).ToList();
             float[] temp = new float[3];
             float mainPoint = 0;
             model.mainPoints = new Dictionary<int, float>();
@@ -145,7 +146,8 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
             if (searchText == null && selectedCityId == null && selectedDistrictId == null && selectedQuarterId == null)
             {
-                var query = from p in db.Places.ToList() select p;
+                var query = from p in db.Places.ToList() where p.IsActive
+                    select p;
                 model.places = query.ToList();
             }
             else if (searchText == null && selectedCityId != null && selectedDistrictId == 0 && selectedQuarterId == null)
@@ -163,7 +165,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 List<Place> filter = new List<Place>();
                 foreach (var mahalleiter in sorguMahalleList)
                 {
-                    q = db.Places.Where(x => x.adress_desc_id == mahalleiter.adress_desc_id).FirstOrDefault();
+                    q = db.Places.Where(x => x.adress_desc_id == mahalleiter.adress_desc_id && x.IsActive).FirstOrDefault();
                     if (q != null)
                     {
                         filter.Add(q);
@@ -181,7 +183,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 List<Place> filter = new List<Place>();
                 foreach (var mahalleiter in sorguMahalle)
                 {
-                    q = db.Places.Where(x => x.adress_desc_id == mahalleiter.adress_desc_id).FirstOrDefault();
+                    q = db.Places.Where(x => x.adress_desc_id == mahalleiter.adress_desc_id && x.IsActive).FirstOrDefault();
                     if (q != null)
                     {
                         filter.Add(q);
@@ -192,7 +194,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             else if (searchText == null && selectedCityId != null && selectedDistrictId != null && selectedQuarterId > 0)
             {
                 var query = from p in db.Places
-                            where p.adress_desc_id == selectedQuarterId
+                            where p.adress_desc_id == selectedQuarterId && p.IsActive
                             select p;
                 model.places = query.ToList();
 
@@ -200,7 +202,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             else if (searchText != null && selectedCityId == null && selectedDistrictId == null && selectedQuarterId == null)
             {
                 var query = from p in db.Places
-                            where p.placeName.Contains(searchText)
+                            where p.placeName.Contains(searchText) && p.IsActive
                             select p;
                 model.places = query.ToList();
             }
@@ -213,7 +215,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 var sorguIlce = db.Adress_Descriptions.Where(x => x.parent_id == selectedCityId).ToList();
                 foreach (var data in sorguIlce)
                 {
-                    sorguMahalle = db.Adress_Descriptions.Where(x => x.parent_id == data.adress_desc_id).ToList();
+                    sorguMahalle = db.Adress_Descriptions.Where(x => x.parent_id == data.adress_desc_id && x.IsActive).ToList();
                     sorguMahalleList.AddRange(sorguMahalle);
                 }
 
@@ -221,7 +223,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 List<Place> filter = new List<Place>();
                 foreach (var mahalleiter in sorguMahalleList)
                 {
-                    q = db.Places.Where(x => x.placeName.Contains(searchText) && x.adress_desc_id == mahalleiter.adress_desc_id).FirstOrDefault();
+                    q = db.Places.Where(x => x.placeName.Contains(searchText) && x.adress_desc_id == mahalleiter.adress_desc_id && x.IsActive).FirstOrDefault();
                     if (q != null)
                     {
                         filter.Add(q);
@@ -241,7 +243,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 List<Place> filter = new List<Place>();
                 foreach (var mahalleiter in sorguMahalle)
                 {
-                    q = db.Places.Where(x => x.placeName.Contains(searchText) && x.adress_desc_id == mahalleiter.adress_desc_id).FirstOrDefault();
+                    q = db.Places.Where(x => x.placeName.Contains(searchText) && x.adress_desc_id == mahalleiter.adress_desc_id && x.IsActive).FirstOrDefault();
                     if (q != null)
                     {
                         filter.Add(q);
@@ -254,7 +256,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             else
             {
                 var query = from p in db.Places
-                            where p.placeName.Contains(searchText) && p.adress_desc_id == selectedQuarterId
+                            where p.placeName.Contains(searchText) && p.adress_desc_id == selectedQuarterId && p.IsActive
                             select p;
                 model.places = query.ToList();
             }
