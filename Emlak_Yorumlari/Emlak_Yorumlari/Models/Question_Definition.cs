@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Emlak_Yorumlari.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -16,6 +17,10 @@ namespace Emlak_Yorumlari_Entities.Models
         [Index(IsUnique = true)]
         public int question_id { get; set; }
 
+        public int question_type_id { get; set; }
+        [ForeignKey("question_type_id")]
+        public virtual Question_Type question_type { get; set; }
+
         [StringLength(50, ErrorMessage = "question_name alanı max. {0} karakter olmalıdır.")]
         public string question_name { get; set; }
 
@@ -24,5 +29,6 @@ namespace Emlak_Yorumlari_Entities.Models
 
 
         public virtual List<Survey> surveys { get; set; }
+        public virtual List<Combobox_Answer> combobox_answer { get; set; }
     }
 }

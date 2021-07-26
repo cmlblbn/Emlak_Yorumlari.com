@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Emlak_Yorumlari.Models;
 using Emlak_Yorumlari_Entities.Models;
 
 namespace Emlak_Yorumlari_Entities
@@ -21,6 +22,8 @@ namespace Emlak_Yorumlari_Entities
         public DbSet<Adress_Description> Adress_Descriptions { get; set; }
         public DbSet<Adress_Type> Adress_Types { get; set; }
         public DbSet<Question_Definition> Question_Definitions { get; set; }
+        public DbSet<Question_Type> Question_Types { get; set; }
+        public DbSet<Combobox_Answer> Combobox_Answers { get; set; }
         
     }
 }

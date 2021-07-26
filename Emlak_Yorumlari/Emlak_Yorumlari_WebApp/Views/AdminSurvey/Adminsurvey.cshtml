@@ -1,0 +1,153 @@
+﻿@using Emlak_Yorumlari_WebApp.ViewModels
+@model AdminSurveyViewModel
+
+@{
+    ViewBag.Title = "Adminsurvey";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+<link href="~/Content/shop-homepage.css" rel="stylesheet" />
+
+<style type="text/css">
+    .validation-summary-errors {
+        border: 2px dotted;
+        background-color: #d76663;
+        border-radius: 8px;
+    }
+
+        .validation-summary-errors ul {
+            color: white;
+            padding: 10px;
+            list-style-type: none;
+        }
+</style>
+
+<div class="container">
+
+    <div class="row">
+        @*ara*@
+        <div class="col-md-3">
+            <div class="well">
+                <div class="input-group input-group-sm mb-3">
+                    @using (Html.BeginForm())
+                    {
+
+                        @Html.ValidationSummary(false)
+                        <p class="lead">Soru Ekle</p>
+                        <div class="input-group-prepend form-group">
+                            <span class="input-group-text" id="inputGroup-sizing-sm"></span>
+                        </div>
+                        @Html.TextBoxFor(model => model.questionName, new { @class = "form-control", placeholder = "Soru Adı Giriniz.." })
+                        <br />
+                        <br />
+
+                        <div class="form-group">
+                            <div class="dropdown">
+                                Soru Tipini Seçiniz <br /> <br />
+                                @Html.RadioButtonFor(x => Model.questionType, "1", new { @checked = "checked" }) Combobox (Örn: Cinsiyet)<br /> <br />
+                                @Html.RadioButtonFor(x => Model.questionType, "2") 1-5 arası puanlama<br /> <br />
+                                @Html.RadioButtonFor(x => Model.questionType, "3") Kişisel Integer Veri (Örn: Yaş)<br /> <br />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.TextAreaFor(x => Model.comboBoxAnswers, new { @class = "form-control", placeholder = "Combobox için cevapları aralarında birer boşluk bırakarak buraya giriniz.", row = "5" })<br />
+                            <br />
+                            <button type="submit" class="btn btn-warning pull-right">
+                                Soru ekle
+                                <span class="glyphicon glyphicon-hand-right"></span>
+                            </button>
+                        </div>
+
+
+                    }
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-9 offset-md-3">
+
+
+            @*İçerikler*@
+            <div class="row">
+                @if (Model.question_list.Count == 0)
+                {
+                    <div class="col-md-9 alert-warning">
+
+                        <span class="label">
+                            <h2 class="text-primary">
+                                Sistemde Soru Bulunamadı..
+                            </h2>
+                        </span>
+                        <br />
+
+
+
+                    </div>
+                }
+                else
+                {
+                    <div class="col-md-9 alert-warning">
+
+                        <span class="label">
+                            <h2 class="text-primary">
+                                EMLAK YORUMLARI ANKET SORULARI
+                            </h2>
+                        </span>
+                        <br />
+
+
+
+                    </div>
+                }
+
+
+                @foreach (var data in Model.question_list)
+                {
+                    <div class="col-md-9 alert-success">
+                        <div class="col-md-5 alert-success">
+                            <h4>
+
+                                <p class="text-warning">
+                                    &nbsp;&nbsp;@data.question_name
+                                </p>
+
+
+                                <br />
+                                <h5 class="text-primary">
+
+                                    <p>
+
+                                        @if (data.IsActive == false)
+                                        {
+                                            <h4 class="text-danger">
+                                                &nbsp;&nbsp;Aktif Değil!
+                                            </h4>
+                                        }
+                                    </p>
+
+                                </h5>
+
+
+                            </h4>
+                        </div>
+                        <div class="col-md-9 alert-success">
+                            <p>
+                                &nbsp;@Html.ActionLink("AKTİF ET", "ActivateQuestion", "AdminSurvey", new { id = data.question_id }, new { @class = "btn btn-success" })
+                                &nbsp;@Html.ActionLink("PASİF YAP", "DeActivateQuestion", "AdminSurvey", new { id = data.question_id }, new { @class = "btn btn-warning" })
+                                &nbsp;@Html.ActionLink("DÜZENLE", "QuestionEdit", "AdminSurvey", new { id = data.question_id }, new { @class = "btn btn-warning" })
+
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="col-md-9 alert-warning ">
+                        <hr />
+                    </div>
+
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+

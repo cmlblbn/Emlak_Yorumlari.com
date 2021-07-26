@@ -13,6 +13,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
     {
         // GET: AdminUser
         private MyContext db = new MyContext();
+
         public ActionResult AdminuserControl()
         {
 
@@ -31,6 +32,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             }
             return View(model);
         }
+
         [HttpPost]
         public ActionResult AdminuserControl(AdminUserControlViewModel model)
         {

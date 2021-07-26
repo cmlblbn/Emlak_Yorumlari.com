@@ -217,9 +217,9 @@ C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\bin\D
 C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\bin\Debug\System.ValueTuple.xml
 C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.csprojAssemblyReference.cache
-C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.Migrations.deneme.resources
-C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.csproj.GenerateResource.cache
 C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.csproj.CoreCompileInputs.cache
 C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.csproj.CopyComplete
 C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.dll
 C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.pdb
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.Migrations.appendquestionmigrate.resources
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.csproj.GenerateResource.cache

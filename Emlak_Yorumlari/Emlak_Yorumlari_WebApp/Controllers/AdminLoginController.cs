@@ -4,7 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
+using Emlak_Yorumlari.Models;
 using Emlak_Yorumlari_Entities;
+using Emlak_Yorumlari_Entities.Models;
 using Emlak_Yorumlari_WebApp.ViewModels;
 
 namespace Emlak_Yorumlari_WebApp.Controllers
@@ -18,6 +20,9 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             Session["Admin"] = null;
             return View();
         }
+
+
+
 
         [HttpPost]
         public ActionResult AdminLogin(LoginViewModel model)

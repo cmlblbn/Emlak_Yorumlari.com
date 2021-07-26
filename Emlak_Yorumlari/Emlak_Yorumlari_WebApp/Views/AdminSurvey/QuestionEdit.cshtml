@@ -1,0 +1,58 @@
+﻿@using Emlak_Yorumlari_WebApp.ViewModels
+@model AdminSurveyViewModel
+@{
+    ViewBag.Title = "QuestionEdit";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+<link href="~/Content/shop-homepage.css" rel="stylesheet" />
+<div class="container">
+
+    <div class="row">
+        @*ara*@
+        <div class="col-md-9">
+            <div class="well">
+                <div class="form-group">
+                    @using (Html.BeginForm("QuestionEdit", "AdminSurvey", FormMethod.Post, new { enctype = "multipart/form-data", id = "js-form" }))
+                    {
+
+                        @Html.ValidationSummary(false)
+                        <p class="lead">Soruyu Düzenle</p>
+                        <div class="input-group-prepend form-group">
+                            <span class="input-group-text" id="inputGroup"></span>
+                        </div>
+                        @Html.TextBoxFor(model => model.questionName, new { @class = "form-control" })
+                        <br />
+                        <br />
+
+                        <div class="form-group">
+                            
+                                Soru Tipini Seçiniz <br /> <br />
+                                @Html.RadioButtonFor(x => Model.questionType, "1", new { @checked = "checked" }) Combobox (Örn: Cinsiyet)<br /> <br />
+                                @Html.RadioButtonFor(x => Model.questionType, "2") 1-5 arası puanlama<br /> <br />
+                                @Html.RadioButtonFor(x => Model.questionType, "3") Kişisel Integer Veri (Örn: Yaş)<br /> <br />
+                            
+                        </div>
+                        if (Model.comboBoxAnswers != null)
+                        {
+                            <div class="form-group">
+                                @Html.TextAreaFor(x => Model.comboBoxAnswers, new { @class = "form-control", row = "5" })<br />
+                                <br />                       
+                            </div>
+
+                        }
+                        <div class="input-group-btn">
+
+                            <button type="submit" class="btn btn-warning pull-right btn-sm">
+                                Soruyu Güncelle
+                                <span class="glyphicon glyphicon-hand-right"></span>
+                            </button>
+                        </div>
+
+
+                    }
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
