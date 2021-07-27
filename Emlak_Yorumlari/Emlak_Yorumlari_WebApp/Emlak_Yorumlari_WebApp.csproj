@@ -221,7 +221,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AddPlaceViewModel.cs" />
-    <Compile Include="ViewModels\AdminQuestionEditViewModel.cs" />
     <Compile Include="ViewModels\AdminSurveyViewModel.cs" />
     <Compile Include="ViewModels\AdminUserControlViewModel.cs" />
     <Compile Include="ViewModels\ForgotMyPassViewModel.cs" />

@@ -4,7 +4,9 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 using Emlak_Yorumlari_Entities;
+using Emlak_Yorumlari_Entities.Models;
 
 namespace Emlak_Yorumlari_WebApp.ViewModels
 {
@@ -20,7 +22,10 @@ namespace Emlak_Yorumlari_WebApp.ViewModels
         public float aktivite_alani_mainscore { get; set; }
         public float yonetim_memnuniyeti_mainscore { get; set; }
 
-
+        public List<Question_Definition> questions { get; set; }
+        public Dictionary<string,List<string>> combobox_answers { get; set; }
+        public Dictionary<string,string> scores { get; set; }
+        public float mainScore { get; set; }
 
 
         [DisplayName("Yorum"), Required(ErrorMessage = "{0} alanı boş geçilemez!"), StringLength(25, ErrorMessage = "{0} alanı max {1} karater olmalı!")]

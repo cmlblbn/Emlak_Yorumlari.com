@@ -37,15 +37,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             {
                 ModelState.AddModelError("", "Combobox tipinde veri girişi yaparken cevap girmek zorundasınız!");
             }
-            foreach (var item in ModelState)
-            {
-                if (item.Value.Errors.Count > 0)
-                {
 
-
-                    return View(model);
-                }
-            }
 
 
             Question_Definition q_append = new Question_Definition();
@@ -82,7 +74,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             }
 
 
-            return View(model);
+            return RedirectToAction("Adminsurvey");
         }
 
         public ActionResult QuestionEdit(int? id)
@@ -178,18 +170,31 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                                 updateDatabase.SaveChanges();
                                 i++;
                             }
+                            if (answers.Count() < q_find.Count)
+                            {
+                                int j = q_find.Count();
+                                while(j > answers.Count())
+                                {
+                                    
+                                    db.Combobox_Answers.Remove(q_find[j-1]);
+                                    q_find.Remove(q_find[j - 1]);
+                                    db.SaveChanges();
+                                    j--;
+                                }
+                            }
+                           
 
                             
                         }
                     }
                 }
+                else
+                {
+                    model.comboBoxAnswers = "deneme";
+                }
             }
 
-
-
-            
-
-            return View(model);
+            return RedirectToAction("Adminsurvey");
         }
 
         public ActionResult ActivateQuestion(int? id)

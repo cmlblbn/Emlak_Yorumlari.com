@@ -94,6 +94,26 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             return scores;
         }
 
+        public static float mainscoresCalculator(Place place)
+        {
+            float mainScores = 0;
+            MyContext get_q = new MyContext();
+            var questionsAnswers = get_q.Surveys.Where(x => x.place_id == place.place_id && x.IsActive).ToList();
+            float get_score = 0;
+            foreach(var q in questionsAnswers)
+            {
+                if(q.question_definitioın.question_type_id == 2)
+                {
+                    get_score = q.score + get_score;
+                }
+            }
+            mainScores = get_score / questionsAnswers.Count;
+
+
+            return mainScores;
+        }
+
+
         public static List<string> GetUserScore(User sorguUser,Place place)
         {
             List<string> scores = new List<string>(4);
@@ -200,6 +220,32 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             model.guven_puani_mainscore = scores[0];
             model.aktivite_alani_mainscore = scores[1];
             model.yonetim_memnuniyeti_mainscore = scores[2];
+
+
+            model.questions = new List<Question_Definition>();
+            model.scores = new Dictionary<string, string>();
+            model.combobox_answers = new Dictionary<string, List<string>>();
+
+            MyContext comboboxGetanswer = new MyContext();
+            model.questions = db.Question_Definitions.Where(x=>x.IsActive).ToList();
+
+            foreach(var data in model.questions)
+            {
+                model.scores.Add(data.question_id.ToString(), "0");
+                if(data.question_type_id == 1)
+                {
+                    var answers = comboboxGetanswer.Combobox_Answers.Where(x => x.question_id == data.question_id && x.IsActive).ToList();
+                    model.combobox_answers.Add(data.question_id.ToString(), new List<string>());
+                    for (int i = 0; i < answers.Count; i++)
+                    {           
+                        model.combobox_answers[data.question_id.ToString()].Add(answers[i].question_answer);
+                    }
+
+                }
+
+            }
+            
+
             Dictionary<string, List<string>> commentsAndPoints;
             if (redis.IsSet(place.place_id.ToString()))
             {
@@ -224,6 +270,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             model.question3_name = questionName3.question_name;
             model.place = place;
             model.user = user;
+            model.mainScore = mainscoresCalculator(place);
 
             Adress_Description mahalle = new Adress_Description();
             Adress_Description ilce = new Adress_Description();
