@@ -221,7 +221,7 @@
                             {
                                 <div class="form-control">
 
-                                    @question.question_name: &nbsp;&nbsp;@Html.TextBoxFor(model => Model.scores[question.question_id.ToString()], new { placeholder = "Cevap", required = "required" })
+                                    @question.question_name: &nbsp;&nbsp;@Html.TextBoxFor(model => Model.scores[question.question_id.ToString()], new { Style = "margin-top:-5px;", placeholder = "Cevap", required = "required" })
                                 </div>
                                 <br />
                             }

@@ -6,6 +6,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Web;
 using System.Web.Mvc;
 using Emalk_Yorumlari_Redis;
+using Emlak_Yorumlari.Models;
 using Emlak_Yorumlari_Entities;
 using Emlak_Yorumlari_Entities.Models;
 using Emlak_Yorumlari_WebApp.ViewModels;
@@ -99,6 +100,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             float mainScores = 0;
             MyContext get_q = new MyContext();
             var questionsAnswers = get_q.Surveys.Where(x => x.place_id == place.place_id && x.IsActive).ToList();
+            var usercount = place.comments.Count();
             float get_score = 0;
             foreach(var q in questionsAnswers)
             {
@@ -107,7 +109,16 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                     get_score = q.score + get_score;
                 }
             }
-            mainScores = get_score / questionsAnswers.Count;
+            var q_count = get_q.Question_Definitions.Where(x => x.question_type_id == 2).ToList();
+            if(usercount == 0)
+            {
+                mainScores = 0;
+            }
+            else
+            {
+                mainScores = get_score / q_count.Count;
+                mainScores = mainScores / usercount;
+            }
 
 
             return mainScores;
@@ -296,113 +307,179 @@ namespace Emlak_Yorumlari_WebApp.Controllers
         [HttpPost]
         public ActionResult PlaceProfile(PlaceWithoutSurveys model, int? placeId)
         {
-            if (Session["User"] == null)
+            if (Session["User"] == null && Session["Admin"] == null)
             {
                 return RedirectToAction("Index", "Home");
             }
             TempData["post"] = "ok";
             Place place = new Place();
             place = db.Places.Where(x => x.place_id == placeId).FirstOrDefault();
-            string username = Session["User"].ToString();
+            string username = " ";
+            if(Session["Admin"] != null)
+            {
+                username = Session["Admin"].ToString();
+            }
+            else
+            {
+                username = Session["User"].ToString();
+            }
+
             User user = new User();
             user = db.Users.Where(x => x.username == username).FirstOrDefault();
-
-            Question_Definition guven_question = new Question_Definition();
-            guven_question = db.Question_Definitions.Where(x => x.question_id == 1).FirstOrDefault();
-            Question_Definition aktivite_question = new Question_Definition();
-            aktivite_question = db.Question_Definitions.Where(x => x.question_id == 2).FirstOrDefault();
-            Question_Definition yonetim_question = new Question_Definition();
-            yonetim_question = db.Question_Definitions.Where(x => x.question_id == 3).FirstOrDefault();
-
-            if (model.aktivite_alani_score != 0 && model.yonetim_memnuniyeti_score != 0 && model.yonetim_memnuniyeti_score != 0 && model.comment != null)
+            foreach(var data in model.scores)
             {
-                
-
-                Survey quiz1 = new Survey();
-
-                quiz1.user_id = user.user_id;
-                quiz1.user = user;
-                quiz1.question_id = guven_question.question_id;
-                quiz1.question_definitioın = guven_question;
-                quiz1.place_id = place.place_id;
-                quiz1.place = place;
-                quiz1.score = model.guven_puani_score;
-                quiz1.createdOn = DateTime.Now;
-                quiz1.IsActive = true;
-
-
-                db.Surveys.Add(quiz1);
-
-               
-
-                Survey quiz2 = new Survey();
-
-                quiz2.user_id = user.user_id;
-                quiz2.user = user;
-                quiz2.question_id = aktivite_question.question_id;
-                quiz2.question_definitioın = aktivite_question;
-                quiz2.place_id = place.place_id;
-                quiz2.place = place;
-                quiz2.score = model.aktivite_alani_score;
-                quiz2.createdOn = DateTime.Now;
-                quiz2.IsActive = true;
-
-                db.Surveys.Add(quiz2);
-
-                
-
-                Survey quiz3 = new Survey();
-
-                quiz3.user_id = user.user_id;
-                quiz3.user = user;
-                quiz3.question_id = yonetim_question.question_id;
-                quiz3.question_definitioın = yonetim_question;
-                quiz3.place_id = place.place_id;
-                quiz3.place = place;
-                quiz3.score = model.yonetim_memnuniyeti_score;
-                quiz3.createdOn = DateTime.Now;
-                quiz3.IsActive = true;
-
-                db.Surveys.Add(quiz3);
-
-
-
-                Comment comments = new Comment();
-                comments.user_id = user.user_id;
-                comments.user = user;
-                comments.place_id = place.place_id;
-                comments.place = place;
-                comments.text = model.comment;
-                comments.createdOn = DateTime.Now;
-                comments.IsActive = true;
-
-                db.Comments.Add(comments);
-
-                place.surveys.Add(quiz1);
-                place.surveys.Add(quiz2);
-                place.surveys.Add(quiz3);
-                place.comments.Add(comments);
-
-                user.surveys.Add(quiz1);
-                user.surveys.Add(quiz2);
-                user.surveys.Add(quiz3);
-                user.comments.Add(comments);
-
-
-                
-                ViewBag.status = db.SaveChanges();
-
-                if (redis.IsSet(place.place_id.ToString()))
+                Question_Definition addQuestion = new Question_Definition();
+                int sorguKey = int.Parse(data.Key);
+                addQuestion = db.Question_Definitions.Where(x => x.question_id == sorguKey ).FirstOrDefault();
+                Survey addQuiz = new Survey();
+                if(addQuestion != null)
                 {
-                    redis.Remove(place.place_id.ToString());
+                    addQuiz.user_id = user.user_id;
+                    addQuiz.user = user;
+                    addQuiz.place_id = place.place_id;
+                    addQuiz.place = place;
+                    addQuiz.question_id = addQuestion.question_id;
+                    addQuiz.question_definitioın = addQuestion;
+                    if(addQuestion.question_type_id == 1)
+                    {
+                        Combobox_Answer combo = new Combobox_Answer();
+                        combo = db.Combobox_Answers.Where(x => x.question_answer == data.Value).FirstOrDefault();
+                        addQuiz.score = combo.question_answer_id;
+                    }
+                    else
+                    {
+                        addQuiz.score = int.Parse(data.Value);
+                    }
+                    addQuiz.createdOn = DateTime.Now;
+                    addQuiz.IsActive = true;
+
+                    db.Surveys.Add(addQuiz);
+                    place.surveys.Add(addQuiz);
+                    user.surveys.Add(addQuiz);
+                    db.SaveChanges();
                 }
 
+                
+            }
 
+            Comment comment = new Comment();
+            comment.user_id = user.user_id;
+            comment.user = user;
+            comment.place_id = place.place_id;
+            comment.place = place;
+            comment.text = model.comment;
+            comment.createdOn = DateTime.Now;
+            comment.IsActive = true;
+
+            db.Comments.Add(comment);
+            place.comments.Add(comment);
+            user.comments.Add(comment);
+            db.SaveChanges();
+
+            if (redis.IsSet(place.place_id.ToString()))
+            {
+                redis.Remove(place.place_id.ToString());
             }
 
 
-            
-            return RedirectToAction("PlaceProfile",new{placeId = place.place_id});
+            return RedirectToAction("PlaceProfile", new { placeId = place.place_id });
+
+            //Question_Definition guven_question = new Question_Definition();
+            //guven_question = db.Question_Definitions.Where(x => x.question_id == 1).FirstOrDefault();
+            //Question_Definition aktivite_question = new Question_Definition();
+            //aktivite_question = db.Question_Definitions.Where(x => x.question_id == 2).FirstOrDefault();
+            //Question_Definition yonetim_question = new Question_Definition();
+            //yonetim_question = db.Question_Definitions.Where(x => x.question_id == 3).FirstOrDefault();
+
+            //if (model.aktivite_alani_score != 0 && model.yonetim_memnuniyeti_score != 0 && model.yonetim_memnuniyeti_score != 0 && model.comment != null)
+            //{
+
+
+            //    Survey quiz1 = new Survey();
+
+            //    quiz1.user_id = user.user_id;
+            //    quiz1.user = user;
+            //    quiz1.question_id = guven_question.question_id;
+            //    quiz1.question_definitioın = guven_question;
+            //    quiz1.place_id = place.place_id;
+            //    quiz1.place = place;
+            //    quiz1.score = model.guven_puani_score;
+            //    quiz1.createdOn = DateTime.Now;
+            //    quiz1.IsActive = true;
+
+
+            //    db.Surveys.Add(quiz1);
+
+
+
+            //    Survey quiz2 = new Survey();
+
+            //    quiz2.user_id = user.user_id;
+            //    quiz2.user = user;
+            //    quiz2.question_id = aktivite_question.question_id;
+            //    quiz2.question_definitioın = aktivite_question;
+            //    quiz2.place_id = place.place_id;
+            //    quiz2.place = place;
+            //    quiz2.score = model.aktivite_alani_score;
+            //    quiz2.createdOn = DateTime.Now;
+            //    quiz2.IsActive = true;
+
+            //    db.Surveys.Add(quiz2);
+
+
+
+            //    Survey quiz3 = new Survey();
+
+            //    quiz3.user_id = user.user_id;
+            //    quiz3.user = user;
+            //    quiz3.question_id = yonetim_question.question_id;
+            //    quiz3.question_definitioın = yonetim_question;
+            //    quiz3.place_id = place.place_id;
+            //    quiz3.place = place;
+            //    quiz3.score = model.yonetim_memnuniyeti_score;
+            //    quiz3.createdOn = DateTime.Now;
+            //    quiz3.IsActive = true;
+
+            //    db.Surveys.Add(quiz3);
+
+
+
+            //    Comment comments = new Comment();
+            //    comments.user_id = user.user_id;
+            //    comments.user = user;
+            //    comments.place_id = place.place_id;
+            //    comments.place = place;
+            //    comments.text = model.comment;
+            //    comments.createdOn = DateTime.Now;
+            //    comments.IsActive = true;
+
+            //    db.Comments.Add(comments);
+
+            //    place.surveys.Add(quiz1);
+            //    place.surveys.Add(quiz2);
+            //    place.surveys.Add(quiz3);
+            //    place.comments.Add(comments);
+
+            //    user.surveys.Add(quiz1);
+            //    user.surveys.Add(quiz2);
+            //    user.surveys.Add(quiz3);
+            //    user.comments.Add(comments);
+
+
+
+            //    ViewBag.status = db.SaveChanges();
+
+            //    if (redis.IsSet(place.place_id.ToString()))
+            //    {
+            //        redis.Remove(place.place_id.ToString());
+            //    }
+
+
+            //}
+
+
+
+
 
 
         }
@@ -432,88 +509,136 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             User user = new User();
             user = db.Users.Where(x => x.username == username).FirstOrDefault();
 
-            Question_Definition guven_question = new Question_Definition();
-            guven_question = db.Question_Definitions.Where(x => x.question_id == 1).FirstOrDefault();
-            Question_Definition aktivite_question = new Question_Definition();
-            aktivite_question = db.Question_Definitions.Where(x => x.question_id == 2).FirstOrDefault();
-            Question_Definition yonetim_question = new Question_Definition();
-            yonetim_question = db.Question_Definitions.Where(x => x.question_id == 3).FirstOrDefault();
 
-            if (model.aktivite_alani_score != 0 && model.yonetim_memnuniyeti_score != 0 && model.yonetim_memnuniyeti_score != 0 && model.comment != null)
+            foreach (var data in model.scores)
             {
+                Question_Definition addQuestion = new Question_Definition();
+                int sorguKey = int.Parse(data.Key);
+                addQuestion = db.Question_Definitions.Where(x => x.question_id == sorguKey).FirstOrDefault();
+                Survey addQuiz = new Survey();
+                if (addQuestion != null)
+                {
+                    addQuiz.user_id = user.user_id;
+                    addQuiz.user = user;
+                    addQuiz.place_id = place.place_id;
+                    addQuiz.place = place;
+                    addQuiz.question_id = addQuestion.question_id;
+                    addQuiz.question_definitioın = addQuestion;
+                    if (addQuestion.question_type_id == 1)
+                    {
+                        Combobox_Answer combo = new Combobox_Answer();
+                        combo = db.Combobox_Answers.Where(x => x.question_answer == data.Value).FirstOrDefault();
+                        addQuiz.score = combo.question_answer_id;
+                    }
+                    else
+                    {
+                        addQuiz.score = int.Parse(data.Value);
+                    }
+                    addQuiz.createdOn = DateTime.Now;
+                    addQuiz.IsActive = true;
 
-
-                Survey quiz1 = db.Surveys.Where(x => x.user_id == user.user_id && x.place_id == placeId && x.question_id == 1).FirstOrDefault();
-
-                quiz1.user_id = user.user_id;
-                quiz1.user = user;
-                quiz1.question_id = guven_question.question_id;
-                quiz1.question_definitioın = guven_question;
-                quiz1.place_id = place.place_id;
-                quiz1.place = place;
-                quiz1.score = model.guven_puani_score;
-                quiz1.createdOn = DateTime.Now;
-                quiz1.IsActive = true;
-
-
-                db.Surveys.AddOrUpdate(quiz1);
-
-
-
-                Survey quiz2 = db.Surveys.Where(x => x.user_id == user.user_id && x.place_id == placeId && x.question_id == 2).FirstOrDefault(); ;
-
-                quiz2.user_id = user.user_id;
-                quiz2.user = user;
-                quiz2.question_id = aktivite_question.question_id;
-                quiz2.question_definitioın = aktivite_question;
-                quiz2.place_id = place.place_id;
-                quiz2.place = place;
-                quiz2.score = model.aktivite_alani_score;
-                quiz2.createdOn = DateTime.Now;
-                quiz2.IsActive = true;
-
-                db.Surveys.AddOrUpdate(quiz2);
-
-
-
-                Survey quiz3 = db.Surveys.Where(x => x.user_id == user.user_id && x.place_id == placeId && x.question_id == 3).FirstOrDefault(); ;
-
-                quiz3.user_id = user.user_id;
-                quiz3.user = user;
-                quiz3.question_id = yonetim_question.question_id;
-                quiz3.question_definitioın = yonetim_question;
-                quiz3.place_id = place.place_id;
-                quiz3.place = place;
-                quiz3.score = model.yonetim_memnuniyeti_score;
-                quiz3.createdOn = DateTime.Now;
-                quiz3.IsActive = true;
-
-                db.Surveys.AddOrUpdate(quiz3);
-
-
-
-                Comment comments = db.Comments.Where(x => x.user_id == user.user_id && x.place_id == placeId).FirstOrDefault(); ;
-
-                comments.user_id = user.user_id;
-                comments.user = user;
-                comments.place_id = place.place_id;
-                comments.place = place;
-                comments.text = model.comment;
-                comments.createdOn = DateTime.Now;
-                comments.IsActive = true;
-
-                db.Comments.AddOrUpdate(comments);
-
-               
-
-
-
-                ViewBag.status = db.SaveChanges();
-
-
+                    db.Surveys.AddOrUpdate(addQuiz);
+                    db.SaveChanges();
+                }
 
 
             }
+
+            Comment comment = new Comment();
+            comment.user_id = user.user_id;
+            comment.user = user;
+            comment.place_id = place.place_id;
+            comment.place = place;
+            comment.text = model.comment;
+            comment.createdOn = DateTime.Now;
+            comment.IsActive = true;
+
+            db.Comments.AddOrUpdate(comment);
+            db.SaveChanges();
+
+
+            //Question_Definition guven_question = new Question_Definition();
+            //guven_question = db.Question_Definitions.Where(x => x.question_id == 1).FirstOrDefault();
+            //Question_Definition aktivite_question = new Question_Definition();
+            //aktivite_question = db.Question_Definitions.Where(x => x.question_id == 2).FirstOrDefault();
+            //Question_Definition yonetim_question = new Question_Definition();
+            //yonetim_question = db.Question_Definitions.Where(x => x.question_id == 3).FirstOrDefault();
+
+            //if (model.aktivite_alani_score != 0 && model.yonetim_memnuniyeti_score != 0 && model.yonetim_memnuniyeti_score != 0 && model.comment != null)
+            //{
+
+
+            //    Survey quiz1 = db.Surveys.Where(x => x.user_id == user.user_id && x.place_id == placeId && x.question_id == 1).FirstOrDefault();
+
+            //    quiz1.user_id = user.user_id;
+            //    quiz1.user = user;
+            //    quiz1.question_id = guven_question.question_id;
+            //    quiz1.question_definitioın = guven_question;
+            //    quiz1.place_id = place.place_id;
+            //    quiz1.place = place;
+            //    quiz1.score = model.guven_puani_score;
+            //    quiz1.createdOn = DateTime.Now;
+            //    quiz1.IsActive = true;
+
+
+            //    db.Surveys.AddOrUpdate(quiz1);
+
+
+
+            //    Survey quiz2 = db.Surveys.Where(x => x.user_id == user.user_id && x.place_id == placeId && x.question_id == 2).FirstOrDefault(); ;
+
+            //    quiz2.user_id = user.user_id;
+            //    quiz2.user = user;
+            //    quiz2.question_id = aktivite_question.question_id;
+            //    quiz2.question_definitioın = aktivite_question;
+            //    quiz2.place_id = place.place_id;
+            //    quiz2.place = place;
+            //    quiz2.score = model.aktivite_alani_score;
+            //    quiz2.createdOn = DateTime.Now;
+            //    quiz2.IsActive = true;
+
+            //    db.Surveys.AddOrUpdate(quiz2);
+
+
+
+            //    Survey quiz3 = db.Surveys.Where(x => x.user_id == user.user_id && x.place_id == placeId && x.question_id == 3).FirstOrDefault(); ;
+
+            //    quiz3.user_id = user.user_id;
+            //    quiz3.user = user;
+            //    quiz3.question_id = yonetim_question.question_id;
+            //    quiz3.question_definitioın = yonetim_question;
+            //    quiz3.place_id = place.place_id;
+            //    quiz3.place = place;
+            //    quiz3.score = model.yonetim_memnuniyeti_score;
+            //    quiz3.createdOn = DateTime.Now;
+            //    quiz3.IsActive = true;
+
+            //    db.Surveys.AddOrUpdate(quiz3);
+
+
+
+            //    Comment comments = db.Comments.Where(x => x.user_id == user.user_id && x.place_id == placeId).FirstOrDefault(); ;
+
+            //    comments.user_id = user.user_id;
+            //    comments.user = user;
+            //    comments.place_id = place.place_id;
+            //    comments.place = place;
+            //    comments.text = model.comment;
+            //    comments.createdOn = DateTime.Now;
+            //    comments.IsActive = true;
+
+            //    db.Comments.AddOrUpdate(comments);
+
+
+
+
+
+            //    ViewBag.status = db.SaveChanges();
+
+
+
+
+            //}
 
             if (redis.IsSet(place.place_id.ToString()))
             {
@@ -541,19 +666,33 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             User user = new User();
             user = db.Users.Where(x => x.username == username).FirstOrDefault();
 
-            Survey quiz1 = db.Surveys.Where(x => x.user_id == user.user_id && x.place_id == placeId && x.question_id == 1).FirstOrDefault();
-            Survey quiz2 = db.Surveys.Where(x => x.user_id == user.user_id && x.place_id == placeId && x.question_id == 2).FirstOrDefault();
-            Survey quiz3 = db.Surveys.Where(x => x.user_id == user.user_id && x.place_id == placeId && x.question_id == 3).FirstOrDefault();
-            Comment comment = db.Comments.Where(x => x.user_id == user.user_id && x.place_id == placeId ).FirstOrDefault(); ;
-            if (quiz1 != null && quiz2 != null && quiz3 != null && comment  != null)
-            {
-                db.Surveys.Remove(quiz1);
-                db.Surveys.Remove(quiz2);
-                db.Surveys.Remove(quiz3);
-                db.Comments.Remove(comment);
-            }
+            var SurveyList = db.Surveys.Where(x => x.user_id == user.user_id && x.place_id == placeId && x.IsActive).ToList();
 
+            foreach(var survey in SurveyList)
+            {
+                db.Surveys.Remove(survey);
+                db.SaveChanges();
+            }
+            Comment comment = db.Comments.Where(x => x.user_id == user.user_id && x.place_id == placeId).FirstOrDefault();
+            db.Comments.Remove(comment);
             db.SaveChanges();
+
+
+
+            //Survey quiz1 = db.Surveys.Where(x => x.user_id == user.user_id && x.place_id == placeId && x.question_id == 1).FirstOrDefault();
+            //Survey quiz2 = db.Surveys.Where(x => x.user_id == user.user_id && x.place_id == placeId && x.question_id == 2).FirstOrDefault();
+            //Survey quiz3 = db.Surveys.Where(x => x.user_id == user.user_id && x.place_id == placeId && x.question_id == 3).FirstOrDefault();
+            //Comment comment = db.Comments.Where(x => x.user_id == user.user_id && x.place_id == placeId ).FirstOrDefault(); 
+            //if (quiz1 != null && quiz2 != null && quiz3 != null && comment  != null)
+            //{
+            //    db.Surveys.Remove(quiz1);
+            //    db.Surveys.Remove(quiz2);
+            //    db.Surveys.Remove(quiz3);
+            //    db.Comments.Remove(comment);
+            //}
+
+            //db.SaveChanges();
+
             if (redis.IsSet(place.place_id.ToString()))
             {
                 redis.Remove(place.place_id.ToString());

@@ -48,23 +48,9 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             model.mainPoints = new Dictionary<int, float>();
             foreach (var place in model.places)
             {
-                temp = PlacesProfileController.PlaceScoresCalculator(place);
-                foreach (var point in temp)
-                {
-                    mainPoint += point;
-                }
-
-                if (mainPoint == 0)
-                {
-                    mainPoint = 0;
-                }
-                else
-                {
-                    mainPoint /= temp.Length;
-                }
+                mainPoint = PlacesProfileController.mainscoresCalculator(place);
                 mainPoint = (float)Math.Round(mainPoint * 100f) / 100f;
                 model.mainPoints.Add(place.place_id, mainPoint);
-                Array.Clear(temp, 0, 3);
                 mainPoint = 0;
             }
 
