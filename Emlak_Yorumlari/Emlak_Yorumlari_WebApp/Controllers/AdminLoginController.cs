@@ -96,13 +96,13 @@ namespace Emlak_Yorumlari_WebApp.Controllers
         public void setDailyStatisticCache(string cacheKey)
         {
             string cacheData = "";
-            string totalUserDaily = db.Users.Where(x => x.createOn.Day == DateTime.Now.Day - 1).Count().ToString();
-            string totalActiveUserDaily = db.Users.Where(x => x.createOn.Day == DateTime.Now.Day - 1 && x.IsActive).Count().ToString();
-            string totalPlaceDaily = db.Users.Where(x => x.createOn.Day == DateTime.Now.Day - 1).Count().ToString();
-            string totalCommentDaily = db.Comments.Where(x => x.createdOn.Day == DateTime.Now.Day - 1).Count().ToString();
+            string totalUserDaily = db.Users.Where(x => x.createOn.Day == DateTime.Now.Day).Count().ToString();
+            string totalActiveUserDaily = db.Users.Where(x => x.createOn.Day == DateTime.Now.Day && x.IsActive).Count().ToString();
+            string totalPlaceDaily = db.Places.Where(x => x.createdOn.Day == DateTime.Now.Day).Count().ToString();
+            string totalCommentDaily = db.Comments.Where(x => x.createdOn.Day == DateTime.Now.Day).Count().ToString();
 
             string activeUserPlaceRatiostr = "";
-            float activeUserPlaceRatio = (float)(db.Places.Where(x => x.IsActive && x.createdOn.Day == DateTime.Now.Day - 1).Count()) / (db.Users.Where(x => x.IsActive && x.createOn.Day == DateTime.Now.Day - 1).Count());
+            float activeUserPlaceRatio = (float)(db.Places.Where(x => x.IsActive && x.createdOn.Day == DateTime.Now.Day).Count()) / (db.Users.Where(x => x.IsActive && x.createOn.Day == DateTime.Now.Day).Count());
             activeUserPlaceRatio = (float)Math.Round(activeUserPlaceRatio * 100f) / 100f;
             activeUserPlaceRatiostr = activeUserPlaceRatio.ToString();
             if(activeUserPlaceRatiostr == "∞" || activeUserPlaceRatiostr == "NaN")
@@ -111,7 +111,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             }
 
             string activeUserCommentRatiostr = "";
-            float activeUserCommentRatio = (float)(db.Comments.Where(x => x.IsActive && x.createdOn.Day == DateTime.Now.Day - 1).Count()) / (db.Users.Where(x => x.IsActive && x.createOn.Day == DateTime.Now.Day - 1).Count());
+            float activeUserCommentRatio = (float)(db.Comments.Where(x => x.IsActive && x.createdOn.Day == DateTime.Now.Day).Count()) / (db.Users.Where(x => x.IsActive && x.createOn.Day == DateTime.Now.Day).Count());
             activeUserCommentRatio = (float)Math.Round(activeUserCommentRatio * 100f) / 100f;
             activeUserCommentRatiostr = activeUserCommentRatio.ToString();
             if(activeUserPlaceRatiostr == "∞" || activeUserCommentRatiostr == "NaN")
@@ -128,7 +128,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             string cacheData = "";
             string totalUserDaily = db.Users.Where(x => x.createOn.Day >= (DateTime.Now.Day - 7)).Count().ToString();
             string totalActiveUserDaily = db.Users.Where(x => x.createOn.Day >= (DateTime.Now.Day - 7) && x.IsActive).Count().ToString();
-            string totalPlaceDaily = db.Users.Where(x => x.createOn.Day >= (DateTime.Now.Day - 7)).Count().ToString();
+            string totalPlaceDaily = db.Places.Where(x => x.createdOn.Day >= (DateTime.Now.Day - 7)).Count().ToString();
             string totalCommentDaily = db.Comments.Where(x => x.createdOn.Day >= (DateTime.Now.Day - 7)).Count().ToString();
 
             string activeUserPlaceRatiostr = "";
@@ -158,7 +158,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             string cacheData = "";
             string totalUserDaily = db.Users.Where(x => x.createOn.Month >= (DateTime.Now.Month - 1)).Count().ToString();
             string totalActiveUserDaily = db.Users.Where(x => x.createOn.Month >= (DateTime.Now.Month - 1) && x.IsActive).Count().ToString();
-            string totalPlaceDaily = db.Users.Where(x => x.createOn.Month >= (DateTime.Now.Month - 1)).Count().ToString();
+            string totalPlaceDaily = db.Places.Where(x => x.createdOn.Month >= (DateTime.Now.Month - 1)).Count().ToString();
             string totalCommentDaily = db.Comments.Where(x => x.createdOn.Month >= (DateTime.Now.Month - 1)).Count().ToString();
 
             string activeUserPlaceRatiostr = "";
@@ -189,7 +189,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             string cacheData = "";
             string totalUserDaily = db.Users.Count().ToString();
             string totalActiveUserDaily = db.Users.Where(x => x.IsActive).Count().ToString();
-            string totalPlaceDaily = db.Users.Count().ToString();
+            string totalPlaceDaily = db.Places.Count().ToString();
             string totalCommentDaily = db.Comments.Count().ToString();
 
             string activeUserPlaceRatiostr = "";

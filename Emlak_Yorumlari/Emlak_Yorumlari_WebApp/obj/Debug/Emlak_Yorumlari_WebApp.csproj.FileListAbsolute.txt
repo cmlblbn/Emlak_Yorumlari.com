@@ -857,3 +857,8 @@ C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\
 C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.csproj.CopyComplete
 C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.dll
 C:\Users\meusoft\Desktop\pushlanacak\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\obj\Debug\Emlak_Yorumlari_WebApp.pdb
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\Microsoft.Web.Helpers.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\WebMatrix.Data.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\WebMatrix.WebData.dll
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\WebMatrix.Data.xml
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari_WebApp\bin\WebMatrix.WebData.xml
