@@ -222,6 +222,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AddPlaceViewModel.cs" />
+    <Compile Include="ViewModels\AdminStatisticViewModel.cs" />
     <Compile Include="ViewModels\AdminSurveyViewModel.cs" />
     <Compile Include="ViewModels\AdminUserControlViewModel.cs" />
     <Compile Include="ViewModels\ForgotMyPassViewModel.cs" />
@@ -261,6 +262,9 @@
     <Content Include="Views\AdminSurvey\Adminsurvey.cshtml" />
     <Content Include="Views\AdminSurvey\QuestionEdit.cshtml" />
     <Content Include="Views\AdminStatistics\StatisticsPage.cshtml" />
+    <Content Include="Views\AdminStatistics\Daily.cshtml" />
+    <Content Include="Views\AdminStatistics\Weekly.cshtml" />
+    <Content Include="Views\AdminStatistics\Monthly.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
