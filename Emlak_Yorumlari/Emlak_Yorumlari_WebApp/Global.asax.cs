@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Emlak_Yorumlari_WebApp.Tasks.Triggers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,7 @@ namespace Emlak_Yorumlari_WebApp
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            getPlaceStatisticsTrigger.Trigger();
         }
     }
 }

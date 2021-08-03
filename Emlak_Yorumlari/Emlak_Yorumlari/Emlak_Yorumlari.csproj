@@ -97,12 +97,17 @@
     <Compile Include="Migrations\202107260914532_append-question-migrate.designer.cs">
       <DependentUpon>202107260914532_append-question-migrate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108030856159_statisticApp.cs" />
+    <Compile Include="Migrations\202108030856159_statisticApp.designer.cs">
+      <DependentUpon>202108030856159_statisticApp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Adress_Description.cs" />
     <Compile Include="Models\Adress_Type.cs" />
     <Compile Include="Models\Combobox_Answer.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Place.cs" />
+    <Compile Include="Models\Place_Statistics.cs" />
     <Compile Include="Models\Question_Definition.cs" />
     <Compile Include="Models\Question_Type.cs" />
     <Compile Include="Models\Survey.cs" />
@@ -122,6 +127,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202107260914532_append-question-migrate.resx">
       <DependentUpon>202107260914532_append-question-migrate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108030856159_statisticApp.resx">
+      <DependentUpon>202108030856159_statisticApp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
