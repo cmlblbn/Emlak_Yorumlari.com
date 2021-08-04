@@ -157,7 +157,7 @@
     <h4 class="text-danger">Yorumlar</h4>
     <hr class="alert-danger">
     @{
-        int i = 0;
+        int commentCounter = 0;
     }
 
     @foreach (var data in Model.commentsAndPoints)
@@ -165,7 +165,7 @@
 
 
         <div class="row">
-            @if (i > 4)
+            @if (commentCounter > 4)
             {
                 <div class="col-md-12" id="more">
 
@@ -240,11 +240,11 @@
 
         </div>
 
-        i++;
+        commentCounter++;
 
 
     }
-    @if (i > 4)
+    @if (commentCounter > 4)
     {
         <button class="btn btn-link" onclick="myFunction()" id="myBtn">Daha Fazla Göster</button>
     }

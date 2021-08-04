@@ -4,6 +4,7 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using Emalk_Yorumlari_Redis;
 using Emlak_Yorumlari.Models;
@@ -84,9 +85,9 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 q3_mainscore = 0;
             }
 
-
-
-
+            q1_mainscore = (float)Math.Round(q1_mainscore * 100f) / 100f;
+            q2_mainscore = (float)Math.Round(q2_mainscore * 100f) / 100f;
+            q3_mainscore = (float)Math.Round(q3_mainscore * 100f) / 100f;
             scores[0] = q1_mainscore;
             scores[1] = q2_mainscore;
             scores[2] = q3_mainscore;
@@ -120,10 +121,33 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 mainScores = mainScores / usercount;
             }
 
+            mainScores = (float)Math.Round(mainScores * 100f) / 100f;
 
             return mainScores;
         }
 
+        public static Tuple<int,int> minmaxRentCalculator(int averageRent)
+        {
+            int min = 0;
+            int max = 0;
+
+            int hundredsDigit = averageRent % 100;
+
+            if(averageRent > 100)
+            {
+                averageRent -= hundredsDigit;
+                max = averageRent + 400;
+                min = averageRent - 400;
+            }
+            else if(averageRent > 0 && averageRent <= 100){
+                int precision = 100 - averageRent;
+                averageRent += precision;
+                min = averageRent - 100;
+                max = averageRent + 100;
+            }
+
+            return new Tuple<int,int>(min,max);
+        }
 
         public static List<string> GetUserScore(User sorguUser,Place place)
         {
@@ -172,6 +196,23 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             }
 
             return commentsAndPoints;
+        }
+
+        public static string getMinMaxRent(int? placeId)
+        {
+            string minMaxstr = "";
+            if (placeId != null)
+            {
+                MyContext dbContext = new MyContext();
+                var dataList = dbContext.Place_Statistics.Where(x => x.place_id == placeId).ToList();
+                var stat = dataList.LastOrDefault();
+                Tuple<int, int> minMaxRent = minmaxRentCalculator(stat.average_rent);
+
+                minMaxstr = minMaxRent.Item1.ToString() + " - " + minMaxRent.Item2.ToString();
+                dbContext = null;
+            }
+
+            return minMaxstr;
         }
 
         public ActionResult PlaceProfile(int? placeId)
@@ -282,6 +323,8 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             model.place = place;
             model.user = user;
             model.mainScore = mainscoresCalculator(place);
+            model.minMaxRentStr = getMinMaxRent(place.place_id);
+
 
             Adress_Description mahalle = new Adress_Description();
             Adress_Description ilce = new Adress_Description();
@@ -706,6 +749,48 @@ namespace Emlak_Yorumlari_WebApp.Controllers
         {
             return View();
         }
+
+        public ActionResult genderChart(int? placeId)
+        {
+            
+            string[] chartData_xAxis = new string[] { "Erkek", "Kadın", "Diğer" };
+            int[] chartData_yAxis = new int[3];
+            if (placeId != null)
+            {
+                var dataStats = db.Place_Statistics.Where(x => x.place_id == placeId).ToList();
+                var dataStat = dataStats.LastOrDefault();
+                int dataCount = dataStat.male_count + dataStat.female_count + dataStat.otherSex_count;
+                chartData_yAxis[0] = dataStat.male_count;
+                chartData_yAxis[1] = dataStat.female_count;
+                chartData_yAxis[2] = dataStat.otherSex_count;
+                for(int i = 0; i < chartData_xAxis.Length; i++)
+                {
+                    if(dataCount == 0)
+                    {
+                        chartData_xAxis[i] = chartData_xAxis[i] + " % 0";
+                    }
+                    else
+                    {
+                        float xDataElement = (float)chartData_yAxis[i] / dataCount;
+                        xDataElement = (float)Math.Round(xDataElement * 100f) / 100f;
+                        xDataElement = xDataElement * 100;
+                        chartData_xAxis[i] = chartData_xAxis[i] + " % " + xDataElement.ToString();
+                    }
+
+                }
+            }
+
+            Chart chart = new Chart(350, 350, theme: ChartTheme.Yellow);
+            chart.AddTitle("Sitede Yaşayanların Cinsiyet Dağılımı");
+            chart.AddSeries(name: "GenderStatus", chartType: "Doughnut",
+                xValue: chartData_xAxis,
+                yValues: chartData_yAxis);
+            chart.AddLegend();
+
+            return View(chart);
+        }
+
+
 
     }
 }

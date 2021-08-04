@@ -26,7 +26,8 @@ namespace Emlak_Yorumlari_WebApp.ViewModels
         public Dictionary<string,List<string>> combobox_answers { get; set; }
         public Dictionary<string,string> scores { get; set; }
         public float mainScore { get; set; }
-
+        
+        public string minMaxRentStr { get; set; }
 
         [DisplayName("Yorum"), Required(ErrorMessage = "{0} alanı boş geçilemez!"), StringLength(25, ErrorMessage = "{0} alanı max {1} karater olmalı!")]
         public string comment { get; set; }

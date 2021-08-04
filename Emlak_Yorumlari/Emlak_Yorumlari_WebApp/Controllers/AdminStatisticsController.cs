@@ -44,7 +44,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
         {
             MyContext db_statistic = new MyContext();
             int[] Stats = new int[17];
-            var PlaceData = db_statistic.Surveys.Where(x => x.place_id == place.place_id).ToList();
+            var PlaceData = db_statistic.Surveys.Where(x => x.place_id == place.place_id && x.IsActive).ToList();
             if(PlaceData == null)
             {
                 return Stats;
@@ -182,7 +182,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 };
 
                 db_append.Place_Statistics.Add(statistics);
-                //db_append.SaveChanges();
+                db_append.SaveChanges();
             }
 
 

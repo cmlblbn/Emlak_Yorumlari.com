@@ -297,6 +297,7 @@
     <Content Include="Views\AdminStatistics\Monthly.cshtml" />
     <Content Include="Views\AdminStatistics\UserChart.cshtml" />
     <Content Include="Views\AdminStatistics\PlaceChart.cshtml" />
+    <Content Include="Views\PlacesProfile\genderChart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

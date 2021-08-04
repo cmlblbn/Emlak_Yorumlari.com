@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using Emlak_Yorumlari_Entities;
 using Emlak_Yorumlari_Entities.Models;
@@ -579,5 +580,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
             return RedirectToAction("Adminplace");
         }
+
+
     }
 }
