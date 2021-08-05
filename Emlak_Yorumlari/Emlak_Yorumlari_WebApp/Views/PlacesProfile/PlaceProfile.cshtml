@@ -175,7 +175,9 @@
                         </h5>
                     </p>
 
-                    <p><img src="/PlacesProfile/genderChart?placeId=@Model.place.place_id" /></p>
+                    <p><img src="/PlacesProfile/genderChart?placeId=@Model.place.place_id" /> <img class="pull-right" src="/PlacesProfile/EducationChart?placeId=@Model.place.place_id" /></p>
+                    <p><img src="/PlacesProfile/maritalChart?placeId=@Model.place.place_id" /> <img class="pull-right" src="/PlacesProfile/ageChart?placeId=@Model.place.place_id" /></p>
+                    <p><img src="/PlacesProfile/rentDeltaChart?placeId=@Model.place.place_id" /> <img class="pull-right" src=@Url.Action("rentDeltaChart", "PlacesProfile", new {placeId = @Model.place.place_id, type ="Column"}) /></p>
 
 
                 </div>

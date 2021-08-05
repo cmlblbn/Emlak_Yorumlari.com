@@ -6,6 +6,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
+using System.Xml.Serialization;
 using Emalk_Yorumlari_Redis;
 using Emlak_Yorumlari.Models;
 using Emlak_Yorumlari_Entities;
@@ -752,7 +753,23 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
         public ActionResult genderChart(int? placeId)
         {
-            
+            if (redis.IsSet("genderChartxAxis" + placeId.ToString()) && redis.IsSet("genderChartxAxis" + placeId.ToString()))
+            {
+
+                var xAxisstr = redis.getKey("genderChartxAxis" + placeId.ToString());
+                var yAxisstr = redis.getKey("genderChartyAxis" + placeId.ToString());
+
+                var xAxis = Newtonsoft.Json.JsonConvert.DeserializeObject<string[]>(xAxisstr);
+                var yAxis = Newtonsoft.Json.JsonConvert.DeserializeObject<int[]>(yAxisstr);
+
+                Chart chartCache = new Chart(400, 500, theme: ChartTheme.Yellow);               
+                chartCache.AddTitle("Sitede Yaşayanların Cinsiyet Dağılımı").AddSeries(name: "GenderStatus", chartType: "Doughnut",
+                xValue: xAxis,
+                yValues: yAxis).AddLegend();
+                return View(chartCache);
+
+            }
+
             string[] chartData_xAxis = new string[] { "Erkek", "Kadın", "Diğer" };
             int[] chartData_yAxis = new int[3];
             if (placeId != null)
@@ -763,9 +780,71 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 chartData_yAxis[0] = dataStat.male_count;
                 chartData_yAxis[1] = dataStat.female_count;
                 chartData_yAxis[2] = dataStat.otherSex_count;
-                for(int i = 0; i < chartData_xAxis.Length; i++)
+                for (int i = 0; i < chartData_xAxis.Length; i++)
                 {
-                    if(dataCount == 0)
+                    if (dataCount == 0)
+                    {
+                        chartData_xAxis[i] = chartData_xAxis[i] + " % 0";
+                    }
+                    else
+                    {
+                        float xDataElement = (float)chartData_yAxis[i] / dataCount;
+                        xDataElement = (float)Math.Round(xDataElement * 100f) / 100f;
+                        xDataElement = xDataElement * 100;
+                        chartData_xAxis[i] = chartData_xAxis[i] + " % " + xDataElement.ToString();
+                    }
+
+                }
+            }
+            Chart chart = new Chart(400, 500, theme: ChartTheme.Yellow).AddTitle("Sitede Yaşayanların Cinsiyet Dağılımı").AddSeries(name: "GenderStatus", chartType: "Doughnut",
+            xValue: chartData_xAxis,
+            yValues: chartData_yAxis).AddLegend();
+
+
+            var xAxisJson = Newtonsoft.Json.JsonConvert.SerializeObject(chartData_xAxis);
+            var yAxisJson = Newtonsoft.Json.JsonConvert.SerializeObject(chartData_yAxis);
+            redis.setKey("genderChartxAxis" + placeId.ToString(), xAxisJson, 15);
+            redis.setKey("genderChartyAxis" + placeId.ToString(), yAxisJson, 15);
+            return View(chart);
+            
+        }
+
+        public ActionResult EducationChart(int? placeId)
+        {
+            if (redis.IsSet("EducationChartxAxis" + placeId.ToString()) && redis.IsSet("EducationChartxAxis" + placeId.ToString()))
+            {
+
+                var xAxisstr = redis.getKey("EducationChartxAxis" + placeId.ToString());
+                var yAxisstr = redis.getKey("EducationChartyAxis" + placeId.ToString());
+
+                var xAxis = Newtonsoft.Json.JsonConvert.DeserializeObject<string[]>(xAxisstr);
+                var yAxis = Newtonsoft.Json.JsonConvert.DeserializeObject<int[]>(yAxisstr);
+
+                Chart chartCache = new Chart(400, 500, theme: ChartTheme.Yellow);
+                chartCache.AddTitle("Sitede Yaşayanların Cinsiyet Dağılımı").AddSeries(name: "GenderStatus", chartType: "Doughnut",
+                xValue: xAxis,
+                yValues: yAxis).AddLegend();
+                return View(chartCache);
+
+            }
+
+            string[] chartData_xAxis = new string[] { "İlkokul", "Orta okul", "Lise", "Üniversite", "Yüksek Lisans" };
+            int[] chartData_yAxis = new int[5];
+            if (placeId != null)
+            {
+                var dataStats = db.Place_Statistics.Where(x => x.place_id == placeId).ToList();
+                var dataStat = dataStats.LastOrDefault();
+                int dataCount = dataStat.primarySchool_count + dataStat.middleSchool_count + dataStat.highSchool_count + dataStat.degree_count + dataStat.masterDegree_count;
+
+                chartData_yAxis[0] = dataStat.primarySchool_count;
+                chartData_yAxis[1] = dataStat.middleSchool_count;
+                chartData_yAxis[2] = dataStat.highSchool_count;
+                chartData_yAxis[3] = dataStat.degree_count;
+                chartData_yAxis[4] = dataStat.masterDegree_count;
+
+                for (int i = 0; i < chartData_xAxis.Length; i++)
+                {
+                    if (dataCount == 0)
                     {
                         chartData_xAxis[i] = chartData_xAxis[i] + " % 0";
                     }
@@ -780,17 +859,198 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 }
             }
 
-            Chart chart = new Chart(350, 350, theme: ChartTheme.Yellow);
-            chart.AddTitle("Sitede Yaşayanların Cinsiyet Dağılımı");
-            chart.AddSeries(name: "GenderStatus", chartType: "Doughnut",
+            Chart chart = new Chart(400, 500, theme: ChartTheme.Yellow);
+            chart.AddTitle("Sitede Yaşayanların Eğitim Durumu");
+            chart.AddSeries(name: "EducationStatus", chartType: "Doughnut",
                 xValue: chartData_xAxis,
                 yValues: chartData_yAxis);
             chart.AddLegend();
 
+            var xAxisJson = Newtonsoft.Json.JsonConvert.SerializeObject(chartData_xAxis);
+            var yAxisJson = Newtonsoft.Json.JsonConvert.SerializeObject(chartData_yAxis);
+            redis.setKey("EducationChartxAxis" + placeId.ToString(), xAxisJson, 15);
+            redis.setKey("EducationChartyAxis" + placeId.ToString(), yAxisJson, 15);
+
             return View(chart);
+            
         }
 
+        public ActionResult maritalChart(int? placeId)
+        {
+            if (redis.IsSet("maritalChartxAxis" + placeId.ToString()) && redis.IsSet("maritalChartyAxis" + placeId.ToString()))
+            {
 
+                var xAxisstr = redis.getKey("maritalChartxAxis" + placeId.ToString());
+                var yAxisstr = redis.getKey("maritalChartyAxis" + placeId.ToString());
+
+                var xAxis = Newtonsoft.Json.JsonConvert.DeserializeObject<string[]>(xAxisstr);
+                var yAxis = Newtonsoft.Json.JsonConvert.DeserializeObject<int[]>(yAxisstr);
+
+                Chart chartCache = new Chart(400, 500, theme: ChartTheme.Yellow);
+                chartCache.AddTitle("Sitede Yaşayanların Cinsiyet Dağılımı").AddSeries(name: "GenderStatus", chartType: "Doughnut",
+                xValue: xAxis,
+                yValues: yAxis).AddLegend();
+                return View(chartCache);
+
+            }
+
+            string[] chartData_xAxis = new string[] { "Evli", "Bekar", "Boşanmış", "Dul" };
+            int[] chartData_yAxis = new int[4];
+            if (placeId != null)
+            {
+                var dataStats = db.Place_Statistics.Where(x => x.place_id == placeId).ToList();
+                var dataStat = dataStats.LastOrDefault();
+                int dataCount = dataStat.married_count + dataStat.single_count + dataStat.divorced_count + dataStat.widow_count;
+                chartData_yAxis[0] = dataStat.married_count;
+                chartData_yAxis[1] = dataStat.single_count;
+                chartData_yAxis[2] = dataStat.divorced_count;
+                chartData_yAxis[3] = dataStat.widow_count;
+                for (int i = 0; i < chartData_xAxis.Length; i++)
+                {
+                    if (dataCount == 0)
+                    {
+                        chartData_xAxis[i] = chartData_xAxis[i] + " % 0";
+                    }
+                    else
+                    {
+                        float xDataElement = (float)chartData_yAxis[i] / dataCount;
+                        xDataElement = (float)Math.Round(xDataElement * 100f) / 100f;
+                        xDataElement = xDataElement * 100;
+                        chartData_xAxis[i] = chartData_xAxis[i] + " % " + xDataElement.ToString();
+                    }
+
+                }
+            }
+
+            Chart chart = new Chart(400, 500, theme: ChartTheme.Yellow);
+            chart.AddTitle("Sitede Yaşayanların Medeni Durumu");
+            chart.AddSeries(name: "EducationStatus", chartType: "Doughnut",
+                xValue: chartData_xAxis,
+                yValues: chartData_yAxis);
+            chart.AddLegend();
+
+            var xAxisJson = Newtonsoft.Json.JsonConvert.SerializeObject(chartData_xAxis);
+            var yAxisJson = Newtonsoft.Json.JsonConvert.SerializeObject(chartData_yAxis);
+            redis.setKey("maritalChartxAxis" + placeId.ToString(), xAxisJson, 15);
+            redis.setKey("maritalChartyAxis" + placeId.ToString(), yAxisJson, 15);
+
+            return View(chart);
+            
+        }
+
+        public ActionResult ageChart(int? placeId)
+        {
+            if (redis.IsSet("ageChartxAxis" + placeId.ToString()) && redis.IsSet("ageChartyAxis" + placeId.ToString()))
+            {
+
+                var xAxisstr = redis.getKey("ageChartxAxis" + placeId.ToString());
+                var yAxisstr = redis.getKey("ageChartyAxis" + placeId.ToString());
+
+                var xAxis = Newtonsoft.Json.JsonConvert.DeserializeObject<string[]>(xAxisstr);
+                var yAxis = Newtonsoft.Json.JsonConvert.DeserializeObject<int[]>(yAxisstr);
+
+                Chart chartCache = new Chart(400, 500, theme: ChartTheme.Yellow);
+                chartCache.AddTitle("Sitede Yaşayanların Cinsiyet Dağılımı").AddSeries(name: "GenderStatus", chartType: "Doughnut",
+                xValue: xAxis,
+                yValues: yAxis).AddLegend();
+                return View(chartCache);
+
+            }
+
+
+            string[] chartData_xAxis = new string[] { "18'den az", "18-34 arası", "34-55 arası", "55 üstü" };
+            int[] chartData_yAxis = new int[4];
+            if (placeId != null)
+            {
+                var dataStats = db.Place_Statistics.Where(x => x.place_id == placeId).ToList();
+                var dataStat = dataStats.LastOrDefault();
+                int dataCount = dataStat.age_lower_18 + dataStat.age_between_18_34 + dataStat.age_between_34_55 + dataStat.age_upper_55;
+                chartData_yAxis[0] = dataStat.age_lower_18;
+                chartData_yAxis[1] = dataStat.age_between_18_34;
+                chartData_yAxis[2] = dataStat.age_between_34_55;
+                chartData_yAxis[3] = dataStat.age_upper_55;
+                for (int i = 0; i < chartData_xAxis.Length; i++)
+                {
+                    if (dataCount == 0)
+                    {
+                        chartData_xAxis[i] = chartData_xAxis[i] + " % 0";
+                    }
+                    else
+                    {
+                        float xDataElement = (float)chartData_yAxis[i] / dataCount;
+                        xDataElement = (float)Math.Round(xDataElement * 100f) / 100f;
+                        xDataElement = xDataElement * 100;
+                        chartData_xAxis[i] = chartData_xAxis[i] + " % " + xDataElement.ToString();
+                    }
+
+                }
+            }
+
+            Chart chart = new Chart(400, 500, theme: ChartTheme.Yellow);
+            chart.AddTitle("Sitede Yaşayanların Yaş Aralıkları");
+            chart.AddSeries(name: "EducationStatus", chartType: "Doughnut",
+                xValue: chartData_xAxis,
+                yValues: chartData_yAxis);
+            chart.AddLegend();
+
+            var xAxisJson = Newtonsoft.Json.JsonConvert.SerializeObject(chartData_xAxis);
+            var yAxisJson = Newtonsoft.Json.JsonConvert.SerializeObject(chartData_yAxis);
+            redis.setKey("ageChartxAxis" + placeId.ToString(), xAxisJson, 15);
+            redis.setKey("ageChartyAxis" + placeId.ToString(), yAxisJson, 15);
+
+            return View(chart);
+            
+
+        }
+
+        public ActionResult rentDeltaChart(int? placeId, string type = "Line")
+        {
+            string[] chartData_xAxis = new string[] { "Geçen Ay", "Bu ay"};
+            int[] chartData_yAxisMin = new int[2];
+            int[] chartData_yAxisMax = new int[2];
+
+
+            var dataStatsLastMonth = db.Place_Statistics.Where(x => x.place_id == placeId && x.createdOn.Month == (DateTime.Now.Month - 1)).ToList();
+            var dataStatLastMonth = dataStatsLastMonth.LastOrDefault();
+
+
+            var dataStatsToDay = db.Place_Statistics.Where(x => x.place_id == placeId && x.createdOn.Month == DateTime.Now.Month).ToList();
+            var dataStatToDay = dataStatsToDay.LastOrDefault();
+
+
+            var lastMonthMinMaxRent = minmaxRentCalculator(0);
+            var toDayMinMaxRent = minmaxRentCalculator(0);
+
+            if (dataStatLastMonth != null)
+            {
+                lastMonthMinMaxRent = minmaxRentCalculator(dataStatLastMonth.average_rent);
+            }
+            if(dataStatToDay != null)
+
+            {
+                toDayMinMaxRent = minmaxRentCalculator(dataStatToDay.average_rent);
+            }
+
+            chartData_yAxisMin[0] = lastMonthMinMaxRent.Item1;
+            chartData_yAxisMin[1] = toDayMinMaxRent.Item1;
+
+            chartData_yAxisMax[0] = lastMonthMinMaxRent.Item2;
+            chartData_yAxisMax[1] = toDayMinMaxRent.Item2;
+
+            Chart chart = new Chart(440, 500, theme: ChartTheme.Vanilla);
+            chart.AddTitle("Sitedeki Aylık Kira Değişimi");
+            chart.AddSeries(name: "Minimum Kira Değişimi", chartType: type,
+                xValue: chartData_xAxis,
+                yValues: chartData_yAxisMin);
+
+            chart.AddSeries(name: "Maximum Kira Değişimi", chartType: type,
+                xValue: chartData_xAxis,
+                yValues: chartData_yAxisMax);
+
+            chart.AddLegend();
+
+            return View(chart);
+        }
 
     }
 }

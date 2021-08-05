@@ -16,7 +16,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 {
     public class AdminStatisticsController : Controller
     {
-        public Dictionary<int, string> referenceValueByStats = new Dictionary<int, string>()
+        private Dictionary<int, string> referenceValueByStats = new Dictionary<int, string>()
         {
                 {0, "male_count"},
                 {1, "female_count"},
@@ -180,13 +180,10 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                     createdOn = DateTime.Now,
                     IsActive = true
                 };
-
+               
                 db_append.Place_Statistics.Add(statistics);
                 db_append.SaveChanges();
             }
-
-
-
         }
 
         public ActionResult StatisticsPage()

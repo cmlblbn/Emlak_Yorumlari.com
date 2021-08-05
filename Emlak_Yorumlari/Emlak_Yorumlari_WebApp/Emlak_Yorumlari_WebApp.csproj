@@ -298,6 +298,10 @@
     <Content Include="Views\AdminStatistics\UserChart.cshtml" />
     <Content Include="Views\AdminStatistics\PlaceChart.cshtml" />
     <Content Include="Views\PlacesProfile\genderChart.cshtml" />
+    <Content Include="Views\PlacesProfile\EducationChart.cshtml" />
+    <Content Include="Views\PlacesProfile\maritalChart.cshtml" />
+    <Content Include="Views\PlacesProfile\ageChart.cshtml" />
+    <Content Include="Views\PlacesProfile\rentDeltaChart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
