@@ -1,0 +1,118 @@
+﻿
+@{
+    ViewBag.Title = "ShowComment";
+    Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+<link href="~/Content/shop-homepage.css" rel="stylesheet" />
+<link href="~/Content/shop-item.css" rel="stylesheet" />
+
+<div class="container">
+
+<div class="row">
+    @*ara*@
+    <div class="col-md-3">
+        <div class="well">
+            <div class="input-group input-group-sm mb-3">
+                @using (Html.BeginForm())
+                {
+
+
+                    <p class="lead">Arama</p>
+                    <div class="input-group-prepend form-group">
+                        <span class="input-group-text" id="inputGroup-sizing-sm"></span>
+                    </div>
+                    @*@Html.TextBoxFor(model => model.SearchText, new { @class = "form-control", placeholder = "Kişi arayınız..." })*@
+                    <br />
+                    <br />
+
+
+                    <button type="submit" class="btn btn-primary pull-right">
+                        Ara
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                }
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-9 offset-md-3">
+
+
+        @*İçerikler*@
+        <div class="row">
+
+                <div class="col-md-9 alert-warning">
+
+                    <span class="label">
+                        <h2 class="text-primary">
+                            ZARARLI YORUM BULUNAMADI
+                        </h2>
+                    </span>
+                    <br />
+
+
+
+                </div>
+            
+
+                <div class="col-md-9 alert-warning">
+
+                    <span class="label">
+                        <h2 class="text-primary">
+                            EMLAK YORUMLARI ZARARLI YORUMLAR
+                        </h2>
+                    </span>
+                    <br />
+
+
+
+                </div>
+            
+
+
+                <div class="col-md-9 alert-success">
+                    <div class="col-md-5 alert-success">
+                        <h4>
+
+                            <p class="text-warning">  
+                                &nbsp;&nbsp;cmlblbn
+                            </p>
+                            <p class="text-warning">    
+                                &nbsp;&nbsp;PASİF KULLANICI !
+                            </p>
+
+
+                            <br />
+                            <h5 class="text-primary">
+
+                                <p>
+
+                                    &nbsp;&nbsp;Zararlı Yorum: sadgdfsdahgdhkljdsfkşhdsjghdsfjssdhfgdfshshdsfhjçdsjşshsfhs salak herif
+
+                                </p>
+
+                            </h5>
+
+
+                        </h4>
+                    </div>
+                    <div class="col-md-9 alert-success">
+                        <p>
+                            &nbsp;@Html.ActionLink("YORUMU SİL", "UserActivate", "AdminUser", new { id = 14 }, new { @class = "btn btn-success" })
+                            &nbsp;@Html.ActionLink("KULLANICIYI PASİF YAP", "UserDeactivate", "AdminUser", new { id = 14 }, new { @class = "btn btn-warning" })
+                        </p>
+                    </div>
+
+                </div>
+                <div class="col-md-9 alert-warning ">
+                    <hr />
+                </div>
+
+            
+
+        </div>
+    </div>
+</div>
+</div>
+

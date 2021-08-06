@@ -236,6 +236,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminCommentController.cs" />
     <Compile Include="Controllers\AdminLoginController.cs" />
     <Compile Include="Controllers\AdminPlaceController.cs" />
     <Compile Include="Controllers\AdminStatisticsController.cs" />
@@ -302,6 +303,7 @@
     <Content Include="Views\PlacesProfile\maritalChart.cshtml" />
     <Content Include="Views\PlacesProfile\ageChart.cshtml" />
     <Content Include="Views\PlacesProfile\rentDeltaChart.cshtml" />
+    <Content Include="Views\AdminComment\ShowComment.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
