@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "DeActivatedProfileError";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="~/Content/login-register.css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <style type="text/css">
+        .validation-summary-errors {
+            border: 2px dotted;
+            background-color: #d76663;
+            border-radius: 8px;
+        }
+
+            .validation-summary-errors ul {
+                color: white;
+                padding: 10px;
+                list-style-type: none;
+            }
+    </style>
+
+    <script type="text/javascript">
+        setTimeout(function () {
+            window.location = "/Home/Homepage";
+        }, 4000);
+    </script>
+
+</head>
+<body>
+
+    <!------ Include the above in your HEAD tag ---------->
+    <br />
+    <br />
+    <br />
+
+    <section class="login-info">
+        <div class="container">
+            <div class="row main">
+                <div class="form-header alert-danger">
+
+                    <h1 class="text-center "> YAPTIĞINIZ YORUM GEÇERSİZ.</h1>
+
+                </div>
+                <div class="main-content alert-danger">
+
+                    <div class="input-group ">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></span>
+                    </div>
+
+                    <div class="input-group">
+                        <h5 class="text-danger"> Uygunsuz kelime(Kötü içerikli yorum, küfür vb.) kullandığınız için yorum ve geri bildirim puanlarınız geçersiz sayılmıştır, inceleme altında onaylandığı taktirde 1 iş günü içerisinde yorumunuz eklenecektir. Eğer yorumunuz sakıncalı bulunursa siteden men edilebilirsiniz.</h5>
+                    </div>
+                    <div class="input-group">
+                        <h5 class="text-danger"> Anasayfaya Yönlendiriliyorsunuz..</h5>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+</html>

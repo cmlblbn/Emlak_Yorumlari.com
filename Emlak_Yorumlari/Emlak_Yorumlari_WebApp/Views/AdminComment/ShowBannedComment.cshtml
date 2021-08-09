@@ -1,7 +1,7 @@
 ﻿@using Emlak_Yorumlari_WebApp.ViewModels
 @model AdminCommentViewModel
 @{
-    ViewBag.Title = "ShowComment";
+    ViewBag.Title = "ShowBannedComment";
     Layout = "~/Views/Shared/_LayoutPageAdmin.cshtml";
 }
 <link href="~/Content/shop-homepage.css" rel="stylesheet" />
@@ -58,7 +58,7 @@
 
                 @foreach (var data in Model.ClassList)
                 {
-                    if (data.toxicComment.toxic_type == 1)
+                    if (data.toxicComment.toxic_type == 2)
                     {
                         <br />
                         <div class="col-md-12 alert-success">
@@ -97,9 +97,7 @@
                             </div>
                             <div class="col-md-12 alert-success">
                                 <p>
-                                    &nbsp;@Html.ActionLink("YORUMU SİL", "DeleteComment", "AdminComment", new { user_id = data.toxicComment.user_id, place_id = data.toxicComment.place_id }, new { @class = "btn btn-danger" })
-                                    &nbsp;@Html.ActionLink("YORUMU EKLE", "AddComment", "AdminComment", new { user_id = data.toxicComment.user_id, place_id = data.toxicComment.place_id }, new { @class = "btn btn-success" })
-                                    &nbsp;@Html.ActionLink("USER PASİF YAP", "UserDeactivate", "AdminUser", new { id = data.user.user_id }, new { @class = "btn btn-warning" })
+                                    &nbsp;@Html.ActionLink("KULLANICIYI PASİF YAP", "UserDeactivate", "AdminUser", new { id = data.user.user_id }, new { @class = "btn btn-danger" })
 
                                 </p>
                             </div>
@@ -121,4 +119,3 @@
         </div>
     </div>
 </div>
-

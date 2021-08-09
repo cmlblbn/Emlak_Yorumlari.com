@@ -224,3 +224,4 @@ C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\D
 C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.Migrations.appendquestionmigrate.resources
 C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.csproj.GenerateResource.cache
 C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.Migrations.statisticApp.resources
+C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\Emlak_Yorumlari\Emlak_Yorumlari\obj\Debug\Emlak_Yorumlari.Migrations.commentandsurveyLog.resources

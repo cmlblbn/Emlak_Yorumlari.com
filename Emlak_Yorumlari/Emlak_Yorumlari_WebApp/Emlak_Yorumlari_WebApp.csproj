@@ -253,6 +253,7 @@
     <Compile Include="Tasks\Jobs\getPlaceStatistics.cs" />
     <Compile Include="Tasks\Triggers\getPlaceStatisticsTrigger.cs" />
     <Compile Include="ViewModels\AddPlaceViewModel.cs" />
+    <Compile Include="ViewModels\AdminCommentViewModel.cs" />
     <Compile Include="ViewModels\AdminStatisticViewModel.cs" />
     <Compile Include="ViewModels\AdminSurveyViewModel.cs" />
     <Compile Include="ViewModels\AdminUserControlViewModel.cs" />
@@ -304,6 +305,8 @@
     <Content Include="Views\PlacesProfile\ageChart.cshtml" />
     <Content Include="Views\PlacesProfile\rentDeltaChart.cshtml" />
     <Content Include="Views\AdminComment\ShowComment.cshtml" />
+    <Content Include="Views\PlacesProfile\badSlangCommentDirection.cshtml" />
+    <Content Include="Views\AdminComment\ShowBannedComment.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

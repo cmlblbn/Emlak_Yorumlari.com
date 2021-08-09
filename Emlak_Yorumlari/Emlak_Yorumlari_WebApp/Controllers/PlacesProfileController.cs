@@ -22,6 +22,45 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
         private RedisManager redis = new RedisManager();
 
+        public static bool checkBadWords(string comment)
+        {
+            string path = @"C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\slang-bad_words\badWords.txt";
+            string[] readText = System.IO.File.ReadAllLines(path);
+            var commentList = comment.Split(' ');
+
+            foreach(var commentWord in commentList)
+            {
+                foreach(var data in readText)
+                {
+                    if(commentWord == data)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+        
+        public static bool checkSlangWords(string comment)
+        {
+            string path = @"C:\Users\Cemal\Desktop\Emlak_Yorumlari.com\slang-bad_words\slangClean.txt";
+            string[] readText = System.IO.File.ReadAllLines(path);
+            var commentList = comment.Split(' ');
+
+            foreach (var commentWord in commentList)
+            {
+                foreach (var data in readText)
+                {
+                    if (commentWord == data)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
         public static float[] PlaceScoresCalculator(Place place)
         {
             float[] scores = new float[3];
@@ -243,7 +282,8 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             user = db.Users.Where(x => x.username == username).FirstOrDefault();
             Comment kisisorgu = new Comment();
             kisisorgu = db.Comments.Where(x => x.user_id == user.user_id && x.place_id == placeId).FirstOrDefault();
-            if (kisisorgu != null)
+            var kisisorguLog = db.Comment_Logs.Where(x => x.user_id == user.user_id && x.place_id == placeId).FirstOrDefault();
+            if (kisisorgu != null || kisisorguLog != null)
             {
                 TempData["post"] = "ok";
             }
@@ -267,7 +307,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             {
                 return RedirectToAction("DeActivatedProfileError");
             }
-            //redis.Remove(place.place_id.ToString());
+            redis.Remove(place.place_id.ToString());
             var scores = PlaceScoresCalculator(place);
 
             model.guven_puani_mainscore = scores[0];
@@ -370,60 +410,179 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
             User user = new User();
             user = db.Users.Where(x => x.username == username).FirstOrDefault();
-            foreach(var data in model.scores)
-            {
-                Question_Definition addQuestion = new Question_Definition();
-                int sorguKey = int.Parse(data.Key);
-                addQuestion = db.Question_Definitions.Where(x => x.question_id == sorguKey ).FirstOrDefault();
-                Survey addQuiz = new Survey();
-                if(addQuestion != null)
-                {
-                    addQuiz.user_id = user.user_id;
-                    addQuiz.user = user;
-                    addQuiz.place_id = place.place_id;
-                    addQuiz.place = place;
-                    addQuiz.question_id = addQuestion.question_id;
-                    addQuiz.question_definitioın = addQuestion;
-                    if(addQuestion.question_type_id == 1)
-                    {
-                        Combobox_Answer combo = new Combobox_Answer();
-                        combo = db.Combobox_Answers.Where(x => x.question_answer == data.Value).FirstOrDefault();
-                        addQuiz.score = combo.question_answer_id;
-                    }
-                    else
-                    {
-                        addQuiz.score = int.Parse(data.Value);
-                    }
-                    addQuiz.createdOn = DateTime.Now;
-                    addQuiz.IsActive = true;
 
-                    db.Surveys.Add(addQuiz);
-                    place.surveys.Add(addQuiz);
-                    user.surveys.Add(addQuiz);
-                    db.SaveChanges();
+            if (checkBadWords(model.comment))
+            {
+                foreach (var data in model.scores)
+                {
+                    Question_Definition addQuestion = new Question_Definition();
+                    int sorguKey = int.Parse(data.Key);
+                    addQuestion = db.Question_Definitions.Where(x => x.question_id == sorguKey).FirstOrDefault();
+                    Survey_Log addQuiz = new Survey_Log();
+                    if (addQuestion != null)
+                    {
+                        addQuiz.user_id = user.user_id;
+                        addQuiz.user = user;
+                        addQuiz.place_id = place.place_id;
+                        addQuiz.place = place;
+                        addQuiz.question_id = addQuestion.question_id;
+                        addQuiz.question_definitioın = addQuestion;
+                        if (addQuestion.question_type_id == 1)
+                        {
+                            Combobox_Answer combo = new Combobox_Answer();
+                            combo = db.Combobox_Answers.Where(x => x.question_answer == data.Value).FirstOrDefault();
+                            addQuiz.score = combo.question_answer_id;
+                        }
+                        else
+                        {
+                            addQuiz.score = int.Parse(data.Value);
+                        }
+                        addQuiz.toxic_type = 1;
+                        addQuiz.createdOn = DateTime.Now;
+                        addQuiz.IsActive = true;
+
+                        db.Survey_Logs.Add(addQuiz);
+                        db.SaveChanges();
+                    }
+
+
                 }
 
-                
+                Comment_Log comment = new Comment_Log();
+                comment.user_id = user.user_id;
+                comment.user = user;
+                comment.place_id = place.place_id;
+                comment.place = place;
+                comment.text = model.comment;
+                comment.toxic_type = 1;
+                comment.createdOn = DateTime.Now;
+                comment.IsActive = true;
+
+                db.Comment_Logs.Add(comment);
+                db.SaveChanges();
+
+                if (redis.IsSet(place.place_id.ToString()))
+                {
+                    redis.Remove(place.place_id.ToString());
+                }
+                return RedirectToAction("badSlangCommentDirection");
             }
+            else if(checkSlangWords(model.comment)){
+                foreach (var data in model.scores)
+                {
+                    Question_Definition addQuestion = new Question_Definition();
+                    int sorguKey = int.Parse(data.Key);
+                    addQuestion = db.Question_Definitions.Where(x => x.question_id == sorguKey).FirstOrDefault();
+                    Survey_Log addQuiz = new Survey_Log();
+                    if (addQuestion != null)
+                    {
+                        addQuiz.user_id = user.user_id;
+                        addQuiz.user = user;
+                        addQuiz.place_id = place.place_id;
+                        addQuiz.place = place;
+                        addQuiz.question_id = addQuestion.question_id;
+                        addQuiz.question_definitioın = addQuestion;
+                        if (addQuestion.question_type_id == 1)
+                        {
+                            Combobox_Answer combo = new Combobox_Answer();
+                            combo = db.Combobox_Answers.Where(x => x.question_answer == data.Value).FirstOrDefault();
+                            addQuiz.score = combo.question_answer_id;
+                        }
+                        else
+                        {
+                            addQuiz.score = int.Parse(data.Value);
+                        }
+                        addQuiz.toxic_type = 2;
+                        addQuiz.createdOn = DateTime.Now;
+                        addQuiz.IsActive = true;
 
-            Comment comment = new Comment();
-            comment.user_id = user.user_id;
-            comment.user = user;
-            comment.place_id = place.place_id;
-            comment.place = place;
-            comment.text = model.comment;
-            comment.createdOn = DateTime.Now;
-            comment.IsActive = true;
+                        db.Survey_Logs.Add(addQuiz);
+                        db.SaveChanges();
+                    }
 
-            db.Comments.Add(comment);
-            place.comments.Add(comment);
-            user.comments.Add(comment);
-            db.SaveChanges();
 
-            if (redis.IsSet(place.place_id.ToString()))
+                }
+
+                Comment_Log comment = new Comment_Log();
+                comment.user_id = user.user_id;
+                comment.user = user;
+                comment.place_id = place.place_id;
+                comment.place = place;
+                comment.text = model.comment;
+                comment.toxic_type = 2;
+                comment.createdOn = DateTime.Now;
+                comment.IsActive = true;
+
+                db.Comment_Logs.Add(comment);
+                db.SaveChanges();
+
+                if (redis.IsSet(place.place_id.ToString()))
+                {
+                    redis.Remove(place.place_id.ToString());
+                }
+
+                return RedirectToAction("badSlangCommentDirection");
+            }
+            else
             {
-                redis.Remove(place.place_id.ToString());
+                foreach (var data in model.scores)
+                {
+                    Question_Definition addQuestion = new Question_Definition();
+                    int sorguKey = int.Parse(data.Key);
+                    addQuestion = db.Question_Definitions.Where(x => x.question_id == sorguKey).FirstOrDefault();
+                    Survey addQuiz = new Survey();
+                    if (addQuestion != null)
+                    {
+                        addQuiz.user_id = user.user_id;
+                        addQuiz.user = user;
+                        addQuiz.place_id = place.place_id;
+                        addQuiz.place = place;
+                        addQuiz.question_id = addQuestion.question_id;
+                        addQuiz.question_definitioın = addQuestion;
+                        if (addQuestion.question_type_id == 1)
+                        {
+                            Combobox_Answer combo = new Combobox_Answer();
+                            combo = db.Combobox_Answers.Where(x => x.question_answer == data.Value).FirstOrDefault();
+                            addQuiz.score = combo.question_answer_id;
+                        }
+                        else
+                        {
+                            addQuiz.score = int.Parse(data.Value);
+                        }
+                        addQuiz.createdOn = DateTime.Now;
+                        addQuiz.IsActive = true;
+
+                        db.Surveys.Add(addQuiz);
+                        place.surveys.Add(addQuiz);
+                        user.surveys.Add(addQuiz);
+                        db.SaveChanges();
+                    }
+
+
+                }
+
+                Comment comment = new Comment();
+                comment.user_id = user.user_id;
+                comment.user = user;
+                comment.place_id = place.place_id;
+                comment.place = place;
+                comment.text = model.comment;
+                comment.createdOn = DateTime.Now;
+                comment.IsActive = true;
+
+                db.Comments.Add(comment);
+                place.comments.Add(comment);
+                user.comments.Add(comment);
+                db.SaveChanges();
+
+                if (redis.IsSet(place.place_id.ToString()))
+                {
+                    redis.Remove(place.place_id.ToString());
+                }
             }
+
+
+
 
 
             return RedirectToAction("PlaceProfile", new { placeId = place.place_id });
@@ -553,52 +712,185 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             User user = new User();
             user = db.Users.Where(x => x.username == username).FirstOrDefault();
 
-
-            foreach (var data in model.scores)
+            if (checkBadWords(model.comment))
             {
-                Question_Definition addQuestion = new Question_Definition();
-                int sorguKey = int.Parse(data.Key);
-                addQuestion = db.Question_Definitions.Where(x => x.question_id == sorguKey).FirstOrDefault();
-                Survey addQuiz = new Survey();
-                if (addQuestion != null)
+                foreach (var data in model.scores)
                 {
-                    addQuiz.user_id = user.user_id;
-                    addQuiz.user = user;
-                    addQuiz.place_id = place.place_id;
-                    addQuiz.place = place;
-                    addQuiz.question_id = addQuestion.question_id;
-                    addQuiz.question_definitioın = addQuestion;
-                    if (addQuestion.question_type_id == 1)
+                    Question_Definition addQuestion = new Question_Definition();
+                    int sorguKey = int.Parse(data.Key);
+                    addQuestion = db.Question_Definitions.Where(x => x.question_id == sorguKey).FirstOrDefault();
+                    Survey_Log addQuiz = new Survey_Log();
+                    if (addQuestion != null)
                     {
-                        Combobox_Answer combo = new Combobox_Answer();
-                        combo = db.Combobox_Answers.Where(x => x.question_answer == data.Value).FirstOrDefault();
-                        addQuiz.score = combo.question_answer_id;
-                    }
-                    else
-                    {
-                        addQuiz.score = int.Parse(data.Value);
-                    }
-                    addQuiz.createdOn = DateTime.Now;
-                    addQuiz.IsActive = true;
+                        addQuiz.user_id = user.user_id;
+                        addQuiz.user = user;
+                        addQuiz.place_id = place.place_id;
+                        addQuiz.place = place;
+                        addQuiz.question_id = addQuestion.question_id;
+                        addQuiz.question_definitioın = addQuestion;
+                        if (addQuestion.question_type_id == 1)
+                        {
+                            Combobox_Answer combo = new Combobox_Answer();
+                            combo = db.Combobox_Answers.Where(x => x.question_answer == data.Value).FirstOrDefault();
+                            addQuiz.score = combo.question_answer_id;
+                        }
+                        else
+                        {
+                            addQuiz.score = int.Parse(data.Value);
+                        }
+                        addQuiz.toxic_type = 1;
+                        addQuiz.createdOn = DateTime.Now;
+                        addQuiz.IsActive = true;
 
-                    db.Surveys.AddOrUpdate(addQuiz);
-                    db.SaveChanges();
+                        db.Survey_Logs.Add(addQuiz);
+                        db.SaveChanges();
+                    }
+
+
                 }
 
+                Comment_Log comment = new Comment_Log();
+                comment.user_id = user.user_id;
+                comment.user = user;
+                comment.place_id = place.place_id;
+                comment.place = place;
+                comment.text = model.comment;
+                comment.toxic_type = 1;
+                comment.createdOn = DateTime.Now;
+                comment.IsActive = true;
 
+                db.Comment_Logs.Add(comment);
+                db.SaveChanges();
+
+                if (redis.IsSet(place.place_id.ToString()))
+                {
+                    redis.Remove(place.place_id.ToString());
+                    var commentsAndPoints = commentHelper(db, place);
+                    var getJson = Newtonsoft.Json.JsonConvert.SerializeObject(commentsAndPoints);
+                    redis.setKey(place.place_id.ToString(), getJson, 3600);
+
+                }
+                return RedirectToAction("badSlangCommentDirection");
+            }
+            else if (checkSlangWords(model.comment))
+            {
+                foreach (var data in model.scores)
+                {
+                    Question_Definition addQuestion = new Question_Definition();
+                    int sorguKey = int.Parse(data.Key);
+                    addQuestion = db.Question_Definitions.Where(x => x.question_id == sorguKey).FirstOrDefault();
+                    Survey_Log addQuiz = new Survey_Log();
+                    if (addQuestion != null)
+                    {
+                        addQuiz.user_id = user.user_id;
+                        addQuiz.user = user;
+                        addQuiz.place_id = place.place_id;
+                        addQuiz.place = place;
+                        addQuiz.question_id = addQuestion.question_id;
+                        addQuiz.question_definitioın = addQuestion;
+                        if (addQuestion.question_type_id == 1)
+                        {
+                            Combobox_Answer combo = new Combobox_Answer();
+                            combo = db.Combobox_Answers.Where(x => x.question_answer == data.Value).FirstOrDefault();
+                            addQuiz.score = combo.question_answer_id;
+                        }
+                        else
+                        {
+                            addQuiz.score = int.Parse(data.Value);
+                        }
+                        addQuiz.toxic_type = 2;
+                        addQuiz.createdOn = DateTime.Now;
+                        addQuiz.IsActive = true;
+
+                        db.Survey_Logs.Add(addQuiz);
+                        db.SaveChanges();
+                    }
+
+
+                }
+
+                Comment_Log comment = new Comment_Log();
+                comment.user_id = user.user_id;
+                comment.user = user;
+                comment.place_id = place.place_id;
+                comment.place = place;
+                comment.text = model.comment;
+                comment.toxic_type = 2;
+                comment.createdOn = DateTime.Now;
+                comment.IsActive = true;
+
+                db.Comment_Logs.Add(comment);
+                db.SaveChanges();
+
+                if (redis.IsSet(place.place_id.ToString()))
+                {
+                    redis.Remove(place.place_id.ToString());
+                    var commentsAndPoints = commentHelper(db, place);
+                    var getJson = Newtonsoft.Json.JsonConvert.SerializeObject(commentsAndPoints);
+                    redis.setKey(place.place_id.ToString(), getJson, 3600);
+
+                }
+
+                return RedirectToAction("badSlangCommentDirection");
+            }
+            else
+            {
+                foreach (var data in model.scores)
+                {
+                    Question_Definition addQuestion = new Question_Definition();
+                    int sorguKey = int.Parse(data.Key);
+                    addQuestion = db.Question_Definitions.Where(x => x.question_id == sorguKey).FirstOrDefault();
+                    Survey addQuiz = new Survey();
+                    if (addQuestion != null)
+                    {
+                        addQuiz.user_id = user.user_id;
+                        addQuiz.user = user;
+                        addQuiz.place_id = place.place_id;
+                        addQuiz.place = place;
+                        addQuiz.question_id = addQuestion.question_id;
+                        addQuiz.question_definitioın = addQuestion;
+                        if (addQuestion.question_type_id == 1)
+                        {
+                            Combobox_Answer combo = new Combobox_Answer();
+                            combo = db.Combobox_Answers.Where(x => x.question_answer == data.Value).FirstOrDefault();
+                            addQuiz.score = combo.question_answer_id;
+                        }
+                        else
+                        {
+                            addQuiz.score = int.Parse(data.Value);
+                        }
+                        addQuiz.createdOn = DateTime.Now;
+                        addQuiz.IsActive = true;
+
+                        db.Surveys.AddOrUpdate(addQuiz);
+                        db.SaveChanges();
+                    }
+
+
+                }
+
+                Comment comment = new Comment();
+                comment.user_id = user.user_id;
+                comment.user = user;
+                comment.place_id = place.place_id;
+                comment.place = place;
+                comment.text = model.comment;
+                comment.createdOn = DateTime.Now;
+                comment.IsActive = true;
+
+                db.Comments.AddOrUpdate(comment);
+                db.SaveChanges();
+
+                if (redis.IsSet(place.place_id.ToString()))
+                {
+                    redis.Remove(place.place_id.ToString());
+                    var commentsAndPoints = commentHelper(db, place);
+                    var getJson = Newtonsoft.Json.JsonConvert.SerializeObject(commentsAndPoints);
+                    redis.setKey(place.place_id.ToString(), getJson, 3600);
+
+                }
             }
 
-            Comment comment = new Comment();
-            comment.user_id = user.user_id;
-            comment.user = user;
-            comment.place_id = place.place_id;
-            comment.place = place;
-            comment.text = model.comment;
-            comment.createdOn = DateTime.Now;
-            comment.IsActive = true;
-
-            db.Comments.AddOrUpdate(comment);
-            db.SaveChanges();
 
 
             //Question_Definition guven_question = new Question_Definition();
@@ -684,14 +976,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
             //}
 
-            if (redis.IsSet(place.place_id.ToString()))
-            {
-                redis.Remove(place.place_id.ToString());
-                var commentsAndPoints = commentHelper(db, place);
-                var getJson = Newtonsoft.Json.JsonConvert.SerializeObject(commentsAndPoints);
-                redis.setKey(place.place_id.ToString(), getJson, 3600);
 
-            }
             
             return RedirectToAction("PlaceProfile",new{placeId = place.place_id});
         }
@@ -1050,6 +1335,11 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             chart.AddLegend();
 
             return View(chart);
+        }
+
+        public ActionResult badSlangCommentDirection()
+        {
+            return View();
         }
 
     }

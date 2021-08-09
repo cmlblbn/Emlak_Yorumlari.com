@@ -25,6 +25,8 @@ namespace Emlak_Yorumlari_Entities
         public DbSet<Question_Type> Question_Types { get; set; }
         public DbSet<Combobox_Answer> Combobox_Answers { get; set; }
         public DbSet<Place_Statistics> Place_Statistics { get; set; }
+        public DbSet<Comment_Log> Comment_Logs { get; set; }
+        public DbSet<Survey_Log> Survey_Logs { get; set; }
         
     }
 }
