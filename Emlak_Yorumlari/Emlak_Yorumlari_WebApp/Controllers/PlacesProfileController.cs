@@ -246,7 +246,18 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 MyContext dbContext = new MyContext();
                 var dataList = dbContext.Place_Statistics.Where(x => x.place_id == placeId).ToList();
                 var stat = dataList.LastOrDefault();
-                Tuple<int, int> minMaxRent = minmaxRentCalculator(stat.average_rent);
+                Tuple<int, int> minMaxRent;
+                if (stat != null)
+                {
+                    minMaxRent = minmaxRentCalculator(stat.average_rent);
+
+                }
+                else
+                {
+                    minMaxRent = new Tuple<int, int>(0,0);
+
+                }
+                
 
                 minMaxstr = minMaxRent.Item1.ToString() + " - " + minMaxRent.Item2.ToString();
                 dbContext = null;
@@ -1061,25 +1072,35 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             {
                 var dataStats = db.Place_Statistics.Where(x => x.place_id == placeId).ToList();
                 var dataStat = dataStats.LastOrDefault();
-                int dataCount = dataStat.male_count + dataStat.female_count + dataStat.otherSex_count;
-                chartData_yAxis[0] = dataStat.male_count;
-                chartData_yAxis[1] = dataStat.female_count;
-                chartData_yAxis[2] = dataStat.otherSex_count;
-                for (int i = 0; i < chartData_xAxis.Length; i++)
+                if(dataStat != null)
                 {
-                    if (dataCount == 0)
+                    int dataCount = dataStat.male_count + dataStat.female_count + dataStat.otherSex_count;
+                    chartData_yAxis[0] = dataStat.male_count;
+                    chartData_yAxis[1] = dataStat.female_count;
+                    chartData_yAxis[2] = dataStat.otherSex_count;
+                    for (int i = 0; i < chartData_xAxis.Length; i++)
                     {
-                        chartData_xAxis[i] = chartData_xAxis[i] + " % 0";
-                    }
-                    else
-                    {
-                        float xDataElement = (float)chartData_yAxis[i] / dataCount;
-                        xDataElement = (float)Math.Round(xDataElement * 100f) / 100f;
-                        xDataElement = xDataElement * 100;
-                        chartData_xAxis[i] = chartData_xAxis[i] + " % " + xDataElement.ToString();
-                    }
+                        if (dataCount == 0)
+                        {
+                            chartData_xAxis[i] = chartData_xAxis[i] + " % 0";
+                        }
+                        else
+                        {
+                            float xDataElement = (float)chartData_yAxis[i] / dataCount;
+                            xDataElement = (float)Math.Round(xDataElement * 100f) / 100f;
+                            xDataElement = xDataElement * 100;
+                            chartData_xAxis[i] = chartData_xAxis[i] + " % " + xDataElement.ToString();
+                        }
 
+                    }
                 }
+                else
+                {
+                    chartData_yAxis[0] = 0;
+                    chartData_yAxis[1] = 0;
+                    chartData_yAxis[2] = 0;
+                }
+    
             }
             Chart chart = new Chart(400, 500, theme: ChartTheme.Yellow).AddTitle("Sitede Yaşayanların Cinsiyet Dağılımı").AddSeries(name: "GenderStatus", chartType: "Doughnut",
             xValue: chartData_xAxis,
@@ -1119,29 +1140,41 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             {
                 var dataStats = db.Place_Statistics.Where(x => x.place_id == placeId).ToList();
                 var dataStat = dataStats.LastOrDefault();
-                int dataCount = dataStat.primarySchool_count + dataStat.middleSchool_count + dataStat.highSchool_count + dataStat.degree_count + dataStat.masterDegree_count;
-
-                chartData_yAxis[0] = dataStat.primarySchool_count;
-                chartData_yAxis[1] = dataStat.middleSchool_count;
-                chartData_yAxis[2] = dataStat.highSchool_count;
-                chartData_yAxis[3] = dataStat.degree_count;
-                chartData_yAxis[4] = dataStat.masterDegree_count;
-
-                for (int i = 0; i < chartData_xAxis.Length; i++)
+                if(dataStat != null)
                 {
-                    if (dataCount == 0)
-                    {
-                        chartData_xAxis[i] = chartData_xAxis[i] + " % 0";
-                    }
-                    else
-                    {
-                        float xDataElement = (float)chartData_yAxis[i] / dataCount;
-                        xDataElement = (float)Math.Round(xDataElement * 100f) / 100f;
-                        xDataElement = xDataElement * 100;
-                        chartData_xAxis[i] = chartData_xAxis[i] + " % " + xDataElement.ToString();
-                    }
+                    int dataCount = dataStat.primarySchool_count + dataStat.middleSchool_count + dataStat.highSchool_count + dataStat.degree_count + dataStat.masterDegree_count;
 
+                    chartData_yAxis[0] = dataStat.primarySchool_count;
+                    chartData_yAxis[1] = dataStat.middleSchool_count;
+                    chartData_yAxis[2] = dataStat.highSchool_count;
+                    chartData_yAxis[3] = dataStat.degree_count;
+                    chartData_yAxis[4] = dataStat.masterDegree_count;
+
+                    for (int i = 0; i < chartData_xAxis.Length; i++)
+                    {
+                        if (dataCount == 0)
+                        {
+                            chartData_xAxis[i] = chartData_xAxis[i] + " % 0";
+                        }
+                        else
+                        {
+                            float xDataElement = (float)chartData_yAxis[i] / dataCount;
+                            xDataElement = (float)Math.Round(xDataElement * 100f) / 100f;
+                            xDataElement = xDataElement * 100;
+                            chartData_xAxis[i] = chartData_xAxis[i] + " % " + xDataElement.ToString();
+                        }
+
+                    }
                 }
+                else
+                {
+                    chartData_yAxis[0] = 0;
+                    chartData_yAxis[1] = 0;
+                    chartData_yAxis[2] = 0;
+                    chartData_yAxis[3] = 0;
+                    chartData_yAxis[4] = 0;
+                }
+
             }
 
             Chart chart = new Chart(400, 500, theme: ChartTheme.Yellow);
@@ -1185,26 +1218,37 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             {
                 var dataStats = db.Place_Statistics.Where(x => x.place_id == placeId).ToList();
                 var dataStat = dataStats.LastOrDefault();
-                int dataCount = dataStat.married_count + dataStat.single_count + dataStat.divorced_count + dataStat.widow_count;
-                chartData_yAxis[0] = dataStat.married_count;
-                chartData_yAxis[1] = dataStat.single_count;
-                chartData_yAxis[2] = dataStat.divorced_count;
-                chartData_yAxis[3] = dataStat.widow_count;
-                for (int i = 0; i < chartData_xAxis.Length; i++)
+                if(dataStat != null)
                 {
-                    if (dataCount == 0)
+                    int dataCount = dataStat.married_count + dataStat.single_count + dataStat.divorced_count + dataStat.widow_count;
+                    chartData_yAxis[0] = dataStat.married_count;
+                    chartData_yAxis[1] = dataStat.single_count;
+                    chartData_yAxis[2] = dataStat.divorced_count;
+                    chartData_yAxis[3] = dataStat.widow_count;
+                    for (int i = 0; i < chartData_xAxis.Length; i++)
                     {
-                        chartData_xAxis[i] = chartData_xAxis[i] + " % 0";
-                    }
-                    else
-                    {
-                        float xDataElement = (float)chartData_yAxis[i] / dataCount;
-                        xDataElement = (float)Math.Round(xDataElement * 100f) / 100f;
-                        xDataElement = xDataElement * 100;
-                        chartData_xAxis[i] = chartData_xAxis[i] + " % " + xDataElement.ToString();
-                    }
+                        if (dataCount == 0)
+                        {
+                            chartData_xAxis[i] = chartData_xAxis[i] + " % 0";
+                        }
+                        else
+                        {
+                            float xDataElement = (float)chartData_yAxis[i] / dataCount;
+                            xDataElement = (float)Math.Round(xDataElement * 100f) / 100f;
+                            xDataElement = xDataElement * 100;
+                            chartData_xAxis[i] = chartData_xAxis[i] + " % " + xDataElement.ToString();
+                        }
 
+                    }
                 }
+                else
+                {
+                    chartData_yAxis[0] = 0;
+                    chartData_yAxis[1] = 0;
+                    chartData_yAxis[2] = 0;
+                    chartData_yAxis[3] = 0;
+                }
+ 
             }
 
             Chart chart = new Chart(400, 500, theme: ChartTheme.Yellow);
@@ -1249,26 +1293,37 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             {
                 var dataStats = db.Place_Statistics.Where(x => x.place_id == placeId).ToList();
                 var dataStat = dataStats.LastOrDefault();
-                int dataCount = dataStat.age_lower_18 + dataStat.age_between_18_34 + dataStat.age_between_34_55 + dataStat.age_upper_55;
-                chartData_yAxis[0] = dataStat.age_lower_18;
-                chartData_yAxis[1] = dataStat.age_between_18_34;
-                chartData_yAxis[2] = dataStat.age_between_34_55;
-                chartData_yAxis[3] = dataStat.age_upper_55;
-                for (int i = 0; i < chartData_xAxis.Length; i++)
+                if(dataStat != null)
                 {
-                    if (dataCount == 0)
+                    int dataCount = dataStat.age_lower_18 + dataStat.age_between_18_34 + dataStat.age_between_34_55 + dataStat.age_upper_55;
+                    chartData_yAxis[0] = dataStat.age_lower_18;
+                    chartData_yAxis[1] = dataStat.age_between_18_34;
+                    chartData_yAxis[2] = dataStat.age_between_34_55;
+                    chartData_yAxis[3] = dataStat.age_upper_55;
+                    for (int i = 0; i < chartData_xAxis.Length; i++)
                     {
-                        chartData_xAxis[i] = chartData_xAxis[i] + " % 0";
-                    }
-                    else
-                    {
-                        float xDataElement = (float)chartData_yAxis[i] / dataCount;
-                        xDataElement = (float)Math.Round(xDataElement * 100f) / 100f;
-                        xDataElement = xDataElement * 100;
-                        chartData_xAxis[i] = chartData_xAxis[i] + " % " + xDataElement.ToString();
-                    }
+                        if (dataCount == 0)
+                        {
+                            chartData_xAxis[i] = chartData_xAxis[i] + " % 0";
+                        }
+                        else
+                        {
+                            float xDataElement = (float)chartData_yAxis[i] / dataCount;
+                            xDataElement = (float)Math.Round(xDataElement * 100f) / 100f;
+                            xDataElement = xDataElement * 100;
+                            chartData_xAxis[i] = chartData_xAxis[i] + " % " + xDataElement.ToString();
+                        }
 
+                    }
                 }
+                else
+                {
+                    chartData_yAxis[0] = 0;
+                    chartData_yAxis[1] = 0;
+                    chartData_yAxis[2] = 0;
+                    chartData_yAxis[3] = 0;
+                }
+ 
             }
 
             Chart chart = new Chart(400, 500, theme: ChartTheme.Yellow);

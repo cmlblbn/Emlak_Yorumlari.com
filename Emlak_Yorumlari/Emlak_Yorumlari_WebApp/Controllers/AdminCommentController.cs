@@ -15,6 +15,25 @@ namespace Emlak_Yorumlari_WebApp.Controllers
     public class AdminCommentController : Controller
     {
         private MyContext db = new MyContext();
+
+        public static void deleteToxicCommentDaily()
+        {
+            MyContext db_delete = new MyContext();
+            var toxicComment = db_delete.Comment_Logs.Where(x => x.toxic_type == 1 && x.createdOn.Day <= (DateTime.Now.Day - 1)).ToList();
+            var toxicScore = db_delete.Survey_Logs.Where(x => x.toxic_type == 1 && x.createdOn.Day <= (DateTime.Now.Day - 1)).ToList();
+
+            foreach(var comment in toxicComment)
+            {
+                db_delete.Comment_Logs.Remove(comment);
+                db_delete.SaveChanges();
+            }
+            foreach(var score in toxicScore)
+            {
+                db_delete.Survey_Logs.Remove(score);
+                db_delete.SaveChanges();
+            }
+        }
+
         // GET: AdminComment
         public ActionResult ShowComment()
         {

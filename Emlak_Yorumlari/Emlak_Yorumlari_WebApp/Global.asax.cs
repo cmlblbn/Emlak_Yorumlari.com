@@ -14,7 +14,10 @@ namespace Emlak_Yorumlari_WebApp
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            //Cron Jobs Schedule
             getPlaceStatisticsTrigger.Trigger();
+            deleteToxicCommentDailyTrigger.Trigger();
         }
     }
 }
