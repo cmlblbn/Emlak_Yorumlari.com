@@ -26,6 +26,8 @@ namespace Emlak_Yorumlari.Models
         [StringLength(10000, ErrorMessage = "text alanı max. {0} karakter olmalıdır.")]
         public string text { get; set; }
 
+        public System.Nullable<bool> isLabeled { get; set; }
+
         public int toxic_type { get; set; }
 
         public DateTime createdOn { get; set; }

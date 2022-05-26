@@ -105,12 +105,44 @@
     <Compile Include="Migrations\202108090821385_commentandsurveyLog.designer.cs">
       <DependentUpon>202108090821385_commentandsurveyLog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205171622207_mlops.cs" />
+    <Compile Include="Migrations\202205171622207_mlops.designer.cs">
+      <DependentUpon>202205171622207_mlops.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205171633051_cronjobTypeRowAppend.cs" />
+    <Compile Include="Migrations\202205171633051_cronjobTypeRowAppend.designer.cs">
+      <DependentUpon>202205171633051_cronjobTypeRowAppend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205191152327_update_log.cs" />
+    <Compile Include="Migrations\202205191152327_update_log.designer.cs">
+      <DependentUpon>202205191152327_update_log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205191638069_update_maodel.cs" />
+    <Compile Include="Migrations\202205191638069_update_maodel.designer.cs">
+      <DependentUpon>202205191638069_update_maodel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205221903252_updateDatabaseEmbeddingAnalyse.cs" />
+    <Compile Include="Migrations\202205221903252_updateDatabaseEmbeddingAnalyse.designer.cs">
+      <DependentUpon>202205221903252_updateDatabaseEmbeddingAnalyse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205261808234_last_update.cs" />
+    <Compile Include="Migrations\202205261808234_last_update.designer.cs">
+      <DependentUpon>202205261808234_last_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205261813041_last_update_2.cs" />
+    <Compile Include="Migrations\202205261813041_last_update_2.designer.cs">
+      <DependentUpon>202205261813041_last_update_2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Adress_Description.cs" />
     <Compile Include="Models\Adress_Type.cs" />
     <Compile Include="Models\Combobox_Answer.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Comment_Log.cs" />
+    <Compile Include="Models\Crobjob_Parameter.cs" />
+    <Compile Include="Models\Embedding.cs" />
+    <Compile Include="Models\Embedding_Analyse.cs" />
+    <Compile Include="Models\Model.cs" />
     <Compile Include="Models\Place.cs" />
     <Compile Include="Models\Place_Statistics.cs" />
     <Compile Include="Models\Question_Definition.cs" />
@@ -139,6 +171,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108090821385_commentandsurveyLog.resx">
       <DependentUpon>202108090821385_commentandsurveyLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205171622207_mlops.resx">
+      <DependentUpon>202205171622207_mlops.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205171633051_cronjobTypeRowAppend.resx">
+      <DependentUpon>202205171633051_cronjobTypeRowAppend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205191152327_update_log.resx">
+      <DependentUpon>202205191152327_update_log.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205191638069_update_maodel.resx">
+      <DependentUpon>202205191638069_update_maodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205221903252_updateDatabaseEmbeddingAnalyse.resx">
+      <DependentUpon>202205221903252_updateDatabaseEmbeddingAnalyse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205261808234_last_update.resx">
+      <DependentUpon>202205261808234_last_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205261813041_last_update_2.resx">
+      <DependentUpon>202205261813041_last_update_2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

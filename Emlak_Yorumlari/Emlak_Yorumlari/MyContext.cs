@@ -15,6 +15,11 @@ namespace Emlak_Yorumlari_Entities
         {
             // Database.SetInitializer(new MigrateDatabaseToLatestVersion<MyContext, Emlak_Yorumlari.Migrations.Configuration>());
         }
+
+        public DbSet<Model> Models { get; set; }
+        public DbSet<Embedding> Embeddings { get; set; }
+        public DbSet<Crobjob_Parameter> Cronjob_Parameters { get; set; }
+        public DbSet<Embedding_Analyse> Embedding_Analyses { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Place> Places { get; set; }
         public DbSet<Comment> Comments { get; set; }

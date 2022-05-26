@@ -28,7 +28,7 @@ namespace Emlak_Yorumlari_WebApp.ViewModels
         public float mainScore { get; set; }
         
         public string minMaxRentStr { get; set; }
-
+        public string prediction { get; set; }
         [DisplayName("Yorum"), Required(ErrorMessage = "{0} alanı boş geçilemez!"), StringLength(25, ErrorMessage = "{0} alanı max {1} karater olmalı!")]
         public string comment { get; set; }
 

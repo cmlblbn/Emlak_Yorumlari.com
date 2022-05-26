@@ -1,0 +1,214 @@
+﻿@using Emlak_Yorumlari_WebApp.ViewModels
+@model MLopsEmbeddingViewModel
+@{
+    ViewBag.Title = "MLopsEmbedding";
+    Layout = "~/Views/Shared/_MLopsLayout.cshtml";
+}
+
+<link href="~/Content/shop-homepage.css" rel="stylesheet" />
+<!-- Page Content -->
+
+<div class="container">
+
+    <div class="row">
+
+
+        <div class="col-md-12">
+
+
+            @*İçerikler*@
+            <div class="row">
+
+
+
+                <div class="col-md-12 alert-warning">
+
+                    <span class="label">
+                        <h2 class="text-primary">
+                            EMBEDDİNG ANALİZLERİ
+
+                        </h2>
+                    </span>
+                    <br />
+
+                </div>
+                <div class="col-md-12 alert-warning ">
+                    <hr />
+                </div>
+                <div class="col-md-12 alert-warning ">
+                    <h4 class="text-center">
+                        Burada yapılan son analizler sonucunda verilerdeki dağılım değişimini inceleyebilirsiniz
+                    </h4>
+                </div>
+                <div class="col-md-12 alert-warning ">
+                    <hr />
+                </div>
+                @foreach (var value in Model.data)
+                {
+
+                    <div class="col-md-6 alert-success ">
+                        <h4 class="text-center">
+                            Embedding analiz tarihi: @value.lastAnalyseDate
+                        </h4>
+                    </div>
+                    <div class="col-md-6 alert-success ">
+                        <h4 class="text-center">
+                            Kullback Leibler Değişim Katsayısı: @value.kl_divergenceValue
+                        </h4>
+                    </div>
+                    <div class="col-md-12 alert-warning ">
+                        <hr />
+                    </div>
+                }
+                <div class="col-md-12 alert-warning ">
+                    <hr />
+                </div>
+                <div class="col-md-12 alert-warning ">
+                    <h4 class="text-center">
+                        Son analiz: @Model.lastAnalyseDate
+                    </h4>
+                </div>
+                <div class="col-md-12 alert-warning ">
+                    <h4 class="text-center">
+                        Embedding analizi yapmak için aşağıya tıklayabilirsiniz.<h4 class="text-center text-danger">(Not: sistemdeki veri sayısına göre işlem uzun sürecektir)</h4>
+                    </h4>
+                </div>
+                <div class="col-md-12 alert-warning ">
+                    <div class="text-center btn-group-lg">
+
+                        @Html.ActionLink("Embedding Analizi Yap", "GetEmbedding", "MLopsEmbedding", null, new { @class = "btn btn-success" })
+                    </div>
+                </div>
+
+                <div class="col-md-12 alert-warning ">
+                    <hr />
+                </div>
+                <div class="col-md-12 alert-warning ">
+                    <hr />
+                </div>
+                <div class="col-md-12 alert-warning ">
+                    <h4 class="text-center">
+                        Burada eğitimde kullanılmış ve eğitimde kullanılmaya hazır yeni verilerin dağılımlarını görsel olarak inceleyebilirsiniz
+                    </h4>
+                </div>
+                <div class="col-md-12 alert-warning ">
+                    <hr />
+                </div>
+                <div class="col-md-12 alert-warning ">
+                    <hr />
+                </div>
+                <div class="col-md-6 alert-success">
+
+                    <h5>
+                        Kelime Dağılımı (Eğitilmiş)
+
+                    </h5>
+                    <img id="img1" class="img-responsive img-rounded" src='@Url.Content("~/Content/proje/src/backend/Classes/Embedding/trained/"+ Model.trained_path + "/embedding.png")'>
+                </div>
+                <div class="col-md-6 alert-success">
+
+                    <h5>
+                        Kelime Dağılımı (Yeni veriler)
+                    </h5>
+                    <img id="img2" class="img-responsive img-rounded" src='@Url.Content("~/Content/proje/src/backend/Classes/Embedding/nonTrained/"+ Model.nontrained_path+ "/embedding.png")'>
+
+                </div>
+                <div class="col-md-12 alert-warning ">
+                    <hr />
+                </div>
+
+                @*Classların kelime analizleri*@
+                <div class="col-md-6 alert-success">
+
+                    <h5>
+                        Sınıflara Özel Kelime Dağılımı: 0:Olumlu, 1:Olumsuz, 2:Küfürlü (Eğitilmiş)
+                    </h5>
+                    <img id="img3" class="img-responsive img-rounded" src='@Url.Content("~/Content/proje/src/backend/Classes/Embedding/trained/"+ Model.trained_path + "/classes.png")'>
+
+                </div>
+                <div class="col-md-6 alert-success">
+
+                    <h5>
+                        Sınıflara Özel Kelime Dağılımı: 0:Olumlu, 1:Olumsuz, 2:Küfürlü (Yeni Verileri)
+                    </h5>
+                    <img id="img4" class="img-responsive img-rounded" src='@Url.Content("~/Content/proje/src/backend/Classes/Embedding/nonTrained/"+ Model.nontrained_path + "/classes.png")'>
+
+                </div>
+                <div class="col-md-12 alert-warning ">
+                    <hr />
+                </div>
+
+                @*Pozitif kelime analizleri*@
+                <div class="col-md-6 alert-success">
+
+                    <h5>
+                        En Çok Kullanılan 40 Pozitif Kelime (Eğitilmiş)
+                    </h5>
+                    <img id="img5" class="img-responsive img-rounded" src='@Url.Content("~/Content/proje/src/backend/Classes/Embedding/trained/"+ Model.trained_path + "/positive.png")'>
+
+                </div>
+                <div class="col-md-6 alert-success">
+
+                    <h5>
+                        En Çok Kullanılan 40 Pozitif Kelime (Yeni Verileri)
+                    </h5>
+                    <img id="img6" class="img-responsive img-rounded" src='@Url.Content("~/Content/proje/src/backend/Classes/Embedding/nonTrained/"+ Model.nontrained_path + "/positive.png")'>
+                </div>
+                <div class="col-md-12 alert-warning ">
+                    <hr />
+                </div>
+
+                @*Negatif kelime analizleri*@
+                <div class="col-md-6 alert-success">
+
+                    <h5>
+                        En Çok Kullanılan 40 Negatif Kelime (Eğitilmiş)
+                    </h5>
+                    <img id="img7" class="img-responsive img-rounded" src='@Url.Content("~/Content/proje/src/backend/Classes/Embedding/trained/"+ Model.trained_path + "/negative.png")'>
+
+                </div>
+                <div class="col-md-6 alert-success">
+
+                    <h5>
+                        En Çok Kullanılan 40 Negatif Kelime (Yeni Verileri)
+                    </h5>
+                    <img id="img8" class="img-responsive img-rounded" src='@Url.Content("~/Content/proje/src/backend/Classes/Embedding/nonTrained/"+ Model.nontrained_path + "/negative.png")'>
+
+                </div>
+                <div class="col-md-12 alert-warning ">
+                    <hr />
+                </div>
+
+                @*Küfürlü kelime analizleri*@
+                <div class="col-md-6 alert-success">
+
+                    <h5>
+                        En Çok Kullanılan 40 Küfürlü Kelime (Eğitilmiş)
+                    </h5>
+                    <img id="img9" class="img-responsive img-rounded" src='@Url.Content("~/Content/proje/src/backend/Classes/Embedding/trained/"+ Model.trained_path + "/swear.png")'>
+
+                </div>
+                <div class="col-md-6 alert-success">
+
+                    <h5>
+                        En Çok Kullanılan 40 Küfürlü Kelime (Yeni Verileri)
+                    </h5>
+                    <img id="img10" class="img-responsive img-rounded" src='@Url.Content("~/Content/proje/src/backend/Classes/Embedding/nonTrained/"+ Model.nontrained_path + "/swear.png")'>
+
+                </div>
+                <div class="col-md-12 alert-warning ">
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    const el = document.getElementById('img5');
+    console.log(el);
+
+
+
+</script>

@@ -1,0 +1,151 @@
+﻿@using Emlak_Yorumlari_WebApp.ViewModels
+@model ModelDetailViewModel
+@{
+    ViewBag.Title = "MLopsModel";
+    Layout = "~/Views/Shared/_MLopsLayout.cshtml";
+}
+
+<link href="~/Content/shop-homepage.css" rel="stylesheet" />
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+
+
+        <div class="col-md-12 alert-success">
+
+
+            @*İçerikler*@
+            <div class="row">
+
+                <div class="col-md-12 alert-warning">
+                    <div>
+                        <ul class="pager">
+                            <li class="previous"><span aria-hidden="true"> @Html.ActionLink("<--", "MLopsModel", "MLopsModel", new { model_id = Model.model.model_id })</span></a></li>
+                        </ul>
+
+                    </div>
+                    <span class="label">
+                        <h2 class="text-primary">
+                            MODEL YÖNETİM MERKEZİ
+
+                        </h2>
+                    </span>
+                    <br />
+
+                </div>
+
+                <div class="col-md-12 alert-warning ">
+                    <hr />
+                </div>
+                <div class="col-md-12 alert-warning ">
+                    <h4 class="text-center">
+                        Sistemde üretilen modellerin detayları burada görüntülenir.
+                    </h4>
+                </div>
+
+
+                <div class="col-md-12 alert-warning ">
+                    <hr />
+                </div>
+                <br />
+
+
+                <div class="col-md-6 alert-success">
+
+                    <h5>
+                        Model Accuracy
+
+                    </h5>
+                    <img class="img-responsive img-rounded" src="~/Content/proje/src/backend/@Model.model.modelName/statistic/acc.png">
+                </div>
+                <div class="col-md-6 alert-success">
+
+                    <h5>
+                        Model Loss
+                    </h5>
+                    <img class="img-responsive img-rounded" src="~/Content/proje/src/backend/@Model.model.modelName/statistic/loss.png">
+
+                </div>
+                <div class="col-md-9 alert-success ">
+                    <h3 class="text-primary text-left">
+                        Model Bilgileri
+                    </h3>
+
+                    <p class="text-info">
+                        <span class="text-primary">Model adı:</span> @Model.model.modelName &nbsp; <span class="text-primary">Model Test Accuracy:</span> @{float acc = Model.model.Accuracy; acc = acc * 100; string accStr = acc.ToString("0.00");} %@accStr &nbsp;<span class="text-primary">Model Test Loss:</span>@{float loss = Model.model.loss; loss = loss * 100; string lossStr = loss.ToString("0.00");} %@lossStr &nbsp; <br />
+                        <span class="text-primary">Model Batch Size:</span> @Model.model.batch_size &nbsp; <span class="text-primary">Model Maximum Kelime Uzunluğu:</span> @Model.model.maxlen &nbsp; <span class="text-primary">Model Epoch Sayısı:</span> @Model.model.epoch &nbsp; <br />
+                        <span class="text-primary">Model Oluşturulma Zamanı:</span> @Model.model.createdOn
+                    </p>
+                    @if (Model.model.isActive)
+                    {
+
+                        <h4 class="glyphicon glyphicon-heart">
+                            Aktif Model
+                        </h4>
+
+                    }
+
+                </div>
+                @if (!Model.model.isActive)
+                {
+
+                    <div class="col-md-3 text-right bottom btn-group-lg">
+                        @Html.ActionLink("AKTİF ET", "ModelActivate", "MLopsModel", new { model_id = Model.model.model_id }, new { @class = "btn btn-success" })
+                    </div>
+                    <div class="col-md-12 alert-warning ">
+                        <hr />
+                    </div>
+
+                }
+
+                @using (Html.BeginForm())
+                {
+                    <div class="col-md-12 alert-warning ">
+                        <hr />
+                    </div>
+
+                    <div class="col-md-12 alert-warning ">
+                        <h4 class="text-center">
+                            Eğitilmiş model üzerinde örnek denemelerde bulunabilirsiniz.
+                        </h4>
+                    </div>
+                    <div class="col-md-12 alert-warning ">
+                        <hr />
+                    </div>
+
+                    <div class="col-md-12">
+                        <p>
+
+                        </p>
+
+                        @Html.TextAreaFor(model => model.predictText, new { @class = "form-control", @required = "required", placeholder = "Test için değer giriniz" })
+
+
+
+                    </div>
+                    <div class="col-md-12">
+                        <div class="text-center btn-group-lg">
+                            <p>
+
+                            </p>
+                            <button type="submit" class="btn btn-warning btn-group-lg">Test Et</button>
+
+                        </div>
+                        <h3>
+                            Tahmin: 
+                            <span class="text-info">
+                                @Model.predict
+                                
+                            </span>
+                        </h3>
+                    </div>
+                    <div class="col-md-12 alert-warning ">
+                        <hr />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -12,12 +12,13 @@ namespace Emlak_Yorumlari_WebApp
     {
         protected void Application_Start()
         {
+
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
             //Cron Jobs Schedule
             getPlaceStatisticsTrigger.Trigger();
-            deleteToxicCommentDailyTrigger.Trigger();
+            TrainTrigger.Trigger();
         }
     }
 }

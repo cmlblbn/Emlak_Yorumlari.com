@@ -147,14 +147,31 @@
     }
 </script>
 
-
+<script>
+              
+        $.ajax({
+            url: 'http://localhost:4444/predict/',
+            type: 'POST',
+            data: JSON.stringify({ "text": "her şey çok kötü gidiyor..." }),
+            dataType: 'JSON',
+            contentType: "application/json",
+            success: function (data) {
+                console.log(data.response);
+                
+                
+            },
+            error: function () {
+            }
+        });
+           
+        
+</script>
 
 <div class="row">
     <div class="container">
         <div class="col-md-10 col-md-offset-1">
-          
-            <div class="well">
 
+            <div class="well">
                 <img class="img-responsive img-rounded" src="@Url.Action("ReturnImage", "Place", new {Id = Model.place.place_id})" alt="" width="900" height="400">
                 <div class="caption-full">
 
@@ -255,59 +272,59 @@
                         @*<div class="form-control">
 
 
-                    @Html.DisplayFor(x => Model.question1_name)
+                                @Html.DisplayFor(x => Model.question1_name)
 
-                    <fieldset class="rating table-responsive" style="margin-top:-32px; margin-right:350px;">
-
-
-                        @Html.RadioButtonFor(x => Model.guven_puani_score, "5", new { id = "star21", required = "required" })<label class="fulla" for="star21" title="Awesome - 5 stars"></label>
-                        @Html.RadioButtonFor(x => Model.guven_puani_score, "4", new { id = "star22", required = "required" })<label class="fulla" for="star22" title="Awesome - 5 stars"></label>
-                        @Html.RadioButtonFor(x => Model.guven_puani_score, "3", new { id = "star23", required = "required" })<label class="fulla" for="star23" title="Awesome - 5 stars"></label>
-                        @Html.RadioButtonFor(x => Model.guven_puani_score, "2", new { id = "star24", required = "required" })<label class="fulla" for="star24" title="Awesome - 5 stars"></label>
-                        @Html.RadioButtonFor(x => Model.guven_puani_score, "1", new { id = "star25", required = "required" })<label class="fulla" for="star25" title="Awesome - 5 stars"></label>
-
-                    </fieldset>
+                                <fieldset class="rating table-responsive" style="margin-top:-32px; margin-right:350px;">
 
 
-                </div>
-                <br />
+                                    @Html.RadioButtonFor(x => Model.guven_puani_score, "5", new { id = "star21", required = "required" })<label class="fulla" for="star21" title="Awesome - 5 stars"></label>
+                                    @Html.RadioButtonFor(x => Model.guven_puani_score, "4", new { id = "star22", required = "required" })<label class="fulla" for="star22" title="Awesome - 5 stars"></label>
+                                    @Html.RadioButtonFor(x => Model.guven_puani_score, "3", new { id = "star23", required = "required" })<label class="fulla" for="star23" title="Awesome - 5 stars"></label>
+                                    @Html.RadioButtonFor(x => Model.guven_puani_score, "2", new { id = "star24", required = "required" })<label class="fulla" for="star24" title="Awesome - 5 stars"></label>
+                                    @Html.RadioButtonFor(x => Model.guven_puani_score, "1", new { id = "star25", required = "required" })<label class="fulla" for="star25" title="Awesome - 5 stars"></label>
 
-                <div class="form-control">
-
-                    @Html.DisplayFor(x => x.question2_name) Puanı
-
-                    <fieldset class="rating table-responsive" style="margin-top:-32px; margin-right:350px;">
-
-
-                        @Html.RadioButtonFor(x => Model.aktivite_alani_score, "5", new { id = "star31", required = "required" })<label class="fullb" for="star31" title="Awesome - 51 stars"></label>
-                        @Html.RadioButtonFor(x => Model.aktivite_alani_score, "4", new { id = "star32", required = "required" })<label class="fullb" for="star32" title="Awesome - 51 stars"></label>
-                        @Html.RadioButtonFor(x => Model.aktivite_alani_score, "3", new { id = "star33", required = "required" })<label class="fullb" for="star33" title="Awesome - 51 stars"></label>
-                        @Html.RadioButtonFor(x => Model.aktivite_alani_score, "2", new { id = "star34", required = "required" })<label class="fullb" for="star34" title="Awesome - 51 stars"></label>
-                        @Html.RadioButtonFor(x => Model.aktivite_alani_score, "1", new { id = "star35", required = "required" })<label class="fullb" for="star35" title="Awesome - 51 stars"></label>
-
-                    </fieldset>
-
-                </div>
-                <br />
-                <div class="form-control">
+                                </fieldset>
 
 
+                            </div>
+                            <br />
+
+                            <div class="form-control">
+
+                                @Html.DisplayFor(x => x.question2_name) Puanı
+
+                                <fieldset class="rating table-responsive" style="margin-top:-32px; margin-right:350px;">
 
 
-                    @Html.DisplayFor(x => x.question3_name) Puanı
-                    <fieldset class="rating table-responsive" style="margin-top:-32px; margin-right:350px;">
+                                    @Html.RadioButtonFor(x => Model.aktivite_alani_score, "5", new { id = "star31", required = "required" })<label class="fullb" for="star31" title="Awesome - 51 stars"></label>
+                                    @Html.RadioButtonFor(x => Model.aktivite_alani_score, "4", new { id = "star32", required = "required" })<label class="fullb" for="star32" title="Awesome - 51 stars"></label>
+                                    @Html.RadioButtonFor(x => Model.aktivite_alani_score, "3", new { id = "star33", required = "required" })<label class="fullb" for="star33" title="Awesome - 51 stars"></label>
+                                    @Html.RadioButtonFor(x => Model.aktivite_alani_score, "2", new { id = "star34", required = "required" })<label class="fullb" for="star34" title="Awesome - 51 stars"></label>
+                                    @Html.RadioButtonFor(x => Model.aktivite_alani_score, "1", new { id = "star35", required = "required" })<label class="fullb" for="star35" title="Awesome - 51 stars"></label>
+
+                                </fieldset>
+
+                            </div>
+                            <br />
+                            <div class="form-control">
 
 
-                        @Html.RadioButtonFor(x => Model.yonetim_memnuniyeti_score, "5", new { id = "star41", required = "required" })<label class="fullc" for="star41" title="Awesome -2 5 stars"></label>
-                        @Html.RadioButtonFor(x => Model.yonetim_memnuniyeti_score, "4", new { id = "star42", required = "required" })<label class="fullc" for="star42" title="Awesome -2 5 stars"></label>
-                        @Html.RadioButtonFor(x => Model.yonetim_memnuniyeti_score, "3", new { id = "star43", required = "required" })<label class="fullc" for="star43" title="Awesome -2 5 stars"></label>
-                        @Html.RadioButtonFor(x => Model.yonetim_memnuniyeti_score, "2", new { id = "star44", required = "required" })<label class="fullc" for="star44" title="Awesome -2 5 stars"></label>
-                        @Html.RadioButtonFor(x => Model.yonetim_memnuniyeti_score, "1", new { id = "star45", required = "required" })<label class="fullc" for="star45" title="Awesome - 25 stars"></label>
 
-                    </fieldset>
 
-                </div>
-                <br />*@
+                                @Html.DisplayFor(x => x.question3_name) Puanı
+                                <fieldset class="rating table-responsive" style="margin-top:-32px; margin-right:350px;">
+
+
+                                    @Html.RadioButtonFor(x => Model.yonetim_memnuniyeti_score, "5", new { id = "star41", required = "required" })<label class="fullc" for="star41" title="Awesome -2 5 stars"></label>
+                                    @Html.RadioButtonFor(x => Model.yonetim_memnuniyeti_score, "4", new { id = "star42", required = "required" })<label class="fullc" for="star42" title="Awesome -2 5 stars"></label>
+                                    @Html.RadioButtonFor(x => Model.yonetim_memnuniyeti_score, "3", new { id = "star43", required = "required" })<label class="fullc" for="star43" title="Awesome -2 5 stars"></label>
+                                    @Html.RadioButtonFor(x => Model.yonetim_memnuniyeti_score, "2", new { id = "star44", required = "required" })<label class="fullc" for="star44" title="Awesome -2 5 stars"></label>
+                                    @Html.RadioButtonFor(x => Model.yonetim_memnuniyeti_score, "1", new { id = "star45", required = "required" })<label class="fullc" for="star45" title="Awesome - 25 stars"></label>
+
+                                </fieldset>
+
+                            </div>
+                            <br />*@
 
 
                         <div class="form-group">

@@ -1,0 +1,160 @@
+﻿@using Emlak_Yorumlari_WebApp.ViewModels
+@model MLopsLabelViewModel
+
+@{
+    ViewBag.Title = "MLopsLabeling";
+    Layout = "~/Views/Shared/_MLopsLayout.cshtml";
+}
+
+<link href="~/Content/shop-homepage.css" rel="stylesheet" />
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+
+
+        <div class="col-md-12 alert-success">
+
+
+            @*İçerikler*@
+            <div class="row">
+
+
+                @{
+                    Dictionary<int, string> classes = new Dictionary<int, string>();
+                    classes.Add(0, "Olumsuz");
+                    classes.Add(1, "Olumlu");
+                    classes.Add(2, "Küfürlü");
+                }
+
+                <div class="col-md-12 alert-warning">
+
+                    <span class="label">
+                        <h2 class="text-primary">
+                            VERİ ETİKETLEME MERKEZİ
+
+                        </h2>
+                    </span>
+                    <br />
+
+                </div>
+
+                <div class="col-md-12 alert-warning ">
+                    <hr />
+                </div>
+                <div class="col-md-12 alert-warning ">
+                    <h4 class="text-center">
+                        Sisteme gelen veriler doğru bir şekilde etiketlenmesi burada yapılır.
+                    </h4>
+                </div>
+                @using (Html.BeginForm())
+                { 
+
+
+
+
+                foreach (var comment in Model.data)
+                {
+                        <div class="col-md-12 alert-warning ">
+                            <hr />
+                        </div>
+                        <br />
+                        <div class="col-md-6 alert-success ">
+
+                            <div class="text-center">
+                                
+                                Text
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-2 alert-success ">
+
+                            <div class="text-center">
+                                Tahmin
+
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-3 alert-success ">
+
+                            <div class="text-center">
+                                Gerçek Etiket
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-1 alert-success ">
+
+                            <div class="text-center">
+                               
+
+                            </div>
+                        </div>
+
+
+
+                        <br />
+                        <div class="col-md-6 alert-success ">
+
+                            <div class="text-center">
+                                <br />
+                                <p class="text-danger">
+                                    @comment.text
+                                </p>
+
+
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-2 alert-success ">
+
+                            <div class="text-center">
+                                <br />
+                                <p class="text-danger">
+                                    @classes[comment.toxic_type]
+                                </p>
+
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 alert-success ">
+
+                            <div class="text-center">
+                                <br />
+                                @Html.TextBoxFor(model => model.Label, new { @class = "form-control", @oninput = "this.value = this.value.replace(/[^0-2.]/g, '').replace(/(\\..*)\\./g, '$1');", @maxlength = "1" })
+                                <p class="text-danger">
+                                    Doğru tahmin: Boş Bırakınız <br />
+                                    Olumsuz : 0  <br />
+                                    Olumlu : 1  <br />
+                                    Küfürlü : 2  <br />
+                                </p>
+
+                            </div>
+                        </div>
+
+                        @Html.Hidden("user_id",comment.user_id)
+                        @Html.Hidden("place_id",comment.place_id)
+                        <div class="col-md-1 alert-success ">
+
+                            <div class="text-center">
+                                <br />
+                                <button type="submit" class="btn btn-warning btn-group-xm">Etiketle</button>
+                                
+                            </div>
+                        </div>
+                    }
+                    <div class="col-md-12 alert-warning ">
+                        <hr />
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+

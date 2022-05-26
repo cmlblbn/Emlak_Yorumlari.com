@@ -1,0 +1,108 @@
+﻿@using Emlak_Yorumlari_WebApp.ViewModels
+@model CronJobViewModel
+@{
+    ViewBag.Title = "MLopsCronJob";
+    Layout = "~/Views/Shared/_MLopsLayout.cshtml";
+}
+
+<link href="~/Content/shop-homepage.css" rel="stylesheet" />
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+
+
+        <div class="col-md-12 alert-warning">
+
+
+            @*İçerikler*@
+            <div class="row">
+
+
+
+                <div class="col-md-12 alert-warning">
+
+                    <span class="label">
+                        <h2 class="text-primary">
+                            AYLIK EĞİTİM PARAMETRE MERKEZİ
+
+                        </h2>
+                    </span>
+                    <br />
+
+                </div>
+
+                <div class="col-md-12 alert-warning ">
+                    <hr />
+                </div>
+                <div class="col-md-12 alert-warning ">
+                    <h4 class="text-center">
+                        Her ay başı otomatik eğitim yapılacaktır
+                    </h4>
+                </div>
+                @using (Html.BeginForm())
+                {
+
+                    <div class="col-md-6 alert-warning ">
+                        <div class="well">
+                            <p>
+                                Maximum Kelime Uzunluğu: @Html.TextBoxFor(model => model.maxlen, new { @class = "form-control", @required = "required" ,placeholder = "Kelime uzunluğu sayısı giriniz." })
+                            </p>
+
+                            <p>
+                                Güncel Değer : @Model.maxlen
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 alert-warning ">
+                        <div class="well">
+                            <p>
+                                Model tipi: <br />
+                                @Html.RadioButtonFor(x => Model.type, "custom", new { @checked = "checked" }) Custom <br />
+                                @Html.RadioButtonFor(x => Model.type, "bert") Bert
+                            </p>
+
+                            <p>
+                                Güncel Değer : @Model.type
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 alert-warning ">
+                        <div class="well">
+                            <p>
+                                Batch Size: @Html.TextBoxFor(model => model.batch_size, new { @class = "form-control", @required = "required", placeholder = "batch size değeri giriniz" })
+                            </p>
+
+                            <p>
+                                Güncel Değer : @Model.batch_size
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 alert-warning ">
+                        <div class="well">
+                            <p>
+                                Epoch Sayısı: @Html.TextBoxFor(model => model.epoch, new { @class = "form-control", @required = "required", placeholder = "epoch sayısı giriniz" })
+                            </p>
+
+                            <p>
+                                Güncel Değer : @Model.epoch
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12 alert-warning ">
+                        <div class="text-center btn-group-lg">
+                            <button type="submit" class="btn btn-succes btn-group-lg">Parametreleri Güncelle</button>
+
+                        </div>
+                    </div>
+                    <div class="col-md-12 alert-warning ">
+                        <hr />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

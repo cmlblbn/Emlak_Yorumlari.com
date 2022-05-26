@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Net.Http;
 using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
@@ -266,6 +269,35 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             return minMaxstr;
         }
 
+        static async Task<string> SendURI(Uri u, HttpContent c)
+        {
+            string text = string.Empty;
+            using (var client = new HttpClient())
+            {
+                Task<string> response;
+                HttpRequestMessage request = new HttpRequestMessage
+                {
+                    Method = HttpMethod.Post,
+                    RequestUri = u,
+                    Content = c
+                };
+
+                HttpResponseMessage result = await client.SendAsync(request);
+                if (result.IsSuccessStatusCode)
+                {
+                    response = result.Content.ReadAsStringAsync();
+                    text = response.Result;
+                    return text;
+                }
+            }
+            return text;
+        }
+
+        public class prediction
+        {
+            public string response { get; set; }
+        }
+
         public ActionResult PlaceProfile(int? placeId)
         {
 
@@ -378,6 +410,10 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             model.minMaxRentStr = getMinMaxRent(place.place_id);
 
 
+
+
+            
+
             Adress_Description mahalle = new Adress_Description();
             Adress_Description ilce = new Adress_Description();
             Adress_Description sehir = new Adress_Description();
@@ -422,7 +458,28 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             User user = new User();
             user = db.Users.Where(x => x.username == username).FirstOrDefault();
 
-            if (checkBadWords(model.comment))
+            //Communicate with the fastApi to get a predict from AI
+            if(model.comment != null)
+            {
+                Uri u = new Uri("http://localhost:4444/predict/");
+
+                var willPredict = new Dictionary<string, string>
+                    {
+                      {"text",model.comment}
+                    };
+
+                string strWillPredict = Newtonsoft.Json.JsonConvert.SerializeObject(willPredict);
+
+                HttpContent c = new StringContent(strWillPredict, Encoding.UTF8, "application/json");
+                var t = Task.Run(() => SendURI(u, c));
+                t.Wait();
+                var predictionobj = Newtonsoft.Json.JsonConvert.DeserializeObject<prediction>(t.Result);
+                model.prediction = predictionobj.response;
+            }
+
+
+
+            if (model.prediction == "olumsuz")
             {
                 foreach (var data in model.scores)
                 {
@@ -430,55 +487,80 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                     int sorguKey = int.Parse(data.Key);
                     addQuestion = db.Question_Definitions.Where(x => x.question_id == sorguKey).FirstOrDefault();
                     Survey_Log addQuiz = new Survey_Log();
+                    Survey quiz = new Survey();
                     if (addQuestion != null)
                     {
                         addQuiz.user_id = user.user_id;
+                        quiz.user_id = user.user_id;
                         addQuiz.user = user;
+                        quiz.user = user;
                         addQuiz.place_id = place.place_id;
+                        quiz.place_id = place.place_id;
                         addQuiz.place = place;
+                        quiz.place = place;
                         addQuiz.question_id = addQuestion.question_id;
+                        quiz.question_id = addQuestion.question_id;
                         addQuiz.question_definitioın = addQuestion;
+                        quiz.question_definitioın = addQuestion;
                         if (addQuestion.question_type_id == 1)
                         {
                             Combobox_Answer combo = new Combobox_Answer();
                             combo = db.Combobox_Answers.Where(x => x.question_answer == data.Value).FirstOrDefault();
                             addQuiz.score = combo.question_answer_id;
+                            quiz.score = combo.question_answer_id;
                         }
                         else
                         {
                             addQuiz.score = int.Parse(data.Value);
+                            quiz.score = int.Parse(data.Value);
                         }
                         addQuiz.toxic_type = 1;
                         addQuiz.createdOn = DateTime.Now;
+                        quiz.createdOn = DateTime.Now;
                         addQuiz.IsActive = true;
+                        quiz.IsActive = true;
 
                         db.Survey_Logs.Add(addQuiz);
+                        db.Surveys.Add(quiz);
                         db.SaveChanges();
                     }
 
 
+
                 }
 
-                Comment_Log comment = new Comment_Log();
+                Comment comment = new Comment();
                 comment.user_id = user.user_id;
                 comment.user = user;
                 comment.place_id = place.place_id;
                 comment.place = place;
                 comment.text = model.comment;
-                comment.toxic_type = 1;
                 comment.createdOn = DateTime.Now;
                 comment.IsActive = true;
 
-                db.Comment_Logs.Add(comment);
+                db.Comments.Add(comment);
+
+                Comment_Log logComment = new Comment_Log();
+                logComment.user_id = user.user_id;
+                logComment.user = user;
+                logComment.place_id = place.place_id;
+                logComment.place = place;
+                logComment.text = model.comment;
+                logComment.toxic_type = 1;
+                logComment.createdOn = DateTime.Now;
+                logComment.IsActive = true;
+                logComment.isLabeled = false;
+
+                db.Comment_Logs.Add(logComment);
                 db.SaveChanges();
 
                 if (redis.IsSet(place.place_id.ToString()))
                 {
                     redis.Remove(place.place_id.ToString());
                 }
-                return RedirectToAction("badSlangCommentDirection");
+                return RedirectToAction("PlaceProfile", new { placeId = place.place_id });
             }
-            else if(checkSlangWords(model.comment)){
+            else if(model.prediction == "küfürlü"){
                 foreach (var data in model.scores)
                 {
                     Question_Definition addQuestion = new Question_Definition();
@@ -523,6 +605,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 comment.toxic_type = 2;
                 comment.createdOn = DateTime.Now;
                 comment.IsActive = true;
+                comment.isLabeled = false;
 
                 db.Comment_Logs.Add(comment);
                 db.SaveChanges();
@@ -542,28 +625,41 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                     int sorguKey = int.Parse(data.Key);
                     addQuestion = db.Question_Definitions.Where(x => x.question_id == sorguKey).FirstOrDefault();
                     Survey addQuiz = new Survey();
+                    Survey_Log quiz = new Survey_Log();
                     if (addQuestion != null)
                     {
                         addQuiz.user_id = user.user_id;
+                        quiz.user_id = user.user_id;
                         addQuiz.user = user;
+                        quiz.user = user;
                         addQuiz.place_id = place.place_id;
+                        quiz.place_id = place.place_id;
                         addQuiz.place = place;
+                        quiz.place = place;
                         addQuiz.question_id = addQuestion.question_id;
+                        quiz.question_id = addQuestion.question_id;
                         addQuiz.question_definitioın = addQuestion;
+                        quiz.question_definitioın = addQuestion;
                         if (addQuestion.question_type_id == 1)
                         {
                             Combobox_Answer combo = new Combobox_Answer();
                             combo = db.Combobox_Answers.Where(x => x.question_answer == data.Value).FirstOrDefault();
                             addQuiz.score = combo.question_answer_id;
+                            quiz.score = combo.question_answer_id;
                         }
                         else
                         {
                             addQuiz.score = int.Parse(data.Value);
+                            quiz.score = int.Parse(data.Value);
                         }
                         addQuiz.createdOn = DateTime.Now;
+                        quiz.createdOn = DateTime.Now;
                         addQuiz.IsActive = true;
+                        quiz.IsActive = true;
+                        
 
                         db.Surveys.Add(addQuiz);
+                        db.Survey_Logs.Add(quiz);
                         place.surveys.Add(addQuiz);
                         user.surveys.Add(addQuiz);
                         db.SaveChanges();
@@ -581,6 +677,17 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 comment.createdOn = DateTime.Now;
                 comment.IsActive = true;
 
+                Comment_Log logcomment = new Comment_Log();
+                logcomment.user_id = user.user_id;
+                logcomment.user = user;
+                logcomment.place_id = place.place_id;
+                logcomment.place = place;
+                logcomment.text = model.comment;
+                logcomment.createdOn = DateTime.Now;
+                logcomment.IsActive = true;
+                logcomment.isLabeled = false;
+
+                db.Comment_Logs.Add(logcomment);
                 db.Comments.Add(comment);
                 place.comments.Add(comment);
                 user.comments.Add(comment);
@@ -597,103 +704,6 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
 
             return RedirectToAction("PlaceProfile", new { placeId = place.place_id });
-
-            //Question_Definition guven_question = new Question_Definition();
-            //guven_question = db.Question_Definitions.Where(x => x.question_id == 1).FirstOrDefault();
-            //Question_Definition aktivite_question = new Question_Definition();
-            //aktivite_question = db.Question_Definitions.Where(x => x.question_id == 2).FirstOrDefault();
-            //Question_Definition yonetim_question = new Question_Definition();
-            //yonetim_question = db.Question_Definitions.Where(x => x.question_id == 3).FirstOrDefault();
-
-            //if (model.aktivite_alani_score != 0 && model.yonetim_memnuniyeti_score != 0 && model.yonetim_memnuniyeti_score != 0 && model.comment != null)
-            //{
-
-
-            //    Survey quiz1 = new Survey();
-
-            //    quiz1.user_id = user.user_id;
-            //    quiz1.user = user;
-            //    quiz1.question_id = guven_question.question_id;
-            //    quiz1.question_definitioın = guven_question;
-            //    quiz1.place_id = place.place_id;
-            //    quiz1.place = place;
-            //    quiz1.score = model.guven_puani_score;
-            //    quiz1.createdOn = DateTime.Now;
-            //    quiz1.IsActive = true;
-
-
-            //    db.Surveys.Add(quiz1);
-
-
-
-            //    Survey quiz2 = new Survey();
-
-            //    quiz2.user_id = user.user_id;
-            //    quiz2.user = user;
-            //    quiz2.question_id = aktivite_question.question_id;
-            //    quiz2.question_definitioın = aktivite_question;
-            //    quiz2.place_id = place.place_id;
-            //    quiz2.place = place;
-            //    quiz2.score = model.aktivite_alani_score;
-            //    quiz2.createdOn = DateTime.Now;
-            //    quiz2.IsActive = true;
-
-            //    db.Surveys.Add(quiz2);
-
-
-
-            //    Survey quiz3 = new Survey();
-
-            //    quiz3.user_id = user.user_id;
-            //    quiz3.user = user;
-            //    quiz3.question_id = yonetim_question.question_id;
-            //    quiz3.question_definitioın = yonetim_question;
-            //    quiz3.place_id = place.place_id;
-            //    quiz3.place = place;
-            //    quiz3.score = model.yonetim_memnuniyeti_score;
-            //    quiz3.createdOn = DateTime.Now;
-            //    quiz3.IsActive = true;
-
-            //    db.Surveys.Add(quiz3);
-
-
-
-            //    Comment comments = new Comment();
-            //    comments.user_id = user.user_id;
-            //    comments.user = user;
-            //    comments.place_id = place.place_id;
-            //    comments.place = place;
-            //    comments.text = model.comment;
-            //    comments.createdOn = DateTime.Now;
-            //    comments.IsActive = true;
-
-            //    db.Comments.Add(comments);
-
-            //    place.surveys.Add(quiz1);
-            //    place.surveys.Add(quiz2);
-            //    place.surveys.Add(quiz3);
-            //    place.comments.Add(comments);
-
-            //    user.surveys.Add(quiz1);
-            //    user.surveys.Add(quiz2);
-            //    user.surveys.Add(quiz3);
-            //    user.comments.Add(comments);
-
-
-
-            //    ViewBag.status = db.SaveChanges();
-
-            //    if (redis.IsSet(place.place_id.ToString()))
-            //    {
-            //        redis.Remove(place.place_id.ToString());
-            //    }
-
-
-            //}
-
-
-
-
 
 
         }
@@ -723,7 +733,25 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             User user = new User();
             user = db.Users.Where(x => x.username == username).FirstOrDefault();
 
-            if (checkBadWords(model.comment))
+            if (model.comment != null)
+            {
+                Uri u = new Uri("http://localhost:4444/predict/");
+
+                var willPredict = new Dictionary<string, string>
+                    {
+                      {"text",model.comment}
+                    };
+
+                string strWillPredict = Newtonsoft.Json.JsonConvert.SerializeObject(willPredict);
+
+                HttpContent c = new StringContent(strWillPredict, Encoding.UTF8, "application/json");
+                var t = Task.Run(() => SendURI(u, c));
+                t.Wait();
+                var predictionobj = Newtonsoft.Json.JsonConvert.DeserializeObject<prediction>(t.Result);
+                model.prediction = predictionobj.response;
+            }
+
+            if (model.prediction == "olumsuz")
             {
                 foreach (var data in model.scores)
                 {
@@ -731,28 +759,40 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                     int sorguKey = int.Parse(data.Key);
                     addQuestion = db.Question_Definitions.Where(x => x.question_id == sorguKey).FirstOrDefault();
                     Survey_Log addQuiz = new Survey_Log();
+                    Survey survey = new Survey();
                     if (addQuestion != null)
                     {
                         addQuiz.user_id = user.user_id;
+                        survey.user_id = user.user_id;
                         addQuiz.user = user;
+                        survey.user = user;
                         addQuiz.place_id = place.place_id;
+                        survey.place_id = place.place_id;
                         addQuiz.place = place;
+                        survey.place = place;
                         addQuiz.question_id = addQuestion.question_id;
+                        survey.question_id = addQuestion.question_id;
                         addQuiz.question_definitioın = addQuestion;
+                        survey.question_definitioın = addQuestion;
                         if (addQuestion.question_type_id == 1)
                         {
                             Combobox_Answer combo = new Combobox_Answer();
                             combo = db.Combobox_Answers.Where(x => x.question_answer == data.Value).FirstOrDefault();
                             addQuiz.score = combo.question_answer_id;
+                            survey.score = combo.question_answer_id;
                         }
                         else
                         {
                             addQuiz.score = int.Parse(data.Value);
+                            survey.score = int.Parse(data.Value);
                         }
                         addQuiz.toxic_type = 1;
                         addQuiz.createdOn = DateTime.Now;
+                        survey.createdOn = DateTime.Now;
                         addQuiz.IsActive = true;
+                        survey.IsActive = true;
 
+                        db.Surveys.Add(survey);
                         db.Survey_Logs.Add(addQuiz);
                         db.SaveChanges();
                     }
@@ -760,17 +800,29 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
                 }
 
-                Comment_Log comment = new Comment_Log();
+                Comment comment = new Comment();
                 comment.user_id = user.user_id;
                 comment.user = user;
                 comment.place_id = place.place_id;
                 comment.place = place;
                 comment.text = model.comment;
-                comment.toxic_type = 1;
                 comment.createdOn = DateTime.Now;
                 comment.IsActive = true;
 
-                db.Comment_Logs.Add(comment);
+                db.Comments.Add(comment);
+
+                Comment_Log logcomment = new Comment_Log();
+                logcomment.user_id = user.user_id;
+                logcomment.user = user;
+                logcomment.place_id = place.place_id;
+                logcomment.place = place;
+                logcomment.text = model.comment;
+                logcomment.toxic_type = 1;
+                logcomment.createdOn = DateTime.Now;
+                logcomment.IsActive = true;
+                logcomment.isLabeled = false;
+
+                db.Comment_Logs.Add(logcomment);
                 db.SaveChanges();
 
                 if (redis.IsSet(place.place_id.ToString()))
@@ -781,9 +833,9 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                     redis.setKey(place.place_id.ToString(), getJson, 3600);
 
                 }
-                return RedirectToAction("badSlangCommentDirection");
+                return RedirectToAction("PlaceProfile", new { placeId = place.place_id });
             }
-            else if (checkSlangWords(model.comment))
+            else if (model.prediction == "küfürlü")
             {
                 foreach (var data in model.scores)
                 {
@@ -829,6 +881,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 comment.toxic_type = 2;
                 comment.createdOn = DateTime.Now;
                 comment.IsActive = true;
+                comment.isLabeled = false;
 
                 db.Comment_Logs.Add(comment);
                 db.SaveChanges();
@@ -852,27 +905,39 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                     int sorguKey = int.Parse(data.Key);
                     addQuestion = db.Question_Definitions.Where(x => x.question_id == sorguKey).FirstOrDefault();
                     Survey addQuiz = new Survey();
+                    Survey_Log quiz = new Survey_Log();
                     if (addQuestion != null)
                     {
                         addQuiz.user_id = user.user_id;
+                        quiz.user_id = user.user_id;
                         addQuiz.user = user;
+                        quiz.user = user;
                         addQuiz.place_id = place.place_id;
+                        quiz.place_id = place.place_id;
                         addQuiz.place = place;
+                        quiz.place = place;
                         addQuiz.question_id = addQuestion.question_id;
+                        quiz.question_id = addQuestion.question_id;
                         addQuiz.question_definitioın = addQuestion;
+                        quiz.question_definitioın = addQuestion;
                         if (addQuestion.question_type_id == 1)
                         {
                             Combobox_Answer combo = new Combobox_Answer();
                             combo = db.Combobox_Answers.Where(x => x.question_answer == data.Value).FirstOrDefault();
                             addQuiz.score = combo.question_answer_id;
+                            quiz.score = combo.question_answer_id;
                         }
                         else
                         {
                             addQuiz.score = int.Parse(data.Value);
+                            quiz.score = int.Parse(data.Value);
                         }
                         addQuiz.createdOn = DateTime.Now;
+                        quiz.createdOn = DateTime.Now;
                         addQuiz.IsActive = true;
+                        quiz.IsActive = true;
 
+                        db.Survey_Logs.AddOrUpdate(quiz);
                         db.Surveys.AddOrUpdate(addQuiz);
                         db.SaveChanges();
                     }
@@ -889,6 +954,17 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 comment.createdOn = DateTime.Now;
                 comment.IsActive = true;
 
+                Comment_Log logcomment = new Comment_Log();
+                logcomment.user_id = user.user_id;
+                logcomment.user = user;
+                logcomment.place_id = place.place_id;
+                logcomment.place = place;
+                logcomment.text = model.comment;
+                logcomment.createdOn = DateTime.Now;
+                logcomment.IsActive = true;
+                logcomment.isLabeled = false;
+
+                db.Comment_Logs.AddOrUpdate(logcomment);
                 db.Comments.AddOrUpdate(comment);
                 db.SaveChanges();
 
@@ -901,94 +977,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
 
                 }
             }
-
-
-
-            //Question_Definition guven_question = new Question_Definition();
-            //guven_question = db.Question_Definitions.Where(x => x.question_id == 1).FirstOrDefault();
-            //Question_Definition aktivite_question = new Question_Definition();
-            //aktivite_question = db.Question_Definitions.Where(x => x.question_id == 2).FirstOrDefault();
-            //Question_Definition yonetim_question = new Question_Definition();
-            //yonetim_question = db.Question_Definitions.Where(x => x.question_id == 3).FirstOrDefault();
-
-            //if (model.aktivite_alani_score != 0 && model.yonetim_memnuniyeti_score != 0 && model.yonetim_memnuniyeti_score != 0 && model.comment != null)
-            //{
-
-
-            //    Survey quiz1 = db.Surveys.Where(x => x.user_id == user.user_id && x.place_id == placeId && x.question_id == 1).FirstOrDefault();
-
-            //    quiz1.user_id = user.user_id;
-            //    quiz1.user = user;
-            //    quiz1.question_id = guven_question.question_id;
-            //    quiz1.question_definitioın = guven_question;
-            //    quiz1.place_id = place.place_id;
-            //    quiz1.place = place;
-            //    quiz1.score = model.guven_puani_score;
-            //    quiz1.createdOn = DateTime.Now;
-            //    quiz1.IsActive = true;
-
-
-            //    db.Surveys.AddOrUpdate(quiz1);
-
-
-
-            //    Survey quiz2 = db.Surveys.Where(x => x.user_id == user.user_id && x.place_id == placeId && x.question_id == 2).FirstOrDefault(); ;
-
-            //    quiz2.user_id = user.user_id;
-            //    quiz2.user = user;
-            //    quiz2.question_id = aktivite_question.question_id;
-            //    quiz2.question_definitioın = aktivite_question;
-            //    quiz2.place_id = place.place_id;
-            //    quiz2.place = place;
-            //    quiz2.score = model.aktivite_alani_score;
-            //    quiz2.createdOn = DateTime.Now;
-            //    quiz2.IsActive = true;
-
-            //    db.Surveys.AddOrUpdate(quiz2);
-
-
-
-            //    Survey quiz3 = db.Surveys.Where(x => x.user_id == user.user_id && x.place_id == placeId && x.question_id == 3).FirstOrDefault(); ;
-
-            //    quiz3.user_id = user.user_id;
-            //    quiz3.user = user;
-            //    quiz3.question_id = yonetim_question.question_id;
-            //    quiz3.question_definitioın = yonetim_question;
-            //    quiz3.place_id = place.place_id;
-            //    quiz3.place = place;
-            //    quiz3.score = model.yonetim_memnuniyeti_score;
-            //    quiz3.createdOn = DateTime.Now;
-            //    quiz3.IsActive = true;
-
-            //    db.Surveys.AddOrUpdate(quiz3);
-
-
-
-            //    Comment comments = db.Comments.Where(x => x.user_id == user.user_id && x.place_id == placeId).FirstOrDefault(); ;
-
-            //    comments.user_id = user.user_id;
-            //    comments.user = user;
-            //    comments.place_id = place.place_id;
-            //    comments.place = place;
-            //    comments.text = model.comment;
-            //    comments.createdOn = DateTime.Now;
-            //    comments.IsActive = true;
-
-            //    db.Comments.AddOrUpdate(comments);
-
-
-
-
-
-            //    ViewBag.status = db.SaveChanges();
-
-
-
-
-            //}
-
-
-            
+          
             return RedirectToAction("PlaceProfile",new{placeId = place.place_id});
         }
 
@@ -1377,7 +1366,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             chartData_yAxisMax[0] = lastMonthMinMaxRent.Item2;
             chartData_yAxisMax[1] = toDayMinMaxRent.Item2;
 
-            Chart chart = new Chart(440, 500, theme: ChartTheme.Vanilla);
+            Chart chart = new Chart(420, 500, theme: ChartTheme.Vanilla);
             chart.AddTitle("Sitedeki Aylık Kira Değişimi");
             chart.AddSeries(name: "Minimum Kira Değişimi", chartType: type,
                 xValue: chartData_xAxis,
@@ -1396,6 +1385,8 @@ namespace Emlak_Yorumlari_WebApp.Controllers
         {
             return View();
         }
+
+
 
     }
 }

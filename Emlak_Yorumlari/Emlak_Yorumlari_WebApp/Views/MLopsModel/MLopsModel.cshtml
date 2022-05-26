@@ -1,0 +1,159 @@
+﻿@using Emlak_Yorumlari_WebApp.ViewModels
+@model MLopsModelViewModel
+@{
+    ViewBag.Title = "MLopsModel";
+    Layout = "~/Views/Shared/_MLopsLayout.cshtml";
+}
+
+<link href="~/Content/shop-homepage.css" rel="stylesheet" />
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+
+
+        <div class="col-md-12 alert-success">
+
+
+            @*İçerikler*@
+            <div class="row">
+
+                <div class="col-md-12 alert-warning">
+
+                    <span class="label">
+                        <h2 class="text-primary">
+                            MODEL YÖNETİM MERKEZİ
+
+                        </h2>
+                    </span>
+                    <br />
+
+                </div>
+
+                <div class="col-md-12 alert-warning ">
+                    <hr />
+                </div>
+                <div class="col-md-12 alert-warning ">
+                    <h4 class="text-center">
+                        Sistemde aktif olarak çalışan ve diğer üretilen modeller burada yönetilir
+                    </h4>
+                    @Html.ValidationSummary(false)
+                </div>
+
+
+
+                @if (Model.currTrainStatus != null)
+                {
+                    <div class="col-md-12 alert-warning ">
+                        <hr />
+                    </div>
+
+                    if (Convert.ToBoolean(Model.currTrainStatus))
+                    {
+
+                        <div class="col-md-12 alert-success ">
+                            <h4 class="text-center text-info">
+                                Model eğitime alındı. Eğitim bitince aşağıda modeli inceleyebilirsiniz
+                            </h4>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-md-12 alert-danger ">
+                            <h4 class="text-center text-capitalize info">
+                                Eğitim sırasında bir hata oluştu
+                            </h4>
+                        </div>
+                    }
+                    <div class="col-md-12 alert-warning ">
+                        <hr />
+                    </div>
+                }
+
+                @using (Html.BeginForm())
+                {
+
+                    <div class="col-md-12 alert-warning ">
+                        <hr />
+                    </div>
+                    <br />
+
+
+                    <div class="col-md-3 text-left">
+                        <p>
+
+                        </p>
+                        <div class="well">
+                            <p>
+                                Modeli Eğit
+                            </p>
+                            <p>
+                                Maximum kelime uzunluğu: @Html.TextBoxFor(x => x.maxlen, new { @class = "form-control", @required = "required", @size = "100", @placeholder = "maximum kelime uzunluğu giriniz" })
+                            </p>
+                            <p>
+                                Batch Size: @Html.TextBoxFor(x => x.batch_size, new { @class = "form-control", @required = "required", @placeholder = "batch size giriniz" })
+                            </p>
+                            <p>
+                                Epoch Sayısı: @Html.TextBoxFor(x => x.epoch, new { @class = "form-control", @required = "required", @placeholder = "epoch sayısıgiriniz" })
+                            </p>
+                            <p>
+                                Model tipi: <br />
+                                @Html.RadioButtonFor(x => Model.model_type, "custom", new { @checked = "checked" }) Custom <br />
+                                @Html.RadioButtonFor(x => Model.model_type, "bert") Bert
+                            </p>
+                            <p class="text-right">
+                                <button type="submit" class="btn btn-warning btn-group-xm">Eğitim Yap</button>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-9 alert-success text-right">
+                        <h2 class="text-center text-primary">
+                            MODELLER
+                        </h2>
+
+                    </div>
+
+
+                    foreach (var model in Model.models)
+
+                    {
+
+
+                            <div class="col-md-9 alert-success pull-right">
+                                <span class="form-control">
+                                    @Html.ActionLink("MODEL ADI: " + model.modelName, "ModelDetail", "MLopsModel", new { model_id = model.model_id }, new { @class = "text-prime" })
+                                    @if (model.model_id == Model.activeModel_id)
+                                    {
+                                        <span>
+                                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+                                        </span>
+                                        <p class="glyphicon glyphicon-heart ">
+                                            Aktif Model
+                                        </p>
+                                    }
+                                </span>
+
+
+                            </div>
+                            <div class="col-md-9 alert-link text-left">
+                                <hr />
+                            </div>
+                            }
+
+
+
+
+                            <div class="col-md-12 alert-warning ">
+                                <hr />
+                            </div>
+
+                            }
+                        </div>
+                    </div>
+    </div>
+</div>
+
