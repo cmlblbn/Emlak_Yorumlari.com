@@ -325,8 +325,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             user = db.Users.Where(x => x.username == username).FirstOrDefault();
             Comment kisisorgu = new Comment();
             kisisorgu = db.Comments.Where(x => x.user_id == user.user_id && x.place_id == placeId).FirstOrDefault();
-            var kisisorguLog = db.Comment_Logs.Where(x => x.user_id == user.user_id && x.place_id == placeId).FirstOrDefault();
-            if (kisisorgu != null || kisisorguLog != null)
+            if (kisisorgu != null )
             {
                 TempData["post"] = "ok";
             }
@@ -514,7 +513,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                             addQuiz.score = int.Parse(data.Value);
                             quiz.score = int.Parse(data.Value);
                         }
-                        addQuiz.toxic_type = 1;
+                        addQuiz.toxic_type = 0;
                         addQuiz.createdOn = DateTime.Now;
                         quiz.createdOn = DateTime.Now;
                         addQuiz.IsActive = true;
@@ -546,7 +545,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 logComment.place_id = place.place_id;
                 logComment.place = place;
                 logComment.text = model.comment;
-                logComment.toxic_type = 1;
+                logComment.toxic_type = 0;
                 logComment.createdOn = DateTime.Now;
                 logComment.IsActive = true;
                 logComment.isLabeled = false;
@@ -656,6 +655,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                         quiz.createdOn = DateTime.Now;
                         addQuiz.IsActive = true;
                         quiz.IsActive = true;
+                        quiz.toxic_type = 1;
                         
 
                         db.Surveys.Add(addQuiz);
@@ -686,6 +686,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 logcomment.createdOn = DateTime.Now;
                 logcomment.IsActive = true;
                 logcomment.isLabeled = false;
+                logcomment.toxic_type = 1;
 
                 db.Comment_Logs.Add(logcomment);
                 db.Comments.Add(comment);
@@ -786,7 +787,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                             addQuiz.score = int.Parse(data.Value);
                             survey.score = int.Parse(data.Value);
                         }
-                        addQuiz.toxic_type = 1;
+                        addQuiz.toxic_type = 0;
                         addQuiz.createdOn = DateTime.Now;
                         survey.createdOn = DateTime.Now;
                         addQuiz.IsActive = true;
@@ -817,7 +818,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 logcomment.place_id = place.place_id;
                 logcomment.place = place;
                 logcomment.text = model.comment;
-                logcomment.toxic_type = 1;
+                logcomment.toxic_type = 0;
                 logcomment.createdOn = DateTime.Now;
                 logcomment.IsActive = true;
                 logcomment.isLabeled = false;
@@ -936,6 +937,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                         quiz.createdOn = DateTime.Now;
                         addQuiz.IsActive = true;
                         quiz.IsActive = true;
+                        quiz.toxic_type = 1;
 
                         db.Survey_Logs.AddOrUpdate(quiz);
                         db.Surveys.AddOrUpdate(addQuiz);
@@ -963,6 +965,7 @@ namespace Emlak_Yorumlari_WebApp.Controllers
                 logcomment.createdOn = DateTime.Now;
                 logcomment.IsActive = true;
                 logcomment.isLabeled = false;
+                logcomment.toxic_type = 1;
 
                 db.Comment_Logs.AddOrUpdate(logcomment);
                 db.Comments.AddOrUpdate(comment);
@@ -996,14 +999,21 @@ namespace Emlak_Yorumlari_WebApp.Controllers
             user = db.Users.Where(x => x.username == username).FirstOrDefault();
 
             var SurveyList = db.Surveys.Where(x => x.user_id == user.user_id && x.place_id == placeId && x.IsActive).ToList();
-
-            foreach(var survey in SurveyList)
+            var SurveyLogList = db.Survey_Logs.Where(x => x.user_id == user.user_id && x.place_id == placeId && x.IsActive).ToList();
+            foreach (var survey in SurveyList)
             {
                 db.Surveys.Remove(survey);
                 db.SaveChanges();
             }
+            foreach(var survey in SurveyLogList)
+            {
+                db.Survey_Logs.Remove(survey);
+                db.SaveChanges();
+            }
             Comment comment = db.Comments.Where(x => x.user_id == user.user_id && x.place_id == placeId).FirstOrDefault();
+            Comment_Log commentLog = db.Comment_Logs.Where(x => x.user_id == user.user_id && x.place_id == placeId).FirstOrDefault();
             db.Comments.Remove(comment);
+            db.Comment_Logs.Remove(commentLog);
             db.SaveChanges();
 
 

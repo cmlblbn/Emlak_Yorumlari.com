@@ -17,7 +17,7 @@ sql = ''' SELECT * FROM dbo."Models" WHERE "isActive" = TRUE '''
 cur.execute(sql)
 data = cur.fetchall()
 modelName = data[0][1]
-model_path = "./backend/Models/" + modelName + "/"
+model_path = "./backend/" + modelName + "/"
 
 
 def predict(text, maxlen=100):

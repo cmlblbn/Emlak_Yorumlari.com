@@ -19,10 +19,10 @@ namespace Emlak_Yorumlari_WebApp.Controllers
         // GET: MLopsEmbedding
         public ActionResult MLopsEmbedding()
         {
-            /*if (Session["User"] == null && Session["Admin"] == null)
+            if (Session["User"] == null && Session["Admin"] == null)
             {
                 return RedirectToAction("Index", "Home");
-            }*/
+            }
             MLopsEmbeddingViewModel model = new MLopsEmbeddingViewModel();
             model.data = db.Embedding_Analyses.Where(x => x.isActive).OrderByDescending(x => x.lastAnalyseDate).Take(7).ToList();
             model.data.Reverse();
